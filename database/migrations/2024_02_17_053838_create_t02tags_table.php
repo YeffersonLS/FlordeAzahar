@@ -18,11 +18,10 @@ return new class extends Migration
             $table->bigInteger('t03usuario');
             $table->timestamps();
             $table->string('t03slug');
+            $table->foreign('t03usuario')->references('sys01id')->on('sys01usuarios');
+
         });
 
-        Schema::create('t03tag', function (Blueprint $table) {
-            $table->foreign('t03usuario')->references('sys01id')->on('sys01usuarios');
-        });
     }
 
     /**
