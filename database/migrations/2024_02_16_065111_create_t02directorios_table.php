@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('t02directorios', function (Blueprint $table) {
             $table->id('t02id');
 			$table->text('t02nombre')->nullable();
-			$table->timestamps(10);
+			$table->timestamps();
 			$table->text('t02grupo')->nullable();
         });
     }
