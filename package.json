@@ -6,7 +6,8 @@
         "development": "mix",
         "watch": "mix watch",
         "prod": "npm run production",
-        "pronuduction": "mix --production"
+        "pronuduction": "mix --production",
+        "build": "webpack --mode production"
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",
