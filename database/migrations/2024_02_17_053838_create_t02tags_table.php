@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('t03slug');
         });
 
-        Schema::tabla('t03tag', function (Blueprint $table) {
+        Schema::table('t03tag', function (Blueprint $table) {
             $table->foreign('t03usuario')->references('sys01id')->on('sys01usuarios');
         });
     }
