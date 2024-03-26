@@ -16,12 +16,12 @@ return new class extends Migration
             $table->string('t04nombre')->nullable();
             $table->string('t04presentacion')->nullable();
             $table->string('t04cantidad')->nullable();  //gr
-            $table->bigInteger('t04usuario')->nullable();
+            $table->unsignedBigInteger('t04usuario')->nullable();
             $table->foreign('t04usuario')->references('sys01id')->on('sys01usuarios');
             $table->boolean('t04activo')->nullable()->default(false);
             $table->text('t04descripcion')->nullable();
             $table->string('t04sabor')->nullable();
-            $table->bigInteger('t04categoria')->nullable();
+            $table->unsignedBigInteger('t04categoria')->nullable();
             $table->foreign('t04categoria')->references('t02id')->on('t02directorios');
             $table->timestamps();
             $table->longText('t04preparacion')->nullable();

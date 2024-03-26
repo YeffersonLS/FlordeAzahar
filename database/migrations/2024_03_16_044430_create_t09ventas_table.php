@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('t09ventas', function (Blueprint $table) {
             $table->id('t09id');
-            $table->bigInteger('t09usuario')->nullable();
+            $table->unsignedBigInteger('t09usuario')->nullable();
             $table->foreign('t09usuario')->references('sys01id')->on('sys01usuarios')->onDelete('cascade');
-            $table->bigInteger('t09cliente')->nullable();
+            $table->unsignedBigInteger('t09cliente')->nullable();
             $table->foreign('t09cliente')->references('sys01id')->on('sys01usuarios')->onDelete('cascade');
             $table->float('t09valor')->nullable();
             $table->string('t09cupon')->nullable();
             $table->float('t09cuponvalor')->nullable();
-            $table->bigInteger('t09detallemonedero')->nullable();
+            $table->unsignedBigInteger('t09detallemonedero')->nullable();
             $table->foreign('t09detallemonedero')->references('t08id')->on('t08detallemonederos')->onDelete('cascade');
             $table->timestamps();
         });

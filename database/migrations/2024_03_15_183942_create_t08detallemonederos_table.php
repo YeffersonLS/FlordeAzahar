@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('t08detallemonederos', function (Blueprint $table) {
             $table->id('t08id');
-            $table->bigInteger('t08venta')->nullable();
+            $table->unsignedBigInteger('t08venta')->nullable();
             $table->float('t08valor')->nullable();
-            $table->bigInteger('t08monedero')->nullable();
+            $table->unsignedBigInteger('t08monedero')->nullable();
             $table->foreign('t08monedero')->references('t07id')->on('t07monederos')->onDelete('cascade');
             $table->timestamps();
         });

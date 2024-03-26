@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('t01blogs', function (Blueprint $table) {
             $table->id('t01id');
-            $table->bigInteger('t01usuario');
+            $table->unsignedBigInteger('t01usuario');
             $table->longText('t01descripcion')->nullable();
             $table->longText('t01contenido')->nullable();
             $table->longText('t01nombre');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('t01comments')->default(0);
             $table->timestamps();
             $table->text('t01metadescription')->nullable();
-            $table->bigInteger('t01categoria')->nullable();
+            $table->unsignedBigInteger('t01categoria')->nullable();
 
         });
     }

@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('t05postproductos', function (Blueprint $table) {
             $table->id('t05id');
-            $table->bigInteger('t05producto')->unsigned();
+            $table->unsignedBigInteger('t05producto')->unsigned();
             $table->foreign('t05producto')->references('t04id')->on('t04productos')->onDelete('cascade');
             $table->timestamps();
-            $table->bigInteger('t05post');
+            $table->unsignedBigInteger('t05post');
             $table->foreign('t05post')->references('t01id')->on('t01blogs')->onDelete('cascade');
         });
     }
