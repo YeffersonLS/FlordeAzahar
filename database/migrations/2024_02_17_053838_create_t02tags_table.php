@@ -16,9 +16,12 @@ return new class extends Migration
             $table->string('t03nombre');
             $table->string('t03tipo');
             $table->bigInteger('t03usuario');
-            $table->foreign('t03usuario')->references('sys01id')->on('sys01usuarios');
             $table->timestamps();
             $table->string('t03slug');
+        });
+
+        Schema::create('t03tag', function (Blueprint $table) {
+            $table->foreign('t03usuario')->references('sys01id')->on('sys01usuarios');
         });
     }
 
