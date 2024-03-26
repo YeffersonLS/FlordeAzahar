@@ -15,13 +15,10 @@ return new class extends Migration
             $table->id('t03id');
             $table->string('t03nombre');
             $table->string('t03tipo');
-            $table->bigInteger('t03usuario');
+            $table->unsignedBigInteger('t03usuario');
+            $table->foreign('t03usuario')->references('sys01id')->on('sys01usuarios');
             $table->timestamps();
             $table->string('t03slug');
-        });
-
-        Schema::table('t03tag', function (Blueprint $table) {
-            $table->foreign('t03usuario')->references('sys01id')->on('sys01usuarios');
         });
     }
 
