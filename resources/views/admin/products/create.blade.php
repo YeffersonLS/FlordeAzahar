@@ -114,14 +114,13 @@
                             <label for="t04tags">Etiquetas</label>
                             <select id="t04tags" name="t04tags[]" class="chosen-select" multiple>
                                 @foreach($tags as $tagId => $tagName)
-                                    <option value="{{ $tagId }}">{{ $tagName }}</option>
+                                    <option value="{{ $tagId }}" {{ (in_array($tagId, $selectedTags)) ? 'selected' : '' }}>{{ $tagName }}</option>
                                 @endforeach
                             </select>
                         </div>
 
 
                     </div>
-
                     <div class="row form-group">
                         <div class="col-md-12">
                             <label for="t04descripcion">Descripcion del Producto</label>
@@ -148,9 +147,9 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-    <link rel="stylesheet" href="{!! url('assets/css/richtext.min.css') !!}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 @stop
 
 @section('js')

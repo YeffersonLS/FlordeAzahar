@@ -79,8 +79,9 @@ class T04productosController extends Controller
         }
         $categoria = T02directorio::where('t02grupo', '=', 'PRODUCTO')->pluck('t02nombre', 't02id');
         $tags = T03tag::where('t03tipo', '=', 'PRODUCTOS')->pluck('t03nombre', 't03id');
+        $selectedTags = $registro->tags->pluck('t03id')->toArray();
 
-        return view('admin.products.create', compact('titulo', 'registro', 'categoria', 'editMode', 'tags'));
+        return view('admin.products.create', compact('titulo', 'registro', 'categoria', 'editMode', 'tags', 'selectedTags'));
     }
 
     /**
@@ -92,9 +93,13 @@ class T04productosController extends Controller
         $q = T04productos::find($id);
         $q->fill($data);
         // dd($t01blog);
+        if($request->t04tags){
+            $q->tags()->detach();
+            $q->tags()->attach($request->t04tags);
+        }
         $q->update();
 
-        return redirect(self::$ruta)->with('mensaje', 'Se ha editado el post correctamente');
+        return redirect(self::$ruta)->with('mensaje', 'Se ha editado el producto correctamente');
     }
 
     /**
