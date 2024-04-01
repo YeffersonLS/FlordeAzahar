@@ -377,10 +377,10 @@ return [
                     'active'=>['admin/products/create'],
                 ],
                 [
-                    'text' => 'Post Productos',
-                    'icon'    => 'fas fa-newspaper',
-                    'url'  => 'admin/products/post',
-                    'active'=>['admin/products/post*'],
+                    'text' => 'Combos',
+                    'icon'    => 'fas fa-project-diagram',
+                    'url'  => 'admin/combos',
+                    'active'=>['admin/combos*'],
                 ],
                 [
                     'text' => 'Imagenes Productos',

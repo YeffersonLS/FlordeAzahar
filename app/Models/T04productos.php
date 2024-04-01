@@ -25,11 +25,11 @@ class T04productos extends Model
         't04usuario',
         't04activo',
         't04descripcion',
-        't04sabor',
         't04categoria',
         't04preparacion',
         't04slug',
-        't04precio'
+        't04precio',
+        't04sabores'
     ];
 
     protected static $titles = ['Nombre', 'Categoria', 'Estado', 'Acciones'];

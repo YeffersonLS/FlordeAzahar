@@ -91,7 +91,7 @@
 
                         <div class="col-md-6">
                             <label for="t01tags">Etiquetas</label>
-                            <select id="t01tags" name="t01tags[]" class="chosen-select" multiple>
+                            <select id="t01tags" name="t01tags[]" class="form-control chosen-select"  multiple>
                                 @foreach($tags as $tagId => $tagName)
                                     <option value="{{ $tagId }}">{{ $tagName }}</option>
                                 @endforeach

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class ShowProductController extends Controller
 {
     /**
-     * Display a listing of the resource.        r02products_tag
+     * Display a listing of the resource.
      */
     public function index()
     {

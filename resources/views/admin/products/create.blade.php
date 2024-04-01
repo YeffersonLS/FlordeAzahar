@@ -92,29 +92,37 @@
                         </div>
 
                         <div class="col-md-2">
-                            <label for="t04sabor">Sabor</label>
-                            <input type="t04sabor" id="t04sabor" name="t04sabor" class="form-control" value="{{ $registro->t04sabor }}">
-                        </div>
-
-                        <div class="col-md-2">
                             <label for="t04precio">Precio de Venta</label>
                             <input type="text" id="t04precio" name="t04precio" class="form-control" value="{{ $registro->t04precio }}">
                         </div>
 
-                    </div>
-
-                    <div class="row form-group">
                         <div class="col-md-4">
                             <label>Activo</label><br>
                             <input id="Activo" name="t04activo" type="radio" value="false" {{ $registro->t04activo === false ? 'checked' : '' }}> Activo<br>
                             <input id="Inactivo" name="t04activo" type="radio" value="true" {{ $registro->t04activo === true ? 'checked' : '' }}> Inactivo
                         </div>
 
-                        <div class="col-md-6">
+                    </div>
+
+                    <div class="row form-group">
+
+
+                        <div class="col-md-4">
                             <label for="t04tags">Etiquetas</label>
-                            <select id="t04tags" name="t04tags[]" class="chosen-select" multiple>
+                            <select id="t04tags" name="t04tags[]" class="form-control chosen-select"  multiple>
                                 @foreach($tags as $tagId => $tagName)
-                                    <option value="{{ $tagId }}" {{ (in_array($tagId, $selectedTags)) ? 'selected' : '' }}>{{ $tagName }}</option>
+                                <option value="{{ $tagId }}" {{ in_array($tagId, $selectedTags ?? []) ? 'selected' : '' }}>
+                                    {{ $tagName }}
+                                </option>
+                            @endforeach
+                            </select>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="t04sabores">Sabores</label>
+                            <select id="t04sabores" name="t04sabores[]" class="form-control chosen-select"  multiple>
+                                @foreach($sabores as $saborId => $saboresName)
+                                    <option value="{{ $saborId }}" {{ (in_array($saborId, $selectSabores ?? [])) ? 'selected' : '' }}>{{ $saboresName }}</option>
                                 @endforeach
                             </select>
                         </div>

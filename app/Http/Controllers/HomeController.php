@@ -125,6 +125,20 @@ class HomeController extends Controller
         //     $c->save();
         // }
         // exit;
+
+        // $var =  ['Vainilla', 'Fresa', 'Chocolate', 'Taro', 'Cereza', 'Mora Azul', 'Mango', 'Limon', 'Oreo', 'Cappucino', 'Moka', 'Yogurt Griego', 'Yogurt Griego Carbon Activado'];
+
+        // foreach($var as $v){
+        //     $c = new T02directorio();
+        //     $nueva_data = [
+        //         't02nombre' => $v,
+        //         't02grupo' => 'SABORES'
+        //     ];
+        //     $c -> fill($nueva_data);
+        //     $c->save();
+        // }
+
+        // exit;
     }
 
     public function tienda()

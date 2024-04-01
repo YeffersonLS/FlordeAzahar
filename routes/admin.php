@@ -72,5 +72,9 @@ Route::get('json.admin/sales', function (Request $request) {
 })->name('json.admin/sales');
 
 
+Route::resource('combos', \App\Http\Controllers\Admin\T10combosController::class)->names('admin.combos');
+Route::get('json.admin/combos', function (Request $request) {
+    return \App\Models\T10combos::getDatatable($request);
+})->name('json.admin/combos');
 });
 

@@ -34,7 +34,9 @@ class T04productosController extends Controller
         $categoria = T02directorio::where('t02grupo', '=', 'PRODUCTO')->pluck('t02nombre', 't02id');
         $tags = T03tag::where('t03tipo', '=', 'PRODUCTOS')->pluck('t03nombre', 't03id');
         $form_data = ['url' => url('admin/products'), 'method' => 'POST'];
-        return view('admin.products.create', compact('titulo', 'registro', 'form_data', 'categoria', 'tags'));
+        $sabores = T02directorio::where('t02grupo', '=', 'SABORES')->pluck('t02nombre', 't02id');
+
+        return view('admin.products.create', compact('titulo', 'registro', 'form_data', 'categoria', 'tags', 'sabores'));
     }
 
     /**
@@ -48,6 +50,8 @@ class T04productosController extends Controller
         $c->fill($data);
         $c->t04usuario = Auth::user()->sys01id;
         // dd($c);
+        $t04saborString = implode(',', $request->t04sabores);
+        $c->t04sabores = $t04saborString;
         $c->save();
 
         if($request->t04tags){
@@ -80,8 +84,10 @@ class T04productosController extends Controller
         $categoria = T02directorio::where('t02grupo', '=', 'PRODUCTO')->pluck('t02nombre', 't02id');
         $tags = T03tag::where('t03tipo', '=', 'PRODUCTOS')->pluck('t03nombre', 't03id');
         $selectedTags = $registro->tags->pluck('t03id')->toArray();
+        $sabores = T02directorio::where('t02grupo', '=', 'SABORES')->pluck('t02nombre', 't02id');
+        $selectSabores = explode(',', $registro->t04sabores);
 
-        return view('admin.products.create', compact('titulo', 'registro', 'categoria', 'editMode', 'tags', 'selectedTags'));
+        return view('admin.products.create', compact('titulo', 'registro', 'categoria', 'editMode', 'tags', 'selectedTags', 'sabores', 'selectSabores'));
     }
 
     /**
@@ -90,13 +96,19 @@ class T04productosController extends Controller
     public function update(Request $request, string $id)
     {
         $data = $request->all();
+        // dd($data);
+        $t04saborString = implode(',', $request->t04sabores);
+        // dd($t04saborString);
         $q = T04productos::find($id);
         $q->fill($data);
-        // dd($t01blog);
+        $q->t04sabores = $t04saborString;
+        // dd($q);
         if($request->t04tags){
             $q->tags()->detach();
             $q->tags()->attach($request->t04tags);
         }
+
+
         $q->update();
 
         return redirect(self::$ruta)->with('mensaje', 'Se ha editado el producto correctamente');

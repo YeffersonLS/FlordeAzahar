@@ -50,7 +50,7 @@ class T02directorioController extends Controller
         $c->save();
 
 
-        return redirect(self::$ruta)->with('mensaje', 'Se creo el post correctamente');
+        return redirect(self::$ruta)->with('mensaje', 'Se creo la categoria correctamente');
     }
 
     /**
@@ -90,7 +90,7 @@ class T02directorioController extends Controller
         $c->save();
 
 
-        return redirect(self::$ruta)->with('mensaje', 'Se creo el post correctamente');
+        return redirect(self::$ruta)->with('mensaje', 'Se edito la Categoria correctamente');
     }
 
     /**
@@ -100,6 +100,6 @@ class T02directorioController extends Controller
     {
         $blog = T02directorio::findOrFail($id);
         $blog->delete();
-        return redirect(self::$ruta)->with('mensaje', 'Se ha eliminado el blog correctamente!');
+        return redirect(self::$ruta)->with('mensaje', 'Se ha eliminado la categoria correctamente!');
     }
 }
