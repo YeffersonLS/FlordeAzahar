@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ImagesProductRequest;
 use App\Models\T04productos;
 use App\Models\T10combos;
 use Illuminate\Http\Request;
@@ -43,7 +44,6 @@ class T10combosController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        // dd($data);
         $c = new T10combos();
         $c->fill($data);
         $c->t10usuario = Auth::user()->sys01id;
@@ -53,7 +53,7 @@ class T10combosController extends Controller
             foreach ($request->file('image') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
                 $image->move(public_path('images/t10combos'), $imageName);
-                $c->t01image_path = 'images/t10combos/' . $imageName;
+                $c->t10image = 'images/t10combos/' . $imageName;
             }
         }
 
@@ -87,6 +87,7 @@ class T10combosController extends Controller
         if (!$registro) {
             abort(404);
         }
+
         $productos_relacionados = $registro->products->pluck('t04nombre', 't04id')->toArray();
         // dd($productos_relacionados);
         return view('admin.combos.create', compact('titulo', 'registro', 'productos', 'editMode', 'productos_relacionados'));
@@ -105,7 +106,15 @@ class T10combosController extends Controller
             $q->products()->detach();
             $q->products()->attach($request->productos);
         }
-
+        if ($request->hasFile('image')) {
+            foreach ($request->file('image') as $image) {
+                $imageName = time() . '_' . $image->getClientOriginalName();
+                $image->move(public_path('images/t10combos'), $imageName);
+                $q->t10image = 'images/t10combos/' . $imageName;
+            }
+        }
+        // dd($request->hasFile('image'));
+        // dd($q);
 
         $q->update();
 
@@ -125,5 +134,35 @@ class T10combosController extends Controller
         $q->delete();
 
         return redirect(self::$ruta)->with('mensaje', 'Se ha eliminado el combo correctamente!');
+    }
+
+    public function images(string $id)
+    {
+        $titulo = 'Sube o edita del combo';
+        $registro = T10combos::findOrFail($id);
+        // dd($registro);
+        $imagenes_relacionadas = $registro->images;
+        // dd($imagenes_relacionadas);
+        return view('admin.combos.image', compact('titulo', 'registro', 'imagenes_relacionadas'));
+    }
+
+    public function imagesPost(ImagesProductRequest $request)
+    {
+
+        $data = $request->all();
+        $product = T10combos::findOrFail($request->t10id);
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $imageName = time() . '_' . $image->getClientOriginalName(); // Generar un nombre único para la imagen
+                $image->move(public_path('images/t10combos'), $imageName); // Mover la imagen a la carpeta "public/images/t04productos"
+
+                $product->images()->create([
+                    'image_path' => 'images/t10combos/' . $imageName // Guardar la ruta de la imagen en la base de datos
+                ]);
+            }
+        }
+
+        return redirect(self::$ruta)->with('mensaje', 'Se anexaron las imagenes correctamente');
     }
 }

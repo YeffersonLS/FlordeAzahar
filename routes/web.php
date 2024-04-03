@@ -50,3 +50,7 @@ Route::get('monedero', 'App\Http\Controllers\T07monederoController@index');
 
 
 Route::post('monedero', 'App\Http\Controllers\T07monederoController@store')->name('monedero.crear');
+
+Route::get('combos', 'App\Http\Controllers\ShowCombosController@index');
+
+Route::get('combos/{id}', 'App\Http\Controllers\ShowCombosController@show')->name('combos.show');

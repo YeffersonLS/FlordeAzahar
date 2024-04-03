@@ -71,7 +71,9 @@ Route::get('json.admin/sales', function (Request $request) {
     return \App\Models\T09venta::getDatatable($request);
 })->name('json.admin/sales');
 
-
+Route::get('combos/images', [\App\Http\Controllers\Admin\T10combosController::class, 'indexImages'])->name('admin.combos.images');
+Route::get('combos/images/{blog}/crear', [\App\Http\Controllers\Admin\T10combosController::class, 'images'])->name('admin.combos.imagesCrear');
+Route::post('admin/combos/images', [\App\Http\Controllers\Admin\T10combosController::class, 'imagesPost'])->name('admin.combos.imagesPost');
 Route::resource('combos', \App\Http\Controllers\Admin\T10combosController::class)->names('admin.combos');
 Route::get('json.admin/combos', function (Request $request) {
     return \App\Models\T10combos::getDatatable($request);

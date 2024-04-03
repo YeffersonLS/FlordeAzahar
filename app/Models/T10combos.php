@@ -21,8 +21,11 @@ class T10combos extends Model
     protected $primaryKey = 't10id';
     protected $fillable = [
         't10usuario',
+        't10nombre',
         't10vencimiento',
-        't10valor'
+        't10valor',
+        't10image',
+        't10descripcion'
     ];
 
     protected static $titles = ['Consecutivo', 'Fecha de Vencimiento', 'Valor','Acciones'];
@@ -37,6 +40,11 @@ class T10combos extends Model
         return $this->belongsToMany(T04productos::class, 'r04combo_product', 'r04combo_id', 'r04product_id');
     }
 
+    public function images()
+    {
+        return $this->hasMany(R05combosImages::class, 'r05combo');
+    }
+
     public static function getDatatable(Request $request)
     {
         $sql = T10combos::select('t10id', 't10vencimiento', 't10valor')
@@ -47,6 +55,7 @@ class T10combos extends Model
         ->addColumn('Acciones','
         <div class="text-center">
             <a href="{!! url(\'admin/combos/\'.$t10id.\'/edit\') !!}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
+            <a href="{!! url(\'admin/combos/images/\'.$t10id.\'/crear\') !!}" class="btn btn-info btn-xs"><i class="fa fa-images"></i></a>
             <button class="btn btn-danger btn-xs" title="Borrar" data-toggle="modal" data-target="#myModal_{!!$t10id!!}"><i class="fa fa-trash" ></i></button>
         </div>
 

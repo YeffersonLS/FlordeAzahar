@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\T04productos;
+use App\Models\T10combos;
 use Illuminate\Http\Request;
 
 class AjaxController extends Controller
@@ -35,5 +36,19 @@ class AjaxController extends Controller
             't04presentacion' => $p->t04presentacion
         ];
         return json_encode($producto, true);
+    }
+
+    public function eliminarFotoCombo($productoId, $imagenId)
+    {
+        $combo = T10combos::findOrFail($productoId);
+
+        // Obtener la imagen relacionada con el ID proporcionado
+        $imagen = $combo->images()->findOrFail($imagenId);
+
+        // Eliminar la imagen
+        $imagen->delete();
+
+        // Si necesitas devolver alguna respuesta, puedes hacerlo aquí
+        return response()->json(['success' => true]);
     }
 }
