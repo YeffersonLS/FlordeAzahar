@@ -54,3 +54,5 @@ Route::post('monedero', 'App\Http\Controllers\T07monederoController@store')->nam
 Route::get('combos', 'App\Http\Controllers\ShowCombosController@index');
 
 Route::get('combos/{id}', 'App\Http\Controllers\ShowCombosController@show')->name('combos.show');
+
+Route::get('agendar', 'App\Http\Controllers\HomeController@agendar')->name('agendar');

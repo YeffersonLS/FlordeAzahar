@@ -179,4 +179,9 @@ class HomeController extends Controller
 
         return view('products.home',compact('products', 'titulo'));
     }
+
+    public function agendar()
+    {
+        return view('home');
+    }
 }

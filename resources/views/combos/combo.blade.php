@@ -1,5 +1,31 @@
 @extends('layouts.app')
 
+@section('css')
+<style>
+    .mt-3 {
+        margin-top: 15px;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: pink;
+        color: black;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        border: 2px black solid;
+
+    }
+
+    .button:hover {
+        background-color: white;
+        color: black;
+
+    }
+</style>
+@endsection
 @section('content')
 <div class="container">
     <div class="row">
@@ -18,6 +44,9 @@
                 @foreach ($images as $img)
                 <img src="{{ asset($img->image_path) }}" alt="{{ $combo->t02nombre }}" class="thumbnail" onclick="changeImage('{{ $img->image_path }}')" style="max-width: 100px; max-height: 100px;">
                 @endforeach
+            </div>
+            <div class="mt-4">
+                <a href="{{ route('agendar', ['id' => 1]) }}" class="button">Agenda tu combo</a>
             </div>
         </div>
     </div>
