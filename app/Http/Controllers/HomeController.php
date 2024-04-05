@@ -41,6 +41,8 @@ class HomeController extends Controller
         ->WhereNotNull('t02image_path')
         ->get();
 
+        // dd($banners);
+
         return view('home',compact('products', 'banners', 'categorys'));
     }
 

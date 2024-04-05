@@ -9,6 +9,7 @@ use App\Models\T03tag;
 use App\Models\T04productos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class T04productosController extends Controller
 {
@@ -184,7 +185,7 @@ class T04productosController extends Controller
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName(); // Generar un nombre único para la imagen
-                $image->move(public_path('images/t04productos'), $imageName); // Mover la imagen a la carpeta "public/images/t04productos"
+                $image->move(storage_path('images/t04productos'), $imageName); // Mover la imagen a la carpeta "public/images/t04productos"
 
                 $product->images()->create([
                     'image_path' => 'images/t04productos/' . $imageName // Guardar la ruta de la imagen en la base de datos
