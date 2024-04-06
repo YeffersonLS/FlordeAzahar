@@ -57,7 +57,7 @@ class T06banners extends Model
             ¿Esta seguro de eliminar el registro?
             </div>
             <div class="modal-footer">
-                <form id="formdelete_{{ $t06id }}" action="{{ route("admin.tags.destroy", $t06id) }}" method="POST">
+                <form id="formdelete_{{ $t06id }}" action="{{ route("admin.banners.destroy", $t06id) }}" method="POST">
                         @csrf
                         @method("DELETE")
                         <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>

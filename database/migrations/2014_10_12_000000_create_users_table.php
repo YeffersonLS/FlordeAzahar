@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('sys01secondsurname')->nullable();
             $table->float('sys01phonenumber')->nullable();
             $table->boolean('sys01active')->default(false);
-            $table->float('sys01nit');
+            $table->float('sys01nit')->nullable();
             $table->softDeletes();
             $table->string('sys01email')->unique();
             $table->string('password');

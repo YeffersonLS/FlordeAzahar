@@ -51,7 +51,7 @@ class T01blogsController extends Controller
         if ($request->hasFile('image')) {
             foreach ($request->file('image') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->move(public_path('images/t01blogs'), $imageName);
+                $image->move(storage_path('images/t01blogs'), $imageName);
                 $c->t01image_path = 'images/t01blogs/' . $imageName;
             }
         }
@@ -97,7 +97,7 @@ class T01blogsController extends Controller
         if ($request->hasFile('image')) {
             foreach ($request->file('image') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->move(public_path('images/t01blogs'), $imageName);
+                $image->move(storage_path('images/t01blogs'), $imageName);
                 $q->t01image_path = 'images/t01blogs/' . $imageName;
             }
         }

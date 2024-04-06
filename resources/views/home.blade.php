@@ -11,10 +11,10 @@
                 </div>
                 @endforeach
                 <!-- Flechas de navegación -->
-                <div class="nav-arrows">
+                {{-- <div class="nav-arrows">
                     <div class="arrow prev-arrow">&#10094;</div>
                     <div class="arrow next-arrow">&#10095;</div>
-                </div>
+                </div> --}}
                 <!-- Indicadores de puntos -->
                 <div class="banner-dots"></div>
             </div>

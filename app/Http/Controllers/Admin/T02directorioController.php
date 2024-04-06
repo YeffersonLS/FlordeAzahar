@@ -43,7 +43,7 @@ class T02directorioController extends Controller
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->move(public_path('images/t02directorios'), $imageName);
+                $image->move(storage_path('images/t02directorios'), $imageName);
                 $c->t02image_path = 'images/t02directorios/' . $imageName;
             }
         }
@@ -83,7 +83,7 @@ class T02directorioController extends Controller
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->move(public_path('images/t02directorios'), $imageName);
+                $image->move(storage_path('images/t02directorios'), $imageName);
                 $c->t02image_path = 'images/t02directorios/' . $imageName;
             }
         }
