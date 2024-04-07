@@ -55,89 +55,89 @@ class HomeController extends Controller
         //     dd('production');
         // }
         // exit;
-        $var =  ['Noticias', 'Opinion', 'Entretenimiento', 'Salud', 'Estilo de Vida', 'Tecnologia', 'Deportes', 'Educacion', 'Finanzas', 'Cultura'];
+        // $var =  ['Noticias', 'Opinion', 'Entretenimiento', 'Salud', 'Estilo de Vida', 'Tecnologia', 'Deportes', 'Educacion', 'Finanzas', 'Cultura'];
 
-        foreach($var as $v){
-            $c = new T02directorio();
-            $nueva_data = [
-                't02nombre' => $v,
-                't02grupo' => 'BLOG'
-            ];
-            $c -> fill($nueva_data);
-            // dd($c);php a
-            $c->save();
-        }
+        // foreach($var as $v){
+        //     $c = new T02directorio();
+        //     $nueva_data = [
+        //         't02nombre' => $v,
+        //         't02grupo' => 'BLOG'
+        //     ];
+        //     $c -> fill($nueva_data);
+        //     // dd($c);php a
+        //     $c->save();
+        // }
 
-        $var = ['Dieta', 'Helados', 'Salud', 'rutina', 'Cocina', 'Tiempo libre', 'Saludable'];
+        // $var = ['Dieta', 'Helados', 'Salud', 'rutina', 'Cocina', 'Tiempo libre', 'Saludable'];
 
-        foreach($var as $v){
-            $c = new T03tag();
-            $nueva_data = [
-                't03nombre' => $v,
-                't03tipo' => 'BLOGS',
-                't03slug' => strtolower($v),
-                't03usuario' => Auth::user()->sys01id,
-            ];
-            $c -> fill($nueva_data);
-            // dd($c);php a
-            $c->save();
-        }
-
-
-        $var =  ['Bebidas', 'Helados', 'Postres', 'Alimentos'];
-
-        foreach($var as $v){
-            $c = new T02directorio();
-            $nueva_data = [
-                't02nombre' => $v,
-                't02grupo' => 'PRODUCTO'
-            ];
-            $c -> fill($nueva_data);
-            // dd($c);
-            $c->save();
-        }
-
-        $var = ['Chocolate', 'Vainilla', 'Fresa', 'ICE', 'Soda Italiana', 'Frappe', 'Flan','Gelatina Mosaico', 'Cafe', 'Moka', 'Decarado'];
-
-        foreach($var as $v){
-            $c = new T03tag();
-            $nueva_data = [
-                't03nombre' => $v,
-                't03tipo' => 'PRODUCTOS',
-                't03slug' => strtolower($v),
-                't03usuario' => Auth::user()->sys01id,
-            ];
-            $c -> fill($nueva_data);
-            // dd($c);php a
-            $c->save();
-        }
+        // foreach($var as $v){
+        //     $c = new T03tag();
+        //     $nueva_data = [
+        //         't03nombre' => $v,
+        //         't03tipo' => 'BLOGS',
+        //         't03slug' => strtolower($v),
+        //         't03usuario' => Auth::user()->sys01id,
+        //     ];
+        //     $c -> fill($nueva_data);
+        //     // dd($c);php a
+        //     $c->save();
+        // }
 
 
+        // $var =  ['Bebidas', 'Helados', 'Postres', 'Alimentos'];
 
-        $var = ['Efectivo', 'Tarjeta Credito', 'Tarjeta Debito', 'Consignacion'];
+        // foreach($var as $v){
+        //     $c = new T02directorio();
+        //     $nueva_data = [
+        //         't02nombre' => $v,
+        //         't02grupo' => 'PRODUCTO'
+        //     ];
+        //     $c -> fill($nueva_data);
+        //     // dd($c);
+        //     $c->save();
+        // }
 
-        foreach($var as $v){
-            $c = new T02directorio();
-            $nueva_data = [
-                't02nombre' => $v,
-                't02grupo' => 'formas_pago',
-            ];
-            $c -> fill($nueva_data);
-            // dd($c);php a
-            $c->save();
-        }
+        // $var = ['Chocolate', 'Vainilla', 'Fresa', 'ICE', 'Soda Italiana', 'Frappe', 'Flan','Gelatina Mosaico', 'Cafe', 'Moka', 'Decarado'];
 
-        $var =  ['Vainilla', 'Fresa', 'Chocolate', 'Taro', 'Cereza', 'Mora Azul', 'Mango', 'Limon', 'Oreo', 'Cappucino', 'Moka', 'Yogurt Griego', 'Yogurt Griego Carbon Activado'];
+        // foreach($var as $v){
+        //     $c = new T03tag();
+        //     $nueva_data = [
+        //         't03nombre' => $v,
+        //         't03tipo' => 'PRODUCTOS',
+        //         't03slug' => strtolower($v),
+        //         't03usuario' => Auth::user()->sys01id,
+        //     ];
+        //     $c -> fill($nueva_data);
+        //     // dd($c);php a
+        //     $c->save();
+        // }
 
-        foreach($var as $v){
-            $c = new T02directorio();
-            $nueva_data = [
-                't02nombre' => $v,
-                't02grupo' => 'SABORES'
-            ];
-            $c -> fill($nueva_data);
-            $c->save();
-        }
+
+
+        // $var = ['Efectivo', 'Tarjeta Credito', 'Tarjeta Debito', 'Consignacion'];
+
+        // foreach($var as $v){
+        //     $c = new T02directorio();
+        //     $nueva_data = [
+        //         't02nombre' => $v,
+        //         't02grupo' => 'formas_pago',
+        //     ];
+        //     $c -> fill($nueva_data);
+        //     // dd($c);php a
+        //     $c->save();
+        // }
+
+        // $var =  ['Vainilla', 'Fresa', 'Chocolate', 'Taro', 'Cereza', 'Mora Azul', 'Mango', 'Limon', 'Oreo', 'Cappucino', 'Moka', 'Yogurt Griego', 'Yogurt Griego Carbon Activado'];
+
+        // foreach($var as $v){
+        //     $c = new T02directorio();
+        //     $nueva_data = [
+        //         't02nombre' => $v,
+        //         't02grupo' => 'SABORES'
+        //     ];
+        //     $c -> fill($nueva_data);
+        //     $c->save();
+        // }
 
         redirect('/');
     }
