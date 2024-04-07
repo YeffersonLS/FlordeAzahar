@@ -148,7 +148,7 @@
 
     <nav class="menu">
         <ul>
-            <li><a href="/categorias">Ver Categorías</a></li>
+            <li><a href="/categorias">Ver prueba</a></li>
             <li><a href="/productos">Productos</a></li>
             <li><a href="/combos">Combos</a></li>
             <li><a href="/blogs">BLOG</a></li>
