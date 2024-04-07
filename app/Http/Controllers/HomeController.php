@@ -100,7 +100,7 @@ class HomeController extends Controller
             // dd($c);
             $c->save();
         }
-        dd('exito');
+        dd('exito 2');
         exit;
 
         // $var = ['Chocolate', 'Vainilla', 'Fresa', 'ICE', 'Soda Italiana', 'Frappe', 'Flan','Gelatina Mosaico', 'Cafe', 'Moka', 'Decarado'];
