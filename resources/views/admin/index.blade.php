@@ -11,7 +11,11 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
+    @if (env('APP_ENV') == "local")
+        <link rel="stylesheet" href="css/admin_custom.css">
+    @else
+        <link rel="stylesheet" href="public/css/admin_custom.css">
+    @endif
 @stop
 
 @section('js')

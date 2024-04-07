@@ -155,14 +155,21 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-    <link rel="stylesheet" href="{!! url('assets/css/richtext.min.css') !!}" rel="stylesheet">
+    @if (env('APP_ENV') == "local")
+        <link rel="stylesheet" href="css/admin_custom.css">
+    @else
+        <link rel="stylesheet" href="public/css/admin_custom.css">
+    @endif
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.css">
 @stop
 
 @section('js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
-<script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
+    @if (env('APP_ENV') == "local")
+        <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
+    @else
+        <script src="{{ asset('public/vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
+    @endif
 <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/super-build/translations/es.js"></script>
 <script>
     // This sample still does not showcase all CKEditor&nbsp;5 features (!)
