@@ -98,8 +98,11 @@
 @stop
 
 @section('js')
+@if (env('APP_ENV') == "local")
 <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
-<script type="text/javascript">
+@else
+<script src="{{ asset('public/vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
+@endif<script type="text/javascript">
     $(document).ready(function() {
         $("#t03nombre").stringToSlug({
         setEvents: 'keyup keydown blur',
