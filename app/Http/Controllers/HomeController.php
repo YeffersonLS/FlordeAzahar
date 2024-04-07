@@ -48,7 +48,7 @@ class HomeController extends Controller
 
     public function test()
     {
-        dd(env('APP_ENV'));
+        // dd(env('APP_ENV'));
         // if (env('APP_ENV') === "local") {
         //     dd('local');
         //    } else {
