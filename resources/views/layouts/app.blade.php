@@ -17,7 +17,7 @@
     @if (env('APP_ENV') == "local")
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @else
-        <link href="{{ asset('heladeria/css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('public/css/app.css') }}" rel="stylesheet">
     @endif
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
