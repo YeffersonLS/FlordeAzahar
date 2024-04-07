@@ -70,38 +70,38 @@ class HomeController extends Controller
         // dd('exito');
         // exit;
 
-        $var = ['Dieta', 'Helados', 'Salud', 'rutina', 'Cocina', 'Tiempo libre', 'Saludable'];
+        // $var = ['Dieta', 'Helados', 'Salud', 'rutina', 'Cocina', 'Tiempo libre', 'Saludable'];
+
+        // foreach($var as $v){
+        //     $c = new T03tag();
+        //     $nueva_data = [
+        //         't03nombre' => $v,
+        //         't03tipo' => 'BLOGS',
+        //         't03slug' => strtolower($v),
+        //         't03usuario' => Auth::user()->sys01id,
+        //     ];
+        //     $c -> fill($nueva_data);
+        //     // dd($c);php a
+        //     $c->save();
+        // }
+        // dd('exito');
+        // exit;
+
+
+        $var =  ['Bebidas', 'Helados', 'Postres', 'Alimentos'];
 
         foreach($var as $v){
-            $c = new T03tag();
+            $c = new T02directorio();
             $nueva_data = [
-                't03nombre' => $v,
-                't03tipo' => 'BLOGS',
-                't03slug' => strtolower($v),
-                't03usuario' => Auth::user()->sys01id,
+                't02nombre' => $v,
+                't02grupo' => 'PRODUCTO'
             ];
             $c -> fill($nueva_data);
-            // dd($c);php a
+            // dd($c);
             $c->save();
         }
         dd('exito');
         exit;
-
-
-        // $var =  ['Bebidas', 'Helados', 'Postres', 'Alimentos'];
-
-        // foreach($var as $v){
-        //     $c = new T02directorio();
-        //     $nueva_data = [
-        //         't02nombre' => $v,
-        //         't02grupo' => 'PRODUCTO'
-        //     ];
-        //     $c -> fill($nueva_data);
-        //     // dd($c);
-        //     $c->save();
-        // }
-
-        // exit;
 
         // $var = ['Chocolate', 'Vainilla', 'Fresa', 'ICE', 'Soda Italiana', 'Frappe', 'Flan','Gelatina Mosaico', 'Cafe', 'Moka', 'Decarado'];
 
