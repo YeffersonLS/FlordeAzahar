@@ -181,17 +181,20 @@ class T04productosController extends Controller
     {
         $data = $request->all();
         $product = T04productos::findOrFail($request->t04id);
-
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName(); // Generar un nombre único para la imagen
-                $image->move(public_path('images/t04productos'), $imageName); // Mover la imagen a la carpeta "public/images/t04productos"
 
+                // Mover la imagen a la carpeta de almacenamiento
+                $image->storeAs('public/images/t04productos', $imageName);
+
+                // Guardar la ruta de la imagen en la base de datos
                 $product->images()->create([
-                    'image_path' => 'images/t04productos/' . $imageName // Guardar la ruta de la imagen en la base de datos
+                    'image_path' => 'storage/images/t04productos/' . $imageName // Guardar la ruta de la imagen en la base de datos
                 ]);
             }
         }
+
 
         return redirect(self::$ruta.'/images')->with('mensaje', 'Se anexaron las imagenes correctamente');
     }

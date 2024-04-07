@@ -43,8 +43,10 @@ class T02directorioController extends Controller
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->move(public_path('images/t02directorios'), $imageName);
-                $c->t02image_path = 'images/t02directorios/' . $imageName;
+
+                $path = $image->storeAs('public/images/t02directorios', $imageName);
+
+                $c->t02image_path = 'storage/' . str_replace('public/', '', $path);
             }
         }
         $c->save();
@@ -80,11 +82,14 @@ class T02directorioController extends Controller
         $data = $request->all();
         $c = T02directorio::findOrFail($id);
         $c->fill($data);
+
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->move(public_path('images/t02directorios'), $imageName);
-                $c->t02image_path = 'images/t02directorios/' . $imageName;
+
+                $path = $image->storeAs('public/images/t02directorios', $imageName);
+
+                $c->t02image_path = 'storage/' . str_replace('public/', '', $path);
             }
         }
         $c->save();

@@ -48,11 +48,14 @@ class T01blogsController extends Controller
         $c->fill($data);
         $c->t01usuario = Auth::user()->sys01id;
         // dd($data,$c);
-        if ($request->hasFile('image')) {
-            foreach ($request->file('image') as $image) {
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->move(public_path('images/t01blogs'), $imageName);
-                $c->t01image_path = 'images/t01blogs/' . $imageName;
+
+                $path = $image->storeAs('public/images/t01blogs', $imageName);
+
+                $c->t01image_path = 'storage/' . str_replace('public/', '', $path);
             }
         }
         $c->save();
@@ -94,11 +97,13 @@ class T01blogsController extends Controller
         $data = $request->all();
         $q = T01blog::findOrFail($id);
         $q->fill($data);
-        if ($request->hasFile('image')) {
-            foreach ($request->file('image') as $image) {
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->move(public_path('images/t01blogs'), $imageName);
-                $q->t01image_path = 'images/t01blogs/' . $imageName;
+
+                $path = $image->storeAs('public/images/t01blogs', $imageName);
+
+                $q->t01image_path = 'storage/' . str_replace('public/', '', $path);
             }
         }
 

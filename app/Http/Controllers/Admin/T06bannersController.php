@@ -44,8 +44,10 @@ class T06bannersController extends Controller
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->move(public_path('images/t06banners'), $imageName);
-                $product->t06image_path = 'images/t06banners/' . $imageName;
+
+                $path = $image->storeAs('public/images/t06banners', $imageName);
+
+                $product->t06image_path = 'storage/' . str_replace('public/', '', $path);
             }
         }
 

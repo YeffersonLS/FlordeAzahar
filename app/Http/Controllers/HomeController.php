@@ -48,7 +48,13 @@ class HomeController extends Controller
 
     public function test()
     {
-        dd('hola');
+        // dd(env('APP_ENV'));
+        if (env('APP_ENV') === "local") {
+            dd('local');
+           } else {
+            dd('production');
+        }
+        exit;
         // $var =  ['Noticias', 'Opinion', 'Entretenimiento', 'Salud', 'Estilo de Vida', 'Tecnologia', 'Deportes', 'Educacion', 'Finanzas', 'Cultura'];
 
         // foreach($var as $v){

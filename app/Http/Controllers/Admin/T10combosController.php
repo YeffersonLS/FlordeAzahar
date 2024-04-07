@@ -49,14 +49,15 @@ class T10combosController extends Controller
         $c->t10usuario = Auth::user()->sys01id;
         // dd($c);
 
-        if ($request->hasFile('image')) {
-            foreach ($request->file('image') as $image) {
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->move(public_path('images/t10combos'), $imageName);
-                $c->t10image = 'images/t10combos/' . $imageName;
+
+                $path = $image->storeAs('public/images/t10combo', $imageName);
+
+                $c->t10image  = 'storage/' . str_replace('public/', '', $path);
             }
         }
-
         $c->save();
 
         if($request->productos){
@@ -106,11 +107,14 @@ class T10combosController extends Controller
             $q->products()->detach();
             $q->products()->attach($request->productos);
         }
-        if ($request->hasFile('image')) {
-            foreach ($request->file('image') as $image) {
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->move(public_path('images/t10combos'), $imageName);
-                $q->t10image = 'images/t10combos/' . $imageName;
+
+                $path = $image->storeAs('public/images/t10combo', $imageName);
+
+                $q->t10image  = 'storage/' . str_replace('public/', '', $path);
             }
         }
         // dd($request->hasFile('image'));
