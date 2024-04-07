@@ -55,7 +55,7 @@ class T10combosController extends Controller
 
                 $path = $image->storeAs('public/images/t10combo', $imageName);
 
-                $c->t10image  = 'storage/' . str_replace('public/', '', $path);
+                $c->t10image  = 'public/storage/' . str_replace('public/', '', $path);
             }
         }
         $c->save();
@@ -114,7 +114,7 @@ class T10combosController extends Controller
 
                 $path = $image->storeAs('public/images/t10combo', $imageName);
 
-                $q->t10image  = 'storage/' . str_replace('public/', '', $path);
+                $q->t10image  = 'public/storage/' . str_replace('public/', '', $path);
             }
         }
         // dd($request->hasFile('image'));

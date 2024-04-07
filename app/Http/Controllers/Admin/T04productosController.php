@@ -190,7 +190,7 @@ class T04productosController extends Controller
 
                 // Guardar la ruta de la imagen en la base de datos
                 $product->images()->create([
-                    'image_path' => 'storage/images/t04productos/' . $imageName // Guardar la ruta de la imagen en la base de datos
+                    'image_path' => 'public/storage/images/t04productos/' . $imageName // Guardar la ruta de la imagen en la base de datos
                 ]);
             }
         }

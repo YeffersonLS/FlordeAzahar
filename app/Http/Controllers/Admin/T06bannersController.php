@@ -48,7 +48,7 @@ class T06bannersController extends Controller
 
                 $path = $image->storeAs('public/images/t06banners', $imageName);
 
-                $product->t06image_path = 'storage/' . str_replace('public/', '', $path);
+                $product->t06image_path = 'public/storage/' . str_replace('public/', '', $path);
             }
         }
 

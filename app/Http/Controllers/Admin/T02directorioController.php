@@ -46,7 +46,7 @@ class T02directorioController extends Controller
 
                 $path = $image->storeAs('public/images/t02directorios', $imageName);
 
-                $c->t02image_path = 'storage/' . str_replace('public/', '', $path);
+                $c->t02image_path = 'public/storage/' . str_replace('public/', '', $path);
             }
         }
         $c->save();
@@ -89,7 +89,7 @@ class T02directorioController extends Controller
 
                 $path = $image->storeAs('public/images/t02directorios', $imageName);
 
-                $c->t02image_path = 'storage/' . str_replace('public/', '', $path);
+                $c->t02image_path = 'public/storage/' . str_replace('public/', '', $path);
             }
         }
         $c->save();

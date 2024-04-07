@@ -55,7 +55,7 @@ class T01blogsController extends Controller
 
                 $path = $image->storeAs('public/images/t01blogs', $imageName);
 
-                $c->t01image_path = 'storage/' . str_replace('public/', '', $path);
+                $c->t01image_path = 'public/storage/' . str_replace('public/', '', $path);
             }
         }
         $c->save();
@@ -103,7 +103,7 @@ class T01blogsController extends Controller
 
                 $path = $image->storeAs('public/images/t01blogs', $imageName);
 
-                $q->t01image_path = 'storage/' . str_replace('public/', '', $path);
+                $q->t01image_path = 'public/storage/' . str_replace('public/', '', $path);
             }
         }
 
