@@ -67,10 +67,18 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-pink shadow-sm"> <!-- Cambiar la clase a navbar-pink -->
             <div class="container">
+                @if (env('APP_ENV') == "local")
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img class="rounded-circle" src="{{ asset('vendor/adminlte/dist/img/AdminLTELogo.svg') }}" alt="Logo" style="width: 40px; height: 40px;">
                     {{ 'Flor de Azahar' }}
                 </a>
+            @else
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <img class="rounded-circle" src="{{ asset('public/vendor/adminlte/dist/img/AdminLTELogo.svg') }}" alt="Logo" style="width: 40px; height: 40px;">
+                {{ 'Flor de Azahar' }}
+            </a>
+            @endif
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
