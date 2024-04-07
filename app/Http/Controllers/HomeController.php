@@ -55,20 +55,20 @@ class HomeController extends Controller
         //     dd('production');
         // }
         // exit;
-        $var =  ['Noticias', 'Opinion', 'Entretenimiento', 'Salud', 'Estilo de Vida', 'Tecnologia', 'Deportes', 'Educacion', 'Finanzas', 'Cultura'];
+        // $var =  ['Noticias', 'Opinion', 'Entretenimiento', 'Salud', 'Estilo de Vida', 'Tecnologia', 'Deportes', 'Educacion', 'Finanzas', 'Cultura'];
 
-        foreach($var as $v){
-            $c = new T02directorio();
-            $nueva_data = [
-                't02nombre' => $v,
-                't02grupo' => 'BLOG'
-            ];
-            $c -> fill($nueva_data);
-            // dd($c);php a
-            $c->save();
-        }
-        dd('exito');
-        exit;
+        // foreach($var as $v){
+        //     $c = new T02directorio();
+        //     $nueva_data = [
+        //         't02nombre' => $v,
+        //         't02grupo' => 'BLOG'
+        //     ];
+        //     $c -> fill($nueva_data);
+        //     // dd($c);php a
+        //     $c->save();
+        // }
+        // dd('exito');
+        // exit;
 
         // $var = ['Dieta', 'Helados', 'Salud', 'rutina', 'Cocina', 'Tiempo libre', 'Saludable'];
 
