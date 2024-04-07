@@ -28,11 +28,7 @@
     @yield('css')
 
     <!-- Scripts -->
-    @if (env('APP_ENV') == "local")
-       @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    @else
-        @vite(['heladeria/resources/sass/app.scss', 'heladeria/resources/js/app.js'])
-    @endif
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
 
