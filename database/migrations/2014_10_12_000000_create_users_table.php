@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('sys01middlename')->nullable();
             $table->string('sys01lastname');
             $table->string('sys01secondsurname')->nullable();
-            $table->float('sys01phonenumber')->nullable();
+            $table->bigInteger('sys01phonenumber')->nullable();
             $table->boolean('sys01active')->default(false);
             $table->float('sys01nit')->nullable();
             $table->softDeletes();
