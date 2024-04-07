@@ -40,7 +40,7 @@ class T06bannersController extends Controller
         $data = $request->all();
         $product = new T06banners();
         $product->fill($data);
-        dd($product);
+        // dd($product);
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
