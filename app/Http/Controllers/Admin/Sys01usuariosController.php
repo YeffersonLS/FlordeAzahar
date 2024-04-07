@@ -46,11 +46,11 @@ class Sys01usuariosController extends Controller
 
         if ($query->sys01admin) {
 
-            $query->sys01admin = false;
+            $query->sys01admin = 0;
 
         } else {
 
-            $query->sys01admin = true;
+            $query->sys01admin = 1;
 
         }
 

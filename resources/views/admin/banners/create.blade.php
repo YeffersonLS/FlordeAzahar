@@ -56,8 +56,8 @@
 
                         <div class="col-md-4">
                             <label for="t06publicado">Activar visaulizacion Banner</label><br>
-                            <input id="borrador" name="t06publicado" type="radio" value="false" {{ $registro->t06publicado === false ? 'checked' : '' }}> Borrador<br>
-                            <input id="publicado" name="t06publicado" type="radio" value="true" {{ $registro->t06publicado === true ? 'checked' : '' }}> Publicado
+                            <input id="borrador" name="t06publicado" type="radio" value="0" {{ $registro->t06publicado === 0 ? 'checked' : '' }}> Borrador<br>
+                            <input id="publicado" name="t06publicado" type="radio" value="1" {{ $registro->t06publicado === 1 ? 'checked' : '' }}> Publicado
                         </div>
 
                         <div class="col-md-4">

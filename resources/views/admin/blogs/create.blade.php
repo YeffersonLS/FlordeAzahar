@@ -85,8 +85,8 @@
                     <div class="row form-group">
                         <div class="col-md-4">
                             <label>Estado del Post</label><br>
-                            <input id="borrador" name="t01publicado" type="radio" value="false" {{ $registro->t01publicado === false ? 'checked' : '' }}> Borrador<br>
-                            <input id="publicado" name="t01publicado" type="radio" value="true" {{ $registro->t01publicado === true ? 'checked' : '' }}> Publicado
+                            <input id="borrador" name="t01publicado" type="radio" value="0" {{ $registro->t01publicado === 0 ? 'checked' : '' }}> Borrador<br>
+                            <input id="publicado" name="t01publicado" type="radio" value="1" {{ $registro->t01publicado === 1 ? 'checked' : '' }}> Publicado
                         </div>
 
                         <div class="col-md-6">
