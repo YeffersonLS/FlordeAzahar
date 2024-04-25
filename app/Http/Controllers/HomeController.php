@@ -41,9 +41,9 @@ class HomeController extends Controller
         ->WhereNotNull('t02image_path')
         ->get();
 
-        match(true){
-            $banners < 8 => 'No hay banners'
-        };
+        // match(true){
+        //     $banners < 8 => 'No hay banners'
+        // };
 
         // dd($banners);
 
