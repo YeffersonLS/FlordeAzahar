@@ -64,7 +64,7 @@ class T04productosController extends Controller
         }
 
 
-        return redirect(self::$ruta)->with('mensaje', 'Se creo el post correctamente');
+        return redirect(self::$ruta)->with('mensaje', 'Se creo el producto correctamente');
     }
 
     /**
@@ -107,7 +107,7 @@ class T04productosController extends Controller
         $q->fill($data);
         if(!is_null($request->t04sabores)){
             $t04saborString = implode(',', $request->t04sabores);
-            $c->t04sabores = $t04saborString;
+            $q->t04sabores = $t04saborString;
         }
         // dd($q);
         if($request->t04tags){
