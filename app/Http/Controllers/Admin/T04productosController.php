@@ -54,8 +54,8 @@ class T04productosController extends Controller
 
         if(!is_null($request->t04sabores))
          $t04saborString = implode(',', $request->t04sabores);
+         $c->t04sabores = $t04saborString;
 
-        $c->t04sabores = $t04saborString;
         $c->save();
 
         if($request->t04tags){
