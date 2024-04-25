@@ -26,7 +26,7 @@ class T06bannersController extends Controller
      */
     public function create()
     {
-        $titulo = 'Crea una nueva Etiqueta';
+        $titulo = 'Crea un nuevo Banner';
         $registro = new T06banners();
         $form_data = ['url' => url('admin/banners'), 'method' => 'POST'];
         return view('admin.banners.create', compact('titulo', 'registro', 'form_data'));
@@ -70,7 +70,7 @@ class T06bannersController extends Controller
      */
     public function edit(string $id)
     {
-        $titulo = 'Edita una nueva Etiqueta';
+        $titulo = 'Edita el Banner';
         $registro = T06banners::FindOrFail($id);
         return view('admin.banners.create', compact('titulo', 'registro'));
 
@@ -95,9 +95,9 @@ class T06bannersController extends Controller
                 $product->t06image_path = 'public/storage/' . str_replace('public/', '', $path);
             }
         }
+        dd($product);
 
-        $product->save();
-        // dd($product);
+        $product->update();
         return redirect(self::$ruta)->with('mensaje', 'Se edito el banner correctamente');
 
     }
