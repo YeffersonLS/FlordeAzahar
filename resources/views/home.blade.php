@@ -71,19 +71,21 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="row">
-                    <div class="card-header-category">{{ __('Categorias') }}</div>
-                        <div class="card-body">
-                        @foreach ( $categorys as $category )
-                            <div class="col-md-3">
-                                <div class="category">
-                                    <div class="card">
-                                        <img src="{{ asset($category->t02image_path) }}" class="card-img-top-category">
-                                        <h5 class="card-title-category">{{ $category->t02nombre }}</h5>
+                    @foreach ( $categorys as $category )
+                        <div class="card-header-category">{{ __('Categorias') }}</div>
+                            <div class="card-body">
+                                <div class="col-md-3">
+                                    <div class="category">
+                                        <div class="card">
+                                            <img src="{{ asset($category->t02image_path) }}" class="card-img-top-category">
+                                            <h5 class="card-title-category">{{ $category->t02nombre }}</h5>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
