@@ -72,6 +72,7 @@ class T06bannersController extends Controller
     {
         $titulo = 'Edita el Banner';
         $registro = T06banners::FindOrFail($id);
+        dd($registro);
         return view('admin.banners.create', compact('titulo', 'registro'));
 
     }
