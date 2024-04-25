@@ -87,7 +87,7 @@
 
                     <div class="row form-group">
                         <div class="col-md-12 text-center">
-                            <a href="{!! url('admin/products/images') !!}" class="btn btn-warning"><i class="fa fa-reply"></i> Cancelar</a>
+                            <a href="{!! url('admin/banners') !!}" class="btn btn-warning"><i class="fa fa-reply"></i> Cancelar</a>
                             <button type="submit" id="guardar" class="btn btn-success"><i class="fa fa-save"></i> Guardar</button>
                             <input type="submit" id="btnSubmit" style="display: none;">
                         </div>
