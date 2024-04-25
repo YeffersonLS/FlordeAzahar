@@ -102,11 +102,13 @@ class T04productosController extends Controller
     {
         $data = $request->all();
         // dd($data);
-        $t04saborString = implode(',', $request->t04sabores);
         // dd($t04saborString);
         $q = T04productos::find($id);
         $q->fill($data);
-        $q->t04sabores = $t04saborString;
+        if(!is_null($request->t04sabores)){
+            $t04saborString = implode(',', $request->t04sabores);
+            $c->t04sabores = $t04saborString;
+        }
         // dd($q);
         if($request->t04tags){
             $q->tags()->detach();
