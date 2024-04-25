@@ -40,8 +40,8 @@
             </div>
             <div class="card-body">
                 @if (isset($editMode))
-                <form action="{{ route('admin.banners.update', ['banner' => $registro->t06id]) }}" method="PUT" enctype="multipart/form-data">
-                    @method('PUT')
+                <form action="{{ route('admin.banners.update', ['banner' => $registro->t06id]) }}" method="POST" enctype="multipart/form-data">
+                    @method('POST')
                     @csrf
                 @else
                 <form action="{{ route('admin.banners.store') }}" method="POST" enctype="multipart/form-data">
