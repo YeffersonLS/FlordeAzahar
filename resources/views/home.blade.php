@@ -73,7 +73,7 @@
                 <div class="row">
                     <div class="card-header-category">{{ __('Categorias') }}</div>
                         <div class="card-body">
-                            @foreach ( $categorys as $category )
+                        @foreach ( $categorys as $category )
                             <div class="col-md-3">
                                 <div class="category">
                                     <div class="card">
@@ -82,8 +82,7 @@
                                     </div>
                                 </div>
                             </div>
-                            @endforeach
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
