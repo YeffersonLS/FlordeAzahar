@@ -54,7 +54,7 @@ class T06bannersController extends Controller
 
         $product->update();
         // dd($product);
-        return redirect(self::$ruta)->with('mensaje', 'Se Edito el banner correctamente');
+        return redirect(self::$ruta)->with('mensaje', 'Se Creo el banner correctamente');
     }
 
     /**
@@ -72,7 +72,8 @@ class T06bannersController extends Controller
     {
         $titulo = 'Edita el Banner';
         $registro = T06banners::FindOrFail($id);
-        return view('admin.banners.create', compact('titulo', 'registro'));
+        $editMode = true;
+        return view('admin.banners.create', compact('titulo', 'registro', 'editMode'));
 
     }
 
@@ -81,7 +82,6 @@ class T06bannersController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        dd($data);
         $data = $request->all();
         $product = T06banners::FindOrFail($id);
         $product->fill($data);
