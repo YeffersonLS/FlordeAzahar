@@ -70,7 +70,10 @@ class T06bannersController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $titulo = 'Edita una nueva Etiqueta';
+        $registro = T06banners::FindOrFail($id);
+        return view('admin.banners.create', compact('titulo', 'registro'));
+
     }
 
     /**
@@ -78,7 +81,25 @@ class T06bannersController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = $request->all();
+        $product = T06banners::FindOrFail($id);
+        $product->fill($data);
+        // dd($product);
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $imageName = time() . '_' . $image->getClientOriginalName();
+
+                $path = $image->storeAs('public/images/t06banners', $imageName);
+
+                $product->t06image_path = 'public/storage/' . str_replace('public/', '', $path);
+            }
+        }
+
+        $product->save();
+        // dd($product);
+        return redirect(self::$ruta)->with('mensaje', 'Se edito el banner correctamente');
+
     }
 
     /**
