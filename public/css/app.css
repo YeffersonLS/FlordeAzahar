@@ -223,7 +223,7 @@
 }
 
 .productos .card img {
-    height: 200px; /* Altura fija para las imágenes */
+    height: 450px; /* Altura fija para las imágenes */
     object-fit: cover; /* Escala la imagen para que llene la altura sin distorsión */
     border-radius: 22px 22px 0 0; /* Conserva la esquina redondeada en la parte superior */
 }
