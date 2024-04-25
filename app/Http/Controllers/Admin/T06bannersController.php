@@ -72,7 +72,6 @@ class T06bannersController extends Controller
     {
         $titulo = 'Edita el Banner';
         $registro = T06banners::FindOrFail($id);
-        dd($registro);
         return view('admin.banners.create', compact('titulo', 'registro'));
 
     }
@@ -86,7 +85,7 @@ class T06bannersController extends Controller
         $product = T06banners::FindOrFail($id);
         $product->fill($data);
         // dd($product);
-        dd($product);
+        dd($data);
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
