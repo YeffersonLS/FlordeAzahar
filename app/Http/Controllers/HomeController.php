@@ -41,6 +41,10 @@ class HomeController extends Controller
         ->WhereNotNull('t02image_path')
         ->get();
 
+        match(true){
+            $banners < 8 => 'No hay banners'
+        };
+
         // dd($banners);
 
         return view('home',compact('products', 'banners', 'categorys'));

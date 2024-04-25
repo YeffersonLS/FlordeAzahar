@@ -70,7 +70,7 @@ class T04productos extends Model
     {
         $sql =T04productos::select('t04id', 't04nombre', 't04categoria', 'c.t02nombre', 't04activo' )
         ->leftJoin('t02directorios as c', 'c.t02id', '=', 't04categoria')
-        ->orderBy('t04id', 'desc')
+        ->orderBy('t04id', 'asc')
         ;
 
         return Datatables::eloquent($sql)
@@ -117,7 +117,7 @@ class T04productos extends Model
     {
         $sql =T04productos::select('t04id', 't04nombre', 't04categoria', 'c.t02nombre', 't04activo' )
         ->leftJoin('t02directorios as c', 'c.t02id', '=', 't04categoria')
-        ->orderBy('t04id', 'desc')
+        ->orderBy('t04id', 'asc')
         ;
 
         return Datatables::eloquent($sql)
@@ -164,7 +164,7 @@ class T04productos extends Model
     {
         $sql =T04productos::select('t04id', 't04nombre', 't04categoria', 'c.t02nombre', 't04activo' )
         ->leftJoin('t02directorios as c', 'c.t02id', '=', 't04categoria')
-        ->orderBy('t04id', 'desc')
+        ->orderBy('t04id', 'asc')
         ;
 
         return Datatables::eloquent($sql)
