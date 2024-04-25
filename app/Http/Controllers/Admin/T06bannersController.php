@@ -85,6 +85,7 @@ class T06bannersController extends Controller
         $product = T06banners::FindOrFail($id);
         $product->fill($data);
         // dd($product);
+        dd($product);
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
@@ -95,7 +96,6 @@ class T06bannersController extends Controller
                 $product->t06image_path = 'public/storage/' . str_replace('public/', '', $path);
             }
         }
-        dd($product);
 
         $product->update();
         return redirect(self::$ruta)->with('mensaje', 'Se edito el banner correctamente');
