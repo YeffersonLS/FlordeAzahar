@@ -42,7 +42,7 @@ class T06bannersController extends Controller
         $product->fill($data);
         // dd($product);
 
-        if ($request->hasFile('images')) {
+        if (!is_null($request->hasFile('images'))) {
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
 
@@ -52,7 +52,7 @@ class T06bannersController extends Controller
             }
         }
 
-        $product->save();
+        $product->update();
         // dd($product);
         return redirect(self::$ruta)->with('mensaje', 'Se creo el banner correctamente');
     }

@@ -41,7 +41,7 @@ class T06banners extends Model
         return Datatables::eloquent($sql)
         ->addColumn('Acciones','
         <div class="text-center">
-        <a href="{!! url(\'admin/banners/\'.$t06id.\'/edit\') !!}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
+            <a href="{!! url(\'admin/banners/\'.$t06id.\'/edit\') !!}" class="btn btn-warning btn-xs"><i class="fa fa-edit"></i></a>
             <button class="btn btn-danger btn-xs" title="Borrar" data-toggle="modal" data-target="#myModal_{!!$t06id!!}"><i class="fa fa-trash" ></i></button>
         </div>
 
