@@ -52,7 +52,7 @@ class T04productosController extends Controller
         $c->t04usuario = Auth::user()->sys01id;
         // dd($c);
 
-        if(is_null($request->t04sabores))
+        if(!is_null($request->t04sabores))
          $t04saborString = implode(',', $request->t04sabores);
 
         $c->t04sabores = $t04saborString;
