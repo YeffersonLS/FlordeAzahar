@@ -42,7 +42,7 @@ class T06bannersController extends Controller
         $product->fill($data);
         // dd($product);
 
-        if (!isset($request->hasFile('images'))) {
+        if (isset($request->hasFile('images'))) {
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
 
