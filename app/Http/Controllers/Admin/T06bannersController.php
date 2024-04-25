@@ -81,11 +81,11 @@ class T06bannersController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        dd($data);
         $data = $request->all();
         $product = T06banners::FindOrFail($id);
         $product->fill($data);
         // dd($product);
-        dd($data);
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
