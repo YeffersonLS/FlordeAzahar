@@ -72,8 +72,8 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="card-header-category">{{ __('Categorias') }}</div>
-                    @foreach ( $categorys as $category )
                         <div class="card-body">
+                        @foreach ( $categorys as $category )
                             <div class="col-md-3">
                                 <div class="category">
                                     <div class="card">
