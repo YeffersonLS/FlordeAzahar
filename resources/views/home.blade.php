@@ -45,20 +45,20 @@
                     <div class="card-body">
                         <div class="row">
                             @foreach ($products as $product)
-                                <div class="col-md-3">
-                                    <div class="productos">
-                                        <a href="{{ route('product.show', ['t04slug' => $product->t04slug])  }}"><!-- Enlace al detalle del producto -->
-                                            <div class="card">
-                                                <img src="{{ asset($product->image_path) }}" class="card-img-top" alt="{{ $product->t02nombre }}">
-                                                <div class="card-info">
-                                                    <p class="subcategoria-productos">{{ $product->t02nombre }}</p>
-                                                    <h5 class="card-title">{{ $product->t04nombre }}</h5>
-                                                    <p class="card-money">{{ '$' . $product->t04precio . ' Mnx' }}</p>
-                                                </div>
+                            <div class="col-md-3">
+                                <div class="productos">
+                                    <a href="{{ route('product.show', ['t04slug' => $product->t04slug]) }}"><!-- Enlace al detalle del producto -->
+                                        <div class="card">
+                                            <img src="{{ asset($product->image_path) }}" class="card-img-top" alt="{{ $product->t02nombre }}">
+                                            <div class="card-info">
+                                                <p class="subcategoria-productos">{{ $product->t02nombre }}</p>
+                                                <h5 class="card-title">{{ $product->t04nombre }}</h5>
+                                                <p class="card-money">{{ '$' . $product->t04precio . ' Mnx' }}</p>
                                             </div>
-                                        </a>
-                                    </div>
+                                        </div>
+                                    </a>
                                 </div>
+                            </div>
                             @endforeach
                         </div>
                     </div>
