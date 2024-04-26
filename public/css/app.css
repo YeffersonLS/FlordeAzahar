@@ -127,14 +127,7 @@
     color: #000; /* Cambia el color del texto al pasar el mouse */
 }
 
-.banner-carousel {
-    display: flex; /* Hace que los banners sean flexibles */
-    overflow-x: scroll; /* Añade un desplazamiento horizontal */
-    -webkit-overflow-scrolling: touch; /* Desplazamiento suave en dispositivos iOS */
-}
-
 .banner {
-    flex: 0 0 auto; /* Hace que los banners no cambien su tamaño */
     width: 100%;
     height: 600px; /* Puedes ajustar la altura según tus necesidades */
     background-size: cover;
@@ -142,8 +135,10 @@
     text-align: center;
     color: white;
     font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
 
 /* Estilos para las flechas */
 .nav-arrows {
