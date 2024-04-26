@@ -136,11 +136,15 @@
     text-align: center;
     color: white;
     font-size: 24px;
-    display: block;
+    display: flex;
     justify-content: center;
     align-items: center;
+}
+.carousel-banner{
+    display: block;
     margin: auto;
 }
+
 
 /* Estilos para las flechas */
 .nav-arrows {
