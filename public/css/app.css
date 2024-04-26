@@ -205,6 +205,15 @@
 
 }
 
+.productos a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Usa el color por defecto del texto */
+}
+
+.productos a:hover {
+    color: inherit; /* Mantiene el color del texto al pasar el ratón por encima */
+    background-color: transparent; /* Elimina cualquier color de fondo al pasar el ratón por encima */
+}
 
 .productos .card {
     width: 300px;
