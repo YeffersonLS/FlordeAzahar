@@ -310,6 +310,16 @@
     position: relative;
 }
 
+.category a {
+    text-decoration: none; /* Elimina el subrayado */
+    color: inherit; /* Usa el color por defecto del texto */
+}
+
+.category a:hover {
+    color: inherit; /* Mantiene el color del texto al pasar el ratón por encima */
+    background-color: transparent; /* Elimina cualquier color de fondo al pasar el ratón por encima */
+}
+
 .card-blog {
     border: 1px solid #ccc; /* Borde delgago */
     border-bottom-left-radius:10px; /* Radio de borde inferior izquierdo */
