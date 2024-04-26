@@ -74,10 +74,12 @@
                         @foreach ( $categorys as $category )
                         <div class="col-md-3">
                             <div class="category">
-                                <div class="card">
-                                    <img src="{{ asset($category->t02image_path) }}" class="card-img-top-category">
-                                    <h5 class="card-title-category">{{ $category->t02nombre }}</h5>
-                                </div>
+                                <a href="{{ route('category.show', ['id' => $category->t02id])  }}">
+                                    <div class="card">
+                                        <img src="{{ asset($category->t02image_path) }}" class="card-img-top-category">
+                                        <h5 class="card-title-category">{{ $category->t02nombre }}</h5>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                         @endforeach
