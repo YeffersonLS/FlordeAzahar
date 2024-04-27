@@ -153,16 +153,18 @@
         height: 60vh; /* Ajusta la altura para dispositivos móviles */
         /* Otros estilos específicos para dispositivos móviles si es necesario */
     }
+    .banner-carousel{
+        display: block;
+        margin-bottom: 10px;
+        /* margin: auto; */
+    }
 }
 
 .banner-container {
     margin-bottom: 20px; /* Ajusta el margen inferior del contenedor del banner */
 }
 
-.carousel-banner{
-    /* display: block; */
-    margin: auto;
-}
+
 
 /* Estilos para las flechas */
 .nav-arrows {
