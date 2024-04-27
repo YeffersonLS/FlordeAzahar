@@ -129,6 +129,7 @@
 
 .banner {
     background-position-y: top;
+    margin: 10px;
     flex: 0 0 auto;
     width: 100%;
     height: 70vh; /* Puedes ajustar la altura según tus necesidades */
@@ -145,6 +146,7 @@
 
 @media only screen and (max-width: 768px) {
     .banner {
+        margin: 10px;
         background-position-y: top;
         background-size: contain;
         background-repeat: no-repeat;
@@ -152,10 +154,10 @@
         /* Otros estilos específicos para dispositivos móviles si es necesario */
     }
 }
-.carousel-banner{
+/* .carousel-banner{
     display: block;
     margin: 10px;
-}
+} */
 
 .banner-carousel {
     margin-bottom: 100px; /* Ajusta el margen inferior del carousel en dispositivos móviles */
