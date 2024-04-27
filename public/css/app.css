@@ -153,11 +153,8 @@
         /* Otros estilos específicos para dispositivos móviles si es necesario */
     }
 
-    .carousel-banner{
-        display: block;
-        margin: auto;
+    .banner-carousel{
         margin-bottom: 0;
-
     }
 }
 .carousel-banner{
