@@ -152,7 +152,7 @@
         /* Otros estilos específicos para dispositivos móviles si es necesario */
     }
     .banner-carousel {
-        height: 230px;
+        height: 50vh;
     }
 }
 
