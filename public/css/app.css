@@ -141,6 +141,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px; /* Ajusta el margen inferior del banner */
 }
 
 @media only screen and (max-width: 768px) {
@@ -148,10 +149,16 @@
         background-position-y: top;
         background-size: contain;
         background-repeat: no-repeat;
+        margin-bottom: 20px; /* Ajusta el margen inferior del banner */
         height: 60vh; /* Ajusta la altura para dispositivos móviles */
         /* Otros estilos específicos para dispositivos móviles si es necesario */
     }
 }
+
+.banner-container {
+    margin-bottom: 20px; /* Ajusta el margen inferior del contenedor del banner */
+}
+
 .carousel-banner{
     /* display: block; */
     margin: auto;
