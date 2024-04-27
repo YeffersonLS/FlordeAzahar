@@ -6,17 +6,14 @@
             <div class="banner-carousel">
                 @foreach($banners as $index => $banner)
                 <div class="banner carousel-banner" style="background-image: url('{{ asset($banner->t06image_path) }}');">
-                    <!-- Aquí puedes incluir cualquier otro contenido que desees mostrar sobre el banner -->
                     {{-- <h1>{{ $banner->t06descripcionimagen }}</h1> --}}
                 </div>
                 @endforeach
-                <!-- Flechas de navegación -->
                 {{-- <div class="nav-arrows">
                     <div class="arrow prev-arrow">&#10094;</div>
                     <div class="arrow next-arrow">&#10095;</div>
                 </div> --}}
-                <!-- Indicadores de puntos -->
-                <div class="banner-dots"></div>
+                {{-- <div class="banner-dots"></div> --}}
             </div>
         </div>
 
