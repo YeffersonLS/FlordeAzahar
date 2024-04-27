@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-center banner-guia">
+        <div class="row justify-center">
             <div class="banner-carousel">
                 @foreach($banners as $index => $banner)
                 <div class="banner carousel-banner" style="background-image: url('{{ asset($banner->t06image_path) }}');">
