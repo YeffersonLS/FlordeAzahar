@@ -149,9 +149,15 @@
         background-position-y: top;
         background-size: contain;
         background-repeat: no-repeat;
-        margin-bottom: 0;
         height: 400px; /* Ajusta la altura para dispositivos móviles */
         /* Otros estilos específicos para dispositivos móviles si es necesario */
+    }
+
+    .carousel-banner{
+        display: block;
+        margin: auto;
+        margin-bottom: 0;
+
     }
 }
 .carousel-banner{
