@@ -137,7 +137,6 @@
     background-position: center;
     text-align: center;
     color: white;
-    margin-bottom: 0;
     font-size: 24px;
     display: flex;
     justify-content: center;
@@ -155,10 +154,6 @@
         background-repeat: no-repeat;
         height: 400px; /* Ajusta la altura para dispositivos móviles */
         /* Otros estilos específicos para dispositivos móviles si es necesario */
-    }
-
-    .banner-carousel{
-        margin-bottom: 0;
     }
 }
 .carousel-banner{
