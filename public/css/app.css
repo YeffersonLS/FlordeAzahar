@@ -157,12 +157,6 @@
     margin: auto;
 }
 
-.banner-carousel {
-    margin-bottom: 100px; /* Ajusta el margen inferior del carousel en dispositivos móviles */
-}
-
-
-
 /* Estilos para las flechas */
 .nav-arrows {
     position: absolute;
