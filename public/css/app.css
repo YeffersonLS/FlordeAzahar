@@ -144,7 +144,7 @@
 }
 
 .banner-carousel{
-    margin-bottom: 100;
+    margin-bottom: 100px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -160,6 +160,11 @@
     display: block;
     margin: auto;
 }
+
+.banner-carousel {
+    margin-bottom: 100px; /* Ajusta el margen inferior del carousel en dispositivos móviles */
+}
+
 
 
 /* Estilos para las flechas */
