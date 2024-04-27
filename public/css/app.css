@@ -151,9 +151,8 @@
         height: 60vh; /* Ajusta la altura para dispositivos móviles */
         /* Otros estilos específicos para dispositivos móviles si es necesario */
     }
-    .carousel-banner{
-        display: block;
-        margin: 0;
+    .banner-carousel {
+        height: 230px;
     }
 }
 
