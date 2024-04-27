@@ -129,7 +129,7 @@
 
 .banner {
     flex: 0 0 auto;
-    width: 100%;
+    width: 40vh;
     height: 40vh;
     /* height: 600px; Puedes ajustar la altura según tus necesidades */
     background-size: cover;
