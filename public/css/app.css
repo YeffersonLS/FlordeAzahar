@@ -144,7 +144,7 @@
 @media only screen and (max-width: 768px) {
     .banner {
         width: auto;
-        height: auto; /* Ajusta la altura para dispositivos móviles */
+        height: 400px; /* Ajusta la altura para dispositivos móviles */
         /* Otros estilos específicos para dispositivos móviles si es necesario */
     }
 }
