@@ -130,7 +130,8 @@
 .banner {
     flex: 0 0 auto;
     width: 100%;
-    height: 600px; /* Puedes ajustar la altura según tus necesidades */
+    height: 50vh;
+    /* height: 600px; Puedes ajustar la altura según tus necesidades */
     background-size: cover;
     background-position: center;
     text-align: center;
@@ -143,13 +144,6 @@
 .carousel-banner{
     display: block;
     margin: auto;
-}
-
-/* Opcional: ajustar la altura del banner para pantallas pequeñas */
-@media (max-width: 575.98px) { /* Pantallas hasta 575.98px de ancho (como iPhone XS) */
-    .banner {
-        height: 200px; /* Altura ajustada para dispositivos móviles pequeños */
-    }
 }
 
 
