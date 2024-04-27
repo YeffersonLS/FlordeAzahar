@@ -145,6 +145,13 @@
     margin: auto;
 }
 
+/* Opcional: ajustar la altura del banner para pantallas pequeñas */
+@media (max-width: 575.98px) { /* Pantallas hasta 575.98px de ancho (como iPhone XS) */
+    .banner {
+        height: 200px; /* Altura ajustada para dispositivos móviles pequeños */
+    }
+}
+
 
 /* Estilos para las flechas */
 .nav-arrows {
