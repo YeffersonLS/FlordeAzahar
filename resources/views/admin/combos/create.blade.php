@@ -30,7 +30,12 @@
                     @csrf
                 @endif
 
-
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <label for="t10slug">Slug SEO</label>
+                            <input id="t10slug" name="t10slug" class="form-control" value="{{ $registro->t10slug }}" ></input>
+                        </div>
+                    </div>
 
                     <div class="row form-group">
                         <div class="col-md-6">
@@ -274,6 +279,12 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('.chosen-select').chosen();
+
+        $("#t10nombre").stringToSlug({
+            setEvents: 'keyup keydown blur',
+            getPut: '#t10slug',
+            space: '-'
+        });
 
         $("#guardar").click(function(){
             $("#btnSubmit").click();

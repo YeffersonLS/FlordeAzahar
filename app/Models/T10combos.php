@@ -25,7 +25,8 @@ class T10combos extends Model
         't10vencimiento',
         't10valor',
         't10image',
-        't10descripcion'
+        't10descripcion',
+        't10slug'
     ];
 
     protected static $titles = ['Consecutivo', 'Fecha de Vencimiento', 'Valor','Acciones'];
