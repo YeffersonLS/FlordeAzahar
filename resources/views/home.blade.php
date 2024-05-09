@@ -42,7 +42,7 @@
                     <div class="card-body">
                         <div class="row">
                             @foreach ($products as $product)
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                            <div class="col-md-3">
                                 <div class="productos">
                                     <a href="{{ route('product.show', ['t04slug' => $product->t04slug]) }}"><!-- Enlace al detalle del producto -->
                                         <div class="card">
