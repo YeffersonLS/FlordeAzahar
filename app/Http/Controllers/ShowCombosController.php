@@ -17,6 +17,8 @@ class ShowCombosController extends Controller
         $combos = T10combos::where('t10vencimiento', '>', Carbon::now()->format("Y-m-d") )
         ->get()
         ;
+
+        dd($combos);
          return view('combos.home', compact('combos'));
     }
 
