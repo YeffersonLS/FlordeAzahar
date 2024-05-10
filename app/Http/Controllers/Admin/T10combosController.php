@@ -109,6 +109,7 @@ class T10combosController extends Controller
         }
 
         if ($request->hasFile('images')) {
+            dd($request->file('images'));
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
 
