@@ -69,7 +69,7 @@
                         <div class="card-body">
                             <div class="col-md-12">
                                 <label for="images">Agrega Imagen Insignia al combo</label><br>
-                                <input id="images" type="file" name="image[]" accept="image/*">
+                                <input id="images" type="file" name="images[]" accept="image/*">
                             </div>
                         </div>
                     </div>
