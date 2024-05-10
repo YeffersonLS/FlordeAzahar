@@ -29,7 +29,7 @@ class T10combos extends Model
         't10slug'
     ];
 
-    protected static $titles = ['Consecutivo', 'Fecha de Vencimiento', 'Valor','Acciones'];
+    protected static $titles = ['Nombre', 'Fecha de Vencimiento', 'Valor','Acciones'];
 
     public static function getTitles()
     {
@@ -48,7 +48,7 @@ class T10combos extends Model
 
     public static function getDatatable(Request $request)
     {
-        $sql = T10combos::select('t10id', 't10vencimiento', 't10valor')
+        $sql = T10combos::select('t10id', 't10nombre', 't10vencimiento', 't10valor')
         ->orderBy('t10id', 'desc')
         ;
 
@@ -86,6 +86,7 @@ class T10combos extends Model
     ')
             ->escapeColumns(['Acciones'])
             ->skipTotalRecords()
+            ->removeColumn('t10id')
             ->make(false)
         ;
     }
