@@ -162,7 +162,7 @@ class T10combosController extends Controller
                 $image->move(public_path('images/t10combos'), $imageName); // Mover la imagen a la carpeta "public/images/t04productos"
 
                 $product->images()->create([
-                    'image_path' => 'images/t10combos/' . $imageName // Guardar la ruta de la imagen en la base de datos
+                    'image_path' => 'public/storage/images/t10combos/' . $imageName // Guardar la ruta de la imagen en la base de datos
                 ]);
             }
         }
