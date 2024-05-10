@@ -14,7 +14,7 @@ class ShowCombosController extends Controller
      */
     public function index()
     {
-        $combos = T10combos::where('t10vencimiento', '>', Carbon::now()->format("Y-m-d") )
+        $combos = T10combos::where('t10vencimiento', '>=', Carbon::now()->format("Y-m-d") )
         ->get()
         ;
 
