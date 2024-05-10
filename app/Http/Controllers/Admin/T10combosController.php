@@ -107,9 +107,9 @@ class T10combosController extends Controller
             $q->products()->detach();
             $q->products()->attach($request->productos);
         }
+        dd($request->file('images'));
 
         if ($request->hasFile('images')) {
-            dd($request->file('images'));
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
 
