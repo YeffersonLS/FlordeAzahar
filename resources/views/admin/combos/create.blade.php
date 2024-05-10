@@ -68,8 +68,8 @@
                     <div class="row form-group">
                         <div class="card-body">
                             <div class="col-md-12">
-                                <label for="image">Agrega Imagen Insignia al combo</label><br>
-                                <input id="image" type="file" name="image[]" accept="image/*">
+                                <label for="images">Agrega Imagen Insignia al combo</label><br>
+                                <input id="images" type="file" name="image[]" accept="image/*">
                             </div>
                         </div>
                     </div>
