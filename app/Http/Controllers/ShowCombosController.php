@@ -18,7 +18,7 @@ class ShowCombosController extends Controller
         ->get()
         ;
 
-        dd($combos);
+        // dd($combos);
          return view('combos.home', compact('combos'));
     }
 
