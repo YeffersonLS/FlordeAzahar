@@ -55,4 +55,4 @@ Route::get('combos', 'App\Http\Controllers\ShowCombosController@index');
 
 Route::get('combos/{id}', 'App\Http\Controllers\ShowCombosController@show')->name('combos.show');
 
-Route::get('agendar', 'App\Http\Controllers\HomeController@agendar')->name('agendar');
+Route::get('agendar/{id}', 'App\Http\Controllers\HomeController@agendar')->name('agendar');

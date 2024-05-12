@@ -46,7 +46,7 @@
                 @endforeach
             </div>
             <div class="mt-4">
-                <a href="{{ route('agendar', ['id' => 1]) }}" class="button">Agenda tu combo</a>
+                <a href="{{ route('agendar', ['id' => $combo->t10id]) }}" class="button">Agenda tu combo</a>
             </div>
         </div>
     </div>
