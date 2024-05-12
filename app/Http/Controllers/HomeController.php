@@ -6,6 +6,7 @@ use App\Models\T02directorio;
 use App\Models\T03tag;
 use App\Models\T04productos;
 use App\Models\T06banners;
+use App\Models\T10combos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -185,8 +186,16 @@ class HomeController extends Controller
         return view('products.home',compact('products', 'titulo'));
     }
 
-    public function agendar()
+    public function agendar($id)
     {
-        return view('combos.agendar');
+        if (!auth()->check()) {
+            return view('auth.register');
+        } else {
+            $user = Auth::user();
+            $combo = T10combos::findOrFail($id);
+
+            return view('combos.agendar', compact('user', 'combo'));
+        }
+
     }
 }
