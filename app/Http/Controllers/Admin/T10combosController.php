@@ -159,8 +159,11 @@ class T10combosController extends Controller
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName(); // Generar un nombre único para la imagen
-                $image->move(public_path('images/t10combos'), $imageName); // Mover la imagen a la carpeta "public/images/t04productos"
 
+                // Mover la imagen a la carpeta de almacenamiento
+                $image->storeAs('public/images/t04productos', $imageName);
+
+                // Guardar la ruta de la imagen en la base de datos
                 $product->images()->create([
                     'image_path' => 'public/storage/images/t10combos/' . $imageName // Guardar la ruta de la imagen en la base de datos
                 ]);
