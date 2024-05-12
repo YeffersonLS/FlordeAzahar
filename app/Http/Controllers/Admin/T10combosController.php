@@ -165,7 +165,7 @@ class T10combosController extends Controller
 
                 // Guardar la ruta de la imagen en la base de datos
                 $product->images()->create([
-                    'image_path' => 'public/storage/images/t10combo/ruletaFotos' . $imageName // Guardar la ruta de la imagen en la base de datos
+                    'image_path' => 'public/storage/images/t10combo/ruletaFotos/' . $imageName // Guardar la ruta de la imagen en la base de datos
                 ]);
             }
         }

@@ -187,6 +187,6 @@ class HomeController extends Controller
 
     public function agendar()
     {
-        return view('home');
+        return view('combos.agendar');
     }
 }
