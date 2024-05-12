@@ -62,6 +62,7 @@
     $(document).ready(function() {
         $("#agendar").click(function(event) {
             if ($(this).attr("href") === 'register') {
+                console.log('entro');
                 alert("Necesita estar registrado o logeado para poder Agendar tu combo");
             }
         });
