@@ -46,7 +46,7 @@
                 @endforeach
             </div>
             <div class="mt-4">
-                <a id="agendar" href="{{ auth()->check() ? route('agendar', ['id' => $combo->t10id]) : '#' }}" class="button">Agenda tu combo</a>
+                <a id="agendar" href="{{ auth()->check() ? route('agendar', ['id' => $combo->t10id]) : route('register') }}" class="button">Agenda tu combo</a>
             </div>
         </div>
     </div>
@@ -61,8 +61,7 @@
 
     $(document).ready(function() {
         $("#agendar").click(function(event) {
-            if (!$(this).attr("href") || $(this).attr("href") === '#') {
-                event.preventDefault();
+            if ($(this).attr("href") === 'register') {
                 alert("Necesita estar registrado o logeado para poder Agendar tu combo");
             }
         });
