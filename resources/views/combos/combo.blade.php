@@ -61,8 +61,8 @@
     }
 
     $(document).ready(function() {
-        console.log($(this).attr("href"));
         $("#agendar").click(function(event) {
+            console.log($(this).attr("href"));
             if ($(this).attr("href") === 'register') {
                 alert("Necesita estar registrado o logeado para poder Agendar tu combo");
             }
