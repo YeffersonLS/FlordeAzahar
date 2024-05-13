@@ -62,21 +62,6 @@
                         </div>
                     </div>
 
-
-                    {{-- <div class="row form-group">
-                        <div class="col-md-12">
-                            <label for="t03metadescription">Descripción SEO</label>
-                            <textarea id="t03metadescription" name="t03metadescription" class="form-control" required>{!! $registro->t03metadescription !!}</textarea>
-                        </div>
-                    </div> --}}
-{{--
-                    <div class="row form-group">
-                        <div class="col-md-12">
-                            <label for="t03descripcion">Descripción corta en la pagina</label>
-                            <textarea id="t03descripcion" name="t03descripcion" class="form-control" required>{!! $registro->t03descripcion !!}</textarea>
-                        </div>
-                    </div> --}}
-
                     <div class="row form-group">
                         <div class="col-md-12 text-center">
                             <a href="{!! url('admin/tags') !!}" class="btn btn-warning"><i class="fa fa-reply"></i> Cancelar</a>
@@ -98,11 +83,11 @@
 @stop
 
 @section('js')
-@if (env('APP_ENV') == "local")
+{{-- @if (env('APP_ENV') == "local")
 <script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
-@else
+@else --}}
 <script src="{{ asset('public/vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
-@endif<script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function() {
         $("#t03nombre").stringToSlug({
         setEvents: 'keyup keydown blur',

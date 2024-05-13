@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\T11combosagendados;
 use Illuminate\Http\Request;
 
 class T11combosAgendadosController extends Controller
@@ -12,7 +13,11 @@ class T11combosAgendadosController extends Controller
      */
     public function index()
     {
-        //
+        $titulo = 'Combos';
+        $sub = '    <p>Estos son los combos que hay de flor de azahar.</p>';
+        $titulos = T11combosagendados::getTitles();
+
+        return view('datatable', compact('titulo', 'titulos', 'sub'));
     }
 
     /**
