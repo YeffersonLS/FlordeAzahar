@@ -24,7 +24,7 @@
                     <div class="col-md-4">
                         <label>Estado de Pago</label><br>
                         <input id="Activo" name="t11pago" type="radio" value="0" {{ $registro->t11pago === 0 ? 'checked' : '' }}> Pago<br>
-                        <input id="Inactivo" name="t11pago" type="radio" value="1" {{ $registro->t11pago === 1 ? 'checked' : '' }}> No pago|
+                        <input id="Inactivo" name="t11pago" type="radio" value="1" {{ $registro->t11pago === 1 ? 'checked' : '' }}> No pago
                     </div>
                     <div class="mb-3">
                         <input type="text" class="form-control" id="t11combo" name="t11combo" value="{{ $registro->t11id }}" hidden >

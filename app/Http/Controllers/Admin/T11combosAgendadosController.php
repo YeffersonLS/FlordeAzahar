@@ -75,7 +75,9 @@ class T11combosAgendadosController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = $request->all();
+        $registro = T11combosagendados::FindOrFaul($id);
+        dd($registro);
     }
 
     /**
