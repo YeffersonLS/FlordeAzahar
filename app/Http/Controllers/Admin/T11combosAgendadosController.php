@@ -88,8 +88,8 @@ class T11combosAgendadosController extends Controller
         ->where('t11combo', '=', $id)
         ->get();
 
-        dd($registros);
-
+        // dd($registros);
+        $titulo = $registros->t10nombre;
         $events = [];
         foreach ($registros as $registro) {
             $events[] = [
@@ -97,5 +97,8 @@ class T11combosAgendadosController extends Controller
                 'start'=> $registro->t10vencimiento,
             ];
         }
+
+        return view('admin.combos.calendaryDay', compact('titulo', 'events'));
+
     }
 }
