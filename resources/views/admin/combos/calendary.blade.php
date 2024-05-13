@@ -57,19 +57,14 @@
             headerToolbar: {
                 left: 'prev,next today',
                 center: 'title',
-                right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+                // right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+                right: 'dayGridMonth'
+
             },
             // weekNumbers: true,
             // dayMaxEvents: true,
             events: @json($events)
         });
-        // eventClick: function(info) {
-        //     info.jsEvent.preventDefault(); // don't let the browser navigate
-
-        //     if (info.event.url) {
-        //         window.open(info.event.url);
-        //     }
-        // }
         calendar.render();
       });
 
