@@ -28,7 +28,7 @@ class T11combosAgendadosController extends Controller
             ];
         }
 
-        dd($events);
+        // dd($events);
         return view('admin.combos.calendary', compact('titulo', 'events'));
     }
 

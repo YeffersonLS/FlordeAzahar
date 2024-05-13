@@ -17,7 +17,7 @@
 <div class="row">
     <div class="col-12">
         <div class="card border-primary">
-
+            <div id='calendar'></div>
         </div>
     </div>
 </div>
@@ -35,14 +35,24 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $("#t03nombre").stringToSlug({
-        setEvents: 'keyup keydown blur',
-        getPut: '#t03slug',
-        space: '-'
-    });
+            setEvents: 'keyup keydown blur',
+            getPut: '#t03slug',
+            space: '-'
+        });
 
         $("#guardar").click(function(){
             $("#btnSubmit").click();
         });
     });
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth'
+        });
+        calendar.render();
+      });
+
 </script>
 @stop
