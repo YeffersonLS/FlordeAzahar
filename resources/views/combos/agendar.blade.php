@@ -13,10 +13,19 @@
                 <label for="telefono" class="form-label">Telefono de la persona a Entregar</label>
                 <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Ingresa el Telefono" required>
             </div>
+            <div class="col-md-2">
+                <label for="hora">Categoría</label>
+                <select id="hora" name="hora" class="form-control">
+                    @foreach($horas as $hora)
+                        <option value="{{ $hora => $hora }}">{{ $hora }}</option>
+                    @endforeach
+                </select>
+            </div>
             <div class="mb-3">
                 <label for="direccion" class="form-label">Direccion</label>
                 <textarea class="form-control" id="direccion" name="direccion" rows="3" placeholder="Escribe la direccion de entrega" required></textarea>
             </div>
+
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     </div>

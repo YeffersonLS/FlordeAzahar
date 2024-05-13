@@ -195,9 +195,11 @@ class HomeController extends Controller
             $user = Auth::user();
             $combo = T10combos::findOrFail($id);
 
-            dd(FuncionesFront::horaEntregaCombos());
+            $horas = FuncionesFront::horaEntregaCombos();
 
-            return view('combos.agendar', compact('user', 'combo'));
+            // dd(FuncionesFront::horaEntregaCombos());
+
+            return view('combos.agendar', compact('user', 'combo', 'horas'));
         }
 
     }
