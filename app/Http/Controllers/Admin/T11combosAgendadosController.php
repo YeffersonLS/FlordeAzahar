@@ -96,7 +96,7 @@ class T11combosAgendadosController extends Controller
             $events[] = [
                 'title' => $registro->t11nombre,
                 'start'=> $registro->t10vencimiento.' '.$registro->t11hora,
-                'color' => $registro->t11pago ? 1 : 'red' // Color rojo si t11pago es true
+                'color' => $registro->t11pago ? 0 : 'red' // Color rojo si t11pago es true
 
             ];
             $titulo = $registro->t10nombre;
