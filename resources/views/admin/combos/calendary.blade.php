@@ -49,8 +49,10 @@
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth',
-          events: @json($events)
+            center: 'title',
+            initialView: 'dayGridMonth',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth',
+            events: @json($events)
         });
         calendar.render();
       });
