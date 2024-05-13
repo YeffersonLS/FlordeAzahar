@@ -209,6 +209,7 @@ class HomeController extends Controller
         $data = $request->all();
         $registro = new T11combosagendados();
         $registro->fill($data);
+        $registro->t11cliente = Auth::user()->sys01id;
         dd($registro);
     }
 }
