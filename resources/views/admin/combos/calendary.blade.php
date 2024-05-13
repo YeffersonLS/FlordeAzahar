@@ -15,7 +15,7 @@
 @endif
 
 <div class="row">
-    <div class="col-12">
+    <div class="col-8">
         <div class="card border-primary">
             <div id='calendar'></div>
         </div>
