@@ -7,6 +7,7 @@ use App\Models\T03tag;
 use App\Models\T04productos;
 use App\Models\T06banners;
 use App\Models\T10combos;
+use App\Models\T11combosagendados;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -206,7 +207,8 @@ class HomeController extends Controller
 
     public function agendarPost(Request $request) {
         $data = $request->all();
-        dd($data);
-
+        $registro = new T11combosagendados();
+        $registro->fill($data);
+        dd($registro);
     }
 }
