@@ -13,9 +13,13 @@ class T11combosAgendadosController extends Controller
      */
     public function index()
     {
+        $registros = T11combosagendados::select('t11combo', 't11hora', 'c.t10nombre', 't10vencimiento')
+        ->leftJoin('t10combos as c', 't10id', '=', 't11combo')
+        ->get();
+
         $titulo = 'Calendario de Eventos';
         $sub = '    <p>Estos son los combos que hay de flor de azahar.</p>';
-
+        $combos = [];
         return view('admin.combos.calendary', compact('titulo', 'sub'));
     }
 

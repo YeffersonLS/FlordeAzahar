@@ -7,6 +7,10 @@
         <form action="/agendarPost" method="POST">
             @csrf
             <div class="mb-3">
+                <label for="t11combo" class="form-label">aa</label>
+                <input type="text" class="form-control" id="t11combo" name="t11combo" value="{{ $combo->t10id }}" >
+            </div>
+            <div class="mb-3">
                 <label for="t11nombre" class="form-label">Nombre de la persona a Entregar</label>
                 <input type="text" class="form-control" id="t11nombre" name="t11nombre" placeholder="Ingresa tu nombre" required>
             </div>
