@@ -83,15 +83,13 @@ class T11combosAgendadosController extends Controller
 
     public function dayCombo($id){
 
-        $registros = T11combosagendados::select('t11combo', 't11nombre', 't11hora', 'c.t10vencimiento')
+        $registros = T11combosagendados::select('t11combo', 't11nombre', 't11hora', 'c.t10vencimiento', 'c.t10nombre')
         ->leftJoin('t10combos as c', 't10id', '=', 't11combo')
         ->where('t11combo', '=', $id)
         ->get();
 
         // dd($registros);
-        $nombre = T10combos::where('t10id', '=', $id)->get();
         // dd($nombre);
-        $titulo = $nombre->t10nombre;
 
         $events = [];
         foreach ($registros as $registro) {
@@ -99,6 +97,7 @@ class T11combosAgendadosController extends Controller
                 'title' => $registro->t11nombre,
                 'start'=> $registro->t10vencimiento,
             ];
+            $titulo = $registro->t10nombre;
         }
 
         return view('admin.combos.calendaryDay', compact('titulo', 'events'));
