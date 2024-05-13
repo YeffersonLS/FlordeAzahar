@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2 style="color:pink">Agendar {{ $combo->t10nombre }}</h2>
+        <h2 style="blood">Agendar {{ $combo->t10nombre }}</h2>
         <h3> Contactanos si tienes dudas escribenos al Whatsapp <a href="https://wa.link/2sgb9s">229 667 4807</a></h3>
         <form action="/agendarPost" method="POST">
             @csrf
