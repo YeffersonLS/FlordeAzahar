@@ -18,7 +18,7 @@
                 @foreach ($query as $q )
                 <td>{{ $q->t10nombre }}</td>
                 <td>{{ $q->t11hora }}</td>
-                <td>{{ $q->t11pago }}</td>
+                <td>{{ $q->t11pago ? 'Sí' : 'No' }}</td>
                 <td>Acciones</td>
                 @endforeach
 
