@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\FuncionesFront;
 use App\Models\T10combos;
 use App\Models\T11combosagendados;
 use Carbon\Carbon;
@@ -62,9 +63,11 @@ class T11combosAgendadosController extends Controller
      */
     public function edit(string $id)
     {
+        $titulo = "Edita la entrega del combo";
         $registro = T11combosagendados::FindOrFail($id);
+        $horas = FuncionesFront::horaEntregaCombos();
 
-        return view('admin.combos.edit', compact('registro'));
+        return view('admin.combos.edit', compact('registro', 'titulo', 'horas'));
     }
 
     /**
