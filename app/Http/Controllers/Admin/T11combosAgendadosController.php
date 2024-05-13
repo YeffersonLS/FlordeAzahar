@@ -25,6 +25,7 @@ class T11combosAgendadosController extends Controller
             $events[] = [
                 'title' => $registro->t10nombre,
                 'start'=> $registro->t10vencimiento,
+                'url' => 'https://google.com/',
             ];
         }
 
