@@ -89,7 +89,9 @@ class T11combosAgendadosController extends Controller
         ->get();
 
         // dd($registros);
-        $titulo = $registros->t10nombre;
+        $nombre = T10combos::where('t10id', '=', $id)->get();
+        $titulo = $nombre->t10nombre;
+
         $events = [];
         foreach ($registros as $registro) {
             $events[] = [
