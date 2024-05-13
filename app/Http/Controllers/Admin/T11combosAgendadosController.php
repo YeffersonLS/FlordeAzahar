@@ -76,12 +76,12 @@ class T11combosAgendadosController extends Controller
     public function update(Request $request, string $id)
     {
         $data = $request->all();
-        $registro = T11combosagendados::FindOrFaul($id);
+        $registro = T11combosagendados::FindOrFail($id);
         $registro->fill($data);
         // dd($registro);
         $registro->save();
 
-        redirect(url('admin/diary'.$id));
+        redirect(url('admin/diary/'.$id));
     }
 
     /**
@@ -108,7 +108,7 @@ class T11combosAgendadosController extends Controller
                 'title' => $registro->t11nombre,
                 'start'=> $registro->t10vencimiento.' '.$registro->t11hora,
                 'color' => $registro->t11pago ?  : 'red', // Color rojo si t11pago es true
-                'url' => url('admin/diary/'.$registro->t10id.'/edit'),
+                'url' => url('admin/diary/'.$registro->t11combo.'/edit'),
             ];
             $titulo = $registro->t10nombre;
             $fecha = $registro->t10vencimiento;
