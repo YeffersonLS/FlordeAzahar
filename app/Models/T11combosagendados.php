@@ -23,6 +23,7 @@ class T11combosagendados extends Model
         't11direccion',
         't11hora',
         't11pago',
+        't11combo'
     ];
 
     protected static $titles = ['Nombre', 'Hora de entrega', 'Pago','Acciones'];
