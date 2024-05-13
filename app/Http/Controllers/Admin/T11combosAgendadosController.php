@@ -78,7 +78,7 @@ class T11combosAgendadosController extends Controller
         $data = $request->all();
         $registro = T11combosagendados::FindOrFail($id);
         $registro->fill($data);
-        $registro->save();
+        $registro->update();
 
         return redirect(url('admin/diary', $id));
     }
