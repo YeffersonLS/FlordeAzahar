@@ -31,8 +31,8 @@
 @stop
 
 @section('js')
-<script src='fullcalendar/dist/index.global.js'></script>
-{{-- <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script> --}}
+{{-- <script src='fullcalendar/dist/index.global.js'></script> --}}
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
 <script src="{{ asset('public/vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
 <script type="text/javascript">
     $(document).ready(function() {
