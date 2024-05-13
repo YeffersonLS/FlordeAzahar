@@ -17,7 +17,7 @@
                 <label for="hora">Categoría</label>
                 <select id="hora" name="hora" class="form-control">
                     @foreach($horas as $hora)
-                        <option value="{{ $hora => $hora }}">{{ $hora }}</option>
+                        <option value="{{ $id => $hora }}">{{ $hora }}</option>
                     @endforeach
                 </select>
             </div>
