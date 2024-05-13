@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\T10combos;
 use App\Models\T11combosagendados;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class T11combosAgendadosController extends Controller
@@ -13,14 +15,21 @@ class T11combosAgendadosController extends Controller
      */
     public function index()
     {
-        $registros = T11combosagendados::select('t11combo', 't11hora', 'c.t10nombre', 't10vencimiento')
-        ->leftJoin('t10combos as c', 't10id', '=', 't11combo')
-        ->get();
+        $registros = T10combos::where('t10vencimiento', '>=', Carbon::now()->format("Y-m-d") )
+        ->get()
+        ;
 
         $titulo = 'Calendario de Eventos';
-        $sub = '    <p>Estos son los combos que hay de flor de azahar.</p>';
-        $combos = [];
-        return view('admin.combos.calendary', compact('titulo', 'sub'));
+        $events = [];
+        foreach ($registros as $registro) {
+            $events[] = [
+                'title' => $registro->t10nombre,
+                'start'=> $registro->t10vencimiento,
+            ];
+        }
+
+        dd($events);
+        return view('admin.combos.calendary', compact('titulo', 'events'));
     }
 
     /**
