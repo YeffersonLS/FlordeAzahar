@@ -215,4 +215,12 @@ class HomeController extends Controller
         return redirect('/combos')->with('mensaje', 'Se agendo el combo Correctamente');
 
     }
+
+    public function combosAgendados() {
+
+        $query = T11combosagendados::where('t11cliente', '=', Auth::user()->sys01id)
+        ->get();
+
+        dd($query);
+    }
 }
