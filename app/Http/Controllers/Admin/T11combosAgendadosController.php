@@ -95,7 +95,7 @@ class T11combosAgendadosController extends Controller
         foreach ($registros as $registro) {
             $events[] = [
                 'title' => $registro->t11nombre,
-                'start'=> $registro->t10vencimiento,
+                'start'=> $registro->t10vencimiento.' '.$registro->t11hora,
             ];
             $titulo = $registro->t10nombre;
             $fecha = $registro->t10vencimiento;
