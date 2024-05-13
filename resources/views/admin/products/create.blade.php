@@ -98,8 +98,8 @@
 
                         <div class="col-md-4">
                             <label>Activo</label><br>
-                            <input id="Activo" name="t04activo" type="radio" value="0" {{ $registro->t04activo === 0 ? 'checked' : '' }}> Activo<br>
-                            <input id="Inactivo" name="t04activo" type="radio" value="1" {{ $registro->t04activo === 1 ? 'checked' : '' }}> Inactivo
+                            <input id="Activo" name="t04activo" type="radio" value="0" {{ $registro->t04activo === 0 ? 'checked' : '' }}> Inactivo<br>
+                            <input id="Inactivo" name="t04activo" type="radio" value="1" {{ $registro->t04activo === 1 ? 'checked' : '' }}> Activo
                         </div>
 
                     </div>
