@@ -93,7 +93,7 @@ class T11combosAgendadosController extends Controller
 
         $events = [];
         foreach ($registros as $registro) {
-            dd($registro);
+            // dd($registro);
             $events[] = [
                 'title' => $registro->t11nombre,
                 'start'=> $registro->t10vencimiento.' '.$registro->t11hora,
