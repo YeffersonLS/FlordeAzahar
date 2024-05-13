@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('t11combosagendados', function (Blueprint $table) {
             $table->id('t11id');
             $table->string('t11nombre')->nullable();
-            $table->float('t11numero')->nullable();
+            $table->bigInteger('t11numero')->nullable();
             $table->longText('t11direccion')->nullable();
             $table->string('t11hora')->nullable();
             $table->unsignedBigInteger('t11cliente')->nullable();
