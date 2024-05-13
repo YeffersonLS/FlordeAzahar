@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class FuncionesFront extends Controller
 {
-    public function horaEntregaCombos (){
+    public static function horaEntregaCombos (){
 
         $horas = [];
 
