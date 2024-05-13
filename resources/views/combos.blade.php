@@ -16,12 +16,12 @@
         <tbody>
             <tr>
                 @foreach ($query as $q )
-                <td>{{ $q->t11nombre }}</td>
+                <td>{{ $q->t10nombre }}</td>
+                <td>{{ $q->t11hora }}</td>
+                <td>{{ $q->t11pago }}</td>
+                <td>Acciones</td>
                 @endforeach
-                <td>Contenido de la columna 1</td>
-                <td>Contenido de la columna 2</td>
-                <td>Contenido de la columna 3</td>
-                <td>Contenido de la columna 4</td>
+
             </tr>
             <tr>
                 </tr>
