@@ -52,7 +52,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
-            themeSystem: 'bootstrap5'
+            themeSystem: 'bootstrap5',
             events: @json($events)
         });
         // var calendar = new FullCalendar.Calendar(calendarEl, {
