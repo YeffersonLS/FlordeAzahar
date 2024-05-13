@@ -222,6 +222,10 @@ class HomeController extends Controller
         $query = T11combosagendados::where('t11cliente', '=', Auth::user()->sys01id)
         ->get();
 
-        dd($query);
+        // dd($query);
+
+        return view('combos', compact ('query'));
+
+
     }
 }
