@@ -198,4 +198,9 @@ class HomeController extends Controller
         }
 
     }
+
+    public function agendarPost(Request $request) {
+        $data = $request->all();
+
+    }
 }
