@@ -98,9 +98,10 @@ class T11combosAgendadosController extends Controller
                 'start'=> $registro->t10vencimiento,
             ];
             $titulo = $registro->t10nombre;
+            $fecha = $registro->t10vencimiento;
         }
 
-        return view('admin.combos.calendaryDay', compact('titulo', 'events'));
+        return view('admin.combos.calendaryDay', compact('titulo', 'events', 'fecha'));
 
     }
 }
