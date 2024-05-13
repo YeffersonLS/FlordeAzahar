@@ -41,7 +41,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="t11direccion" class="form-label">Direccion</label>
-                        <textarea class="form-control" id="t11direccion" name="t11direccion" rows="3" placeholder="Escribe la direccion de entrega" value="{{  $registro->t11direccion }}" required></textarea>
+                        <textarea class="form-control" id="t11direccion" name="t11direccion" rows="3" placeholder="Escribe la direccion de entrega" required> $registro->t11direccion</textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Enviar</button>
