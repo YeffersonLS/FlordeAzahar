@@ -11,7 +11,7 @@ class FuncionesFront extends Controller
         $horas = [];
 
         for ($i=9; $i < 18; $i++) {
-            $horas + $i;
+            $horas[] = $i;
         }
 
         return $horas;
