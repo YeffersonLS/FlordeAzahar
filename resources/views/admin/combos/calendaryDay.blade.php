@@ -28,6 +28,7 @@
 @section('css')
 <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet'>
 <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css' rel='stylesheet'>
+<style ></style>
 @stop
 
 @section('js')
@@ -65,6 +66,7 @@
             // weekNumbers: true,
             // dayMaxEvents: true,
             events: @json($events),
+            eventBackgroundColor: '#ff0000', // Color de fondo rojo
             initialDate: @json($fecha)
         });
 
