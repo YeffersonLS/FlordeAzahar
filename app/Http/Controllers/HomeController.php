@@ -219,14 +219,11 @@ class HomeController extends Controller
 
     public function combosAgendados() {
 
-        // $query = T11combosagendados::where('t11cliente', '=', Auth::user()->sys01id)
-        // ->get();
-
         $query = T11combosagendados::select('t11cliente', 't11hora', 't11combo', 'c.t10nombre')
         ->leftJoin('t10combos as c', 't10id', '=', 't11combo')
         ->get();
 
-        dd($query);
+        // dd($query);
 
         return view('combos', compact ('query'));
 
