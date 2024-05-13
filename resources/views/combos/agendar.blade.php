@@ -3,6 +3,7 @@
 @section('content')
     <div class="container">
         <h2>Agendar {{ $combo->t10nombre }}</h2>
+        <h3> Contactanos si tienes dudas escribenos al Whatsapp <a href="https://wa.link/2sgb9s">229 667 4807</a></h3>
         <form action="/agendarPost" method="POST">
             @csrf
             <div class="mb-3">
@@ -14,7 +15,7 @@
                 <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Ingresa el Telefono" required>
             </div>
             <div class="col-md-2">
-                <label for="hora">Categoría</label>
+                <label for="hora">Hora de entrega</label>
                 <select id="hora" name="hora" class="form-control">
                     @foreach($horas as $hora)
                         <option value="{{ $hora }}">{{ $hora }}</option>

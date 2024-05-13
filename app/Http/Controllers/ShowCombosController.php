@@ -43,7 +43,12 @@ class ShowCombosController extends Controller
      */
     public function show(string $id)
     {
+
         $combo = T10combos::FindOrFail($id);
+
+        // if ($combo->t10vencimiento >= Carbon::now()->format("Y-m-d")) {
+        //     return view('home');
+        // }
 
         $productos = $combo->products;
 
