@@ -14,7 +14,7 @@
                 <input type="number" class="form-control" id="telefono" name="telefono" placeholder="Ingresa el Telefono" required>
             </div>
             <div class="mb-3">
-                <label for="direccion" class="form-label">Mensaje</label>
+                <label for="direccion" class="form-label">Direccion</label>
                 <textarea class="form-control" id="direccion" name="direccion" rows="3" placeholder="Escribe la direccion de entrega" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>

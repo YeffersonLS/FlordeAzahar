@@ -8,6 +8,7 @@ use App\Models\T04productos;
 use App\Models\T06banners;
 use App\Models\T10combos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -194,6 +195,8 @@ class HomeController extends Controller
             $user = Auth::user();
             $combo = T10combos::findOrFail($id);
 
+            dd(App/FuncionesFront::horaEntregaCombos());
+
             return view('combos.agendar', compact('user', 'combo'));
         }
 
@@ -201,6 +204,7 @@ class HomeController extends Controller
 
     public function agendarPost(Request $request) {
         $data = $request->all();
+        dd($data);
 
     }
 }
