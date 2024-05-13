@@ -65,7 +65,7 @@
             // weekNumbers: true,
             // dayMaxEvents: true,
             events: @json($events),
-            initialDate: $fecha
+            initialDate: @json($fecha)
         });
 
         calendar.render();
