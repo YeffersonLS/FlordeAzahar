@@ -80,4 +80,8 @@ class T11combosAgendadosController extends Controller
     {
         //
     }
+
+    public function dayCombo($id){
+        dd($id);
+    }
 }
