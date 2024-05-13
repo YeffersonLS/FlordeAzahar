@@ -52,6 +52,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
         var calendar = new FullCalendar.Calendar(calendarEl, {
+            locale: 'es',
             themeSystem: 'bootstrap5',
             timeZone: 'UTC',
             headerToolbar: {
