@@ -59,7 +59,8 @@
                 left: 'prev,next today',
                 center: 'title',
                 // right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
-                right: 'timeGridDay'
+                initialView: 'timeGridDay'
+
 
             },
             // weekNumbers: true,
