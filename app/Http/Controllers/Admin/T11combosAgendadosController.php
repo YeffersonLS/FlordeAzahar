@@ -46,7 +46,7 @@ class T11combosAgendadosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -54,7 +54,9 @@ class T11combosAgendadosController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $registro = T11combosagendados::FindOrFail($id);
+
+        return view('admin.combos.edit', compact('registro'));
     }
 
     /**
@@ -93,7 +95,6 @@ class T11combosAgendadosController extends Controller
 
         $events = [];
         foreach ($registros as $registro) {
-            // dd($registro);
             $events[] = [
                 'title' => $registro->t11nombre,
                 'start'=> $registro->t10vencimiento.' '.$registro->t11hora,
