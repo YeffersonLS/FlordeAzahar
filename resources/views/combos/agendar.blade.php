@@ -8,7 +8,7 @@
             @csrf
             <div class="mb-3">
                 <label for="t11combo" class="form-label">aa</label>
-                <input type="text" class="form-control" id="t11combo" name="t11combo" value="{{ $combo->t10id }}" >
+                <input type="text" class="form-control" id="t11combo" name="t11combo" value="{{ $combo->t10id }}" hidden >
             </div>
             <div class="mb-3">
                 <label for="t11nombre" class="form-label">Nombre de la persona a Entregar</label>
