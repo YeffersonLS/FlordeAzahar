@@ -64,14 +64,10 @@
             initialView: 'timeGridDay',
             // weekNumbers: true,
             // dayMaxEvents: true,
-            events: @json($events)
+            events: @json($events),
+            initialDate: '2018-06-01'
         });
 
-        var str = calendar.formatDate('2018-09-01', {
-            month: 'long',
-            year: 'numeric',
-            day: 'numeric'
-        });
         calendar.render();
       });
 
