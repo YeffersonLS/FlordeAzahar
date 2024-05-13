@@ -1,0 +1,48 @@
+@extends('adminlte::page')
+
+@section('title'){!! $titulo !!}
+@endsection
+
+@section('content_header')
+{!! $titulo !!}
+@stop
+
+@section('content')
+   @if (session('mensaje'))
+    <div class="alert alert-success alert-dismissable">
+        {{ session('mensaje') }}
+    </div>
+@endif
+
+<div class="row">
+    <div class="col-12">
+        <div class="card border-primary">
+
+        </div>
+    </div>
+</div>
+
+
+@stop
+
+@section('css')
+
+@stop
+
+@section('js')
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+<script src="{{ asset('public/vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#t03nombre").stringToSlug({
+        setEvents: 'keyup keydown blur',
+        getPut: '#t03slug',
+        space: '-'
+    });
+
+        $("#guardar").click(function(){
+            $("#btnSubmit").click();
+        });
+    });
+</script>
+@stop
