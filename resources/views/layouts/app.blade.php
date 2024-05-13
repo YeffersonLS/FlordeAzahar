@@ -134,7 +134,7 @@
                                         <a class="dropdown-item" href="/admin">Panel de control</a>
                                     @endif
 
-                                    @if (T11combosagendados::count() >= 1)
+                                    @if (App\Models\T11combosagendados::count() >= 1)
                                         <a class="dropdown-item" href="/combosAgendados">Combos Agendados</a>
                                     @endif
                                 </div>
