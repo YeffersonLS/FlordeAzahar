@@ -63,7 +63,7 @@
     $(document).ready(function() {
         $("#agendar").click(function(event) {
             console.log($(this).attr("href"));
-            if ($(this).attr("href") === 'register') {
+            if ($(this).attr("href") === 'https://heladeriaflordeazahar.com/register') {
                 alert("Necesita estar registrado o logeado para poder Agendar tu combo");
             }
         });
