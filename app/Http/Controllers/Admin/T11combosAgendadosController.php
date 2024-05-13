@@ -13,11 +13,10 @@ class T11combosAgendadosController extends Controller
      */
     public function index()
     {
-        $titulo = 'Combos';
+        $titulo = 'Calendario de Eventos';
         $sub = '    <p>Estos son los combos que hay de flor de azahar.</p>';
-        $titulos = T11combosagendados::getTitles();
 
-        return view('datatable', compact('titulo', 'titulos', 'sub'));
+        return view('admin.combos.calendary', compact('titulo', 'sub'));
     }
 
     /**
