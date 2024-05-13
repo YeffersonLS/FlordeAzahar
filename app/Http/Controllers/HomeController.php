@@ -210,6 +210,9 @@ class HomeController extends Controller
         $registro = new T11combosagendados();
         $registro->fill($data);
         $registro->t11cliente = Auth::user()->sys01id;
-        dd($registro);
+        // dd($registro);
+
+        return redirect('/combos')->with('mensaje', 'Se agendo el combo Correctamente');
+
     }
 }
