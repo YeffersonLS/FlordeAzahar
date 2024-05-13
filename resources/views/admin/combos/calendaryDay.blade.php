@@ -66,7 +66,6 @@
             // weekNumbers: true,
             // dayMaxEvents: true,
             events: @json($events),
-            eventBackgroundColor: '#ff0000', // Color de fondo rojo
             initialDate: @json($fecha)
         });
 
