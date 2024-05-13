@@ -66,6 +66,12 @@
             // dayMaxEvents: true,
             events: @json($events)
         });
+
+        var str = calendar.formatDate('2018-09-01', {
+            month: 'long',
+            year: 'numeric',
+            day: 'numeric'
+        });
         calendar.render();
       });
 
