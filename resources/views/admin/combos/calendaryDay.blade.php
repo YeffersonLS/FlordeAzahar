@@ -60,7 +60,8 @@
                 center: 'title',
                 // right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
             },
-            initialView: 'timeGridDay'
+
+            initialView: 'timeGridDay',
             // weekNumbers: true,
             // dayMaxEvents: true,
             events: @json($events)
