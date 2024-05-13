@@ -58,3 +58,6 @@ Route::get('combos/{id}', 'App\Http\Controllers\ShowCombosController@show')->nam
 Route::get('agendar/{id}', 'App\Http\Controllers\HomeController@agendar')->name('agendar');
 
 Route::post('agendarPost', 'App\Http\Controllers\HomeController@agendarPost')->name('agendar.post');
+
+Route::get('combosAgendados', 'App\Http\Controllers\HomeController@va')->name('combos.agendados');
+

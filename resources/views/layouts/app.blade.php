@@ -133,6 +133,10 @@
                                     @if (Auth::user()->sys01admin == true)
                                         <a class="dropdown-item" href="/admin">Panel de control</a>
                                     @endif
+
+                                    @if (App/T11combosagendados::count() >= 1)
+                                        <a class="dropdown-item" href="/combosAgendados">Combos Agendados</a>
+                                    @endif
                                 </div>
                             </li>
                         @endguest
