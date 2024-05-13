@@ -54,9 +54,7 @@ class T11combosAgendadosController extends Controller
      */
     public function show(string $id)
     {
-        $registro = T11combosagendados::FindOrFail($id);
 
-        return view('admin.combos.edit', compact('registro'));
     }
 
     /**
@@ -64,7 +62,9 @@ class T11combosAgendadosController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $registro = T11combosagendados::FindOrFail($id);
+
+        return view('admin.combos.edit', compact('registro'));
     }
 
     /**
