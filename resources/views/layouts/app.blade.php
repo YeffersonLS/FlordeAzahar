@@ -149,7 +149,7 @@
 
                     <div>
                         <a href="/carrito" style="text-decoration: none; color: inherit;">
-                            <span style="font-size: 1.2em;"> 🛒</span>Carrito
+                            <span style="font-size: 1.2em;">🛒</span>Carrito
                         </a>
                     </div>
 
