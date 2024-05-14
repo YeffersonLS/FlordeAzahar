@@ -62,8 +62,8 @@
     };
 
     $(document).ready(function() {
-        $("#guardar").click(function(productoId, quantity){
-            const addToCartForm = document.querySelector('form[action="{{ route('cart.add') }}"]');
+    $("#guardar").click(function() {
+        const addToCartForm = document.querySelector('form[action="{{ route('cart.add') }}"]');
 
             addToCartForm.addEventListener('guardar', (event) => {
                 event.preventDefault(); // Prevent default form submission
