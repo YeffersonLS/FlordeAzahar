@@ -37,6 +37,7 @@
     label[for="quantity"] {
         font-size: 0.8rem; /* Reducir tamaño de fuente */
         margin-bottom: 0.5rem; /* Disminuir espaciado inferior */
+        font-size: 13px;
     }
 
     input[type="number"] {
@@ -46,6 +47,7 @@
         width: 5rem; /* Ajustar ancho */
         padding: 0.5rem; /* Ajustar relleno */
         font-family: sans-serif; /* Fuente simple */
+        font-size: 13px;
     }
 </style>
 @stop
