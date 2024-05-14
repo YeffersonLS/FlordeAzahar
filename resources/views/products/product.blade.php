@@ -72,7 +72,6 @@
     //             const quantity = document.getElementById('quantity').value;
 
     //             // Send the product ID and quantity to the controller using an AJAX request
-    //             fetch('{{ route('cart.add') }}', {
     //                 method: 'POST',
     //                 headers: {
     //                     'Content-Type': 'application/json',
