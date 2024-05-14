@@ -1,4 +1,25 @@
 @extends('layouts.app')
+@section('css')
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/pure-min.css">
+<style>
+    label[for="quantity"] {
+        font-size: 0.8rem; /* Reducir tamaño de fuente */
+        margin-bottom: 0.5rem; /* Disminuir espaciado inferior */
+        font-size: 13px;
+    }
+
+    input[type="number"] {
+        border-radius: 5px; /* Redondear esquinas */
+        border: none; /* Eliminar bordes */
+        box-shadow: none; /* Eliminar sombras */
+        width: 5rem; /* Ajustar ancho */
+        padding: 0.5rem; /* Ajustar relleno */
+        font-family: sans-serif; /* Fuente simple */
+        font-size: 13px;
+    }
+</style>
+@stop
 
 @section('content')
 <div class="container">
@@ -32,31 +53,9 @@
     </div>
 </div>
 
-@section('css')
-<style>
-    label[for="quantity"] {
-        font-size: 0.8rem; /* Reducir tamaño de fuente */
-        margin-bottom: 0.5rem; /* Disminuir espaciado inferior */
-        font-size: 13px;
-    }
-
-    input[type="number"] {
-        border-radius: 5px; /* Redondear esquinas */
-        border: none; /* Eliminar bordes */
-        box-shadow: none; /* Eliminar sombras */
-        width: 5rem; /* Ajustar ancho */
-        padding: 0.5rem; /* Ajustar relleno */
-        font-family: sans-serif; /* Fuente simple */
-        font-size: 13px;
-    }
-</style>
-@stop
-
 @endsection
 @section('js')
 {{-- <script src="{{ asset('public/vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script> --}}
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/pure-min.css">
 <script>
     function changeImage(imagePath) {
         document.getElementById('mainImage').src = "{{ asset('') }}" + imagePath;
