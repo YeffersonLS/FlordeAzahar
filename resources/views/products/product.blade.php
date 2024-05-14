@@ -32,6 +32,24 @@
     </div>
 </div>
 
+@section('css')
+<style>
+    label[for="quantity"] {
+        font-size: 0.8rem; /* Reducir tamaño de fuente */
+        margin-bottom: 0.5rem; /* Disminuir espaciado inferior */
+    }
+
+    input[type="number"] {
+        border-radius: 5px; /* Redondear esquinas */
+        border: none; /* Eliminar bordes */
+        box-shadow: none; /* Eliminar sombras */
+        width: 5rem; /* Ajustar ancho */
+        padding: 0.5rem; /* Ajustar relleno */
+        font-family: sans-serif; /* Fuente simple */
+    }
+</style>
+@stop
+
 @endsection
 @section('js')
 <script>
