@@ -22,7 +22,7 @@
     font-size: 16px;
     line-height: 1;
     width: 100%;
-    background: linear-gradient(
+    /* background: linear-gradient(
         to right,
         pink 5%,
         white 5% 10%,
@@ -44,7 +44,9 @@
         white 85% 90%,
         pink 90% 95%,
         white 95%
-      );
+      ); */
+    background-color: rgb(255, 102, 255); /* Cambia el color a tu preferencia */
+
 }
 
 .header-info ul li {
@@ -69,7 +71,7 @@
 }
 
 .header-top {
-    background: linear-gradient(
+    /* background: linear-gradient(
         to right,
         pink 5%,
         white 5% 10%,
@@ -91,7 +93,9 @@
         white 85% 90%,
         pink 90% 95%,
         white 95%
-      );
+      ); */
+    background-color: rgb(255, 102, 255); /* Cambia el color a tu preferencia */
+
 }
 
 .menu {
