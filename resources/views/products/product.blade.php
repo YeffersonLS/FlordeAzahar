@@ -3,7 +3,6 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <form action="{{ route('cart.add') }}" method="POST">
             <div class="mb-3">
                 <input type="text" class="form-control" id="t04id" name="t04id" value="{{ $product->t04id }}" hidden >
             </div>
