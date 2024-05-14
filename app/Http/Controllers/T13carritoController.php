@@ -11,11 +11,9 @@ class T13carritoController extends Controller
 {
     public function addToCart(Request $request) {
 
-        dd($request->all());
-        $productId = $request->get('product_id');
+        // dd($request->all());
+        $productId = $request->get('t04id');
         $quantity = $request->get('quantity');
-
-        dd($quantity);
 
         $cart = $this->getOrCreateCart();
 
