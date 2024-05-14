@@ -20,6 +20,6 @@ class T13carrito extends Model
 
     public function cartItems(): HasMany
     {
-        return $this->hasMany(T12carritoItem::class);
+        return $this->hasMany(T12carritoItem::class, 't12carrito');
     }
 }
