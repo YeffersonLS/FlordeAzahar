@@ -30,6 +30,7 @@ class T13carritoController extends Controller
                 't12producto' => $product->t04id,
                 't12cantidad' => $quantity,
             ]);
+            dd($cartItem);
             $cart->cartItems()->save($cartItem);
         }
 
