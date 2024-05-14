@@ -40,13 +40,13 @@ class T13carritoController extends Controller
     {
         $cart = $this->getOrCreateCart();
 
-        $cartItems = $cart->cartItems()->with('t12producto')->get();
+        // $cartItems = $cart->cartItems()->with('t12producto')->get();
 
 
-        // $cartItems = $cart->cartItems()->where('t12carrito', '=', $cart->t13id)->get();
+        $cartItems = $cart->cartItems()->where('t12carrito', '=', $cart->t13id)->get();
 
         // $cartItems = T12carritoItem::where('t12carrito', '=', $cart->t13id)->get();
-        dd($cartItems, '2');
+        dd($cartItems, '12');
 
         $total = 0;
         foreach ($cartItems as $cartItem) {
