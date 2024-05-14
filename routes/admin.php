@@ -79,6 +79,7 @@ Route::get('json.admin/combos', function (Request $request) {
     return \App\Models\T10combos::getDatatable($request);
 })->name('json.admin/combos');
 
+Route::patch('admin/diary/{id}', [\App\Http\Controllers\Admin\T11combosAgendadosController::class, 'update'])->name('admin.diary.update');
 Route::get('diary/{id}', [\App\Http\Controllers\Admin\T11combosAgendadosController::class, 'dayCombo'])->name('admin.diary.dayCombo');
 Route::resource('diary', \App\Http\Controllers\Admin\T11combosAgendadosController::class)->names('admin.diary');
 Route::get('json.admin/diary', function (Request $request) {
