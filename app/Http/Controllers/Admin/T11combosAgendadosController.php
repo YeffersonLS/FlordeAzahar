@@ -80,6 +80,8 @@ class T11combosAgendadosController extends Controller
         $registro->fill($data);
         $registro->update();
 
+        dd($registro);
+
         return redirect('/');
     }
 
