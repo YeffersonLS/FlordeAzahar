@@ -38,6 +38,7 @@ class T13carritoController extends Controller
     public function getCart()
     {
         $cart = $this->getOrCreateCart();
+        dd($cart);
         $cartItems = $cart->cartItems()->with('t12producto')->get();
 
         $total = 0;
@@ -65,7 +66,6 @@ class T13carritoController extends Controller
     {
         if (auth()->user()) {
             $cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first();
-            dd('entro');
         } else {
             $sessionId = request()->cookie('laravel_session');
             $cart = T13carrito::where('t13sessionid', $sessionId)->first();
