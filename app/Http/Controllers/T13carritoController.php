@@ -43,10 +43,10 @@ class T13carritoController extends Controller
         // $cartItems = $cart->cartItems()->with('t12producto')->get();
 
 
-        $cartItems = $cart->cartItems()->where('t12carrito', '=', $cart->t13id)->get();
+        // $cartItems = $cart->cartItems()->where('t12carrito', '=', $cart->t13id)->get();
 
-        // $cartItems = T12carritoItem::where('t12carrito', '=', $cart->t13id)->get();
-        dd($cartItems, '12');
+        $cartItems = T12carritoItem::where('t12carrito', '=', $cart->t13id)->get();
+        dd($cartItems);
 
         $total = 0;
         foreach ($cartItems as $cartItem) {
