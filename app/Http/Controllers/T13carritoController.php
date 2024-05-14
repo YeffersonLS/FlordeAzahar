@@ -31,7 +31,7 @@ class T13carritoController extends Controller
             $cart->cartItems()->save($cartItem);
         }
 
-        return response()->json(['mensaje' => 'Producto añadido al carrito']);
+        return response()->json(['mensaje' => 'Producto entro al carrito']);
 
     }
 
