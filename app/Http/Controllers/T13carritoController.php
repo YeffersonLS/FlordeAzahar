@@ -14,6 +14,8 @@ class T13carritoController extends Controller
         $productId = $request->get('product_id');
         $quantity = $request->get('quantity');
 
+        dd($quantity);
+
         $cart = $this->getOrCreateCart();
 
         $cartItem = $cart->cartItems()->where('t12producto', $productId)->first();
