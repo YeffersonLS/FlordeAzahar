@@ -39,7 +39,7 @@ class T13carritoController extends Controller
     {
         $cart = $this->getOrCreateCart();
         // dd($cart);
-        $cartItems = $cart->cartItems()->get();
+        $cartItems = $cart->cartItems();
         dd($cartItems, 'entro');
 
         $total = 0;
