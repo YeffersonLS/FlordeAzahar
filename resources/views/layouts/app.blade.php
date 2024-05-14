@@ -208,7 +208,10 @@
 </footer>
 
 @yield('js')
-
+<script src="{{ asset('public/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('public/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('public/vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+<script src="{{ asset('public/vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Selecciona la lista de noticias
