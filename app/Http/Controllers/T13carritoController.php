@@ -38,8 +38,10 @@ class T13carritoController extends Controller
     public function getCart()
     {
         $cart = $this->getOrCreateCart();
-        // dd($cart);
-        $cartItems = $cart->cartItems()->where('t12carrito', '=', $cart->t13id)->get();
+
+        // $cartItems = $cart->cartItems()->where('t12carrito', '=', $cart->t13id)->get();
+
+        $cartItems = T12carritoItem::where('t12carrito', '=', $cart->t13id)->get();
         dd($cartItems, 'entro');
 
         $total = 0;
