@@ -1,7 +1,7 @@
 
 
 .navbar-pink {
-    background-color: pink; /* Cambia el color a tu preferencia */
+    background-color: rgb(255, 102, 255); /* Cambia el color a tu preferencia */
 }
 .header-info ul {
     display: flex; /* Utiliza flexbox para los elementos de la lista */
