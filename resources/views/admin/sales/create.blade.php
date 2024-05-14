@@ -280,12 +280,12 @@
                             "<td tabindex='441' class='"+noedit+"'>"+json["t04id"]+"</td>" +
                             "<td tabindex='441' class='"+noedit+"'>"+json["t04nombre"]+"</td>" +
                             "<td tabindex='443' class='number'>1</td>" +
-                            "<td tabindex='444' class='precio"+noedit+"'>"+"$"+json["t04precio"]+" MNX"+"</td>" +
+                            "<td tabindex='444' class='precio"+noedit+"'>"+"$"+json["t04precio"]+" MXN"+"</td>" +
                             // "<td tabindex='445' class='number descuento'>0</td>" +
                             // "<td tabindex='445' class='number "+noedit+"'>0</td>" +
                             // "<td tabindex='446' class='number"+noedit+"'>"+iva+"</td>" +
                             // "<td tabindex='447' class='"+noedit+"'>"+valoriva.formatMoney(0)+"</td>" +
-                            "<td tabindex='444' class='precio"+noedit+"'>"+"$"+json["t04precio"]+" MNX"+"</td>" +
+                            "<td tabindex='444' class='precio"+noedit+"'>"+"$"+json["t04precio"]+" MXN"+"</td>" +
                             "</tr>");
                             actualizarTabla();
                     }

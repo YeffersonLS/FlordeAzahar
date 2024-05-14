@@ -14,7 +14,7 @@
                         <div class="card-info">
                             <p class="subcategoria-productos">{{ $product->t02nombre }}</p>
                             <h5 class="card-title">{{ $product->t04nombre }}</h5>
-                            <p class="card-money">{{ '$' . $product->t04precio . ' Mnx' }}</p>
+                            <p class="card-money">{{ '$' . $product->t04precio . ' MXN' }}</p>
                         </div>
                     </div>
                 </a>

@@ -13,7 +13,7 @@
 
     <!-- Mostrar el valor del monedero -->
     <div class="monedero">
-        <h3>Saldo en el monedero: {{ $total.' Mnx' }}</h3>
+        <h3>Saldo en el monedero: {{ $total.' MXN' }}</h3>
     </div>
     <!-- Tabla de cargos en el monedero -->
     <h4>Cargos en el monedero:</h4>
