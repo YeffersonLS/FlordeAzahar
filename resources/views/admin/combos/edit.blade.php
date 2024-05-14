@@ -18,8 +18,7 @@
     <div class="col-12">
         <div class="card border-primary">
             <div class="col-10">
-                <form action="{{ route('admin.diary.update', ['diary' => $registro->t11id]) }}" method="POST">
-                    @method('PUT')
+                <form action="{{ route('admin.diary.update', ['diary' => $registro->t11id]) }}" method="PUT">
                     @csrf
 
                     <div class="col-md-4">
