@@ -64,7 +64,7 @@
 
     // $(document).ready(function() {
     // $("#guardar").click(function() {
-    //     const addToCartForm = document.querySelector('form[action="{{ route('cart.add') }}"]');
+    //     const addToCartForm = document.querySelector('form[action="{{ route('cart.add', $product->t04id) }}"]');
 
     //         addToCartForm.addEventListener('guardar', (event) => {
     //             event.preventDefault(); // Prevent default form submission
