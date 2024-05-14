@@ -42,7 +42,7 @@
                     <input type="text" class="form-control" id="t04id" name="t04id" value="{{ $product->t04id }}" hidden >
                     <label for="quantity">Cantidad:</label>
                     <input type="number" name="quantity" id="quantity" min="1" value="1">
-                    <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+                    <button type="submit" class="btn btn-primary"><i class=" fa-shopping-cart"></i>Agregar al carrito</button>
                 </form>
 
 
