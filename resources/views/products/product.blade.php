@@ -37,7 +37,7 @@
                 @endforeach
             </div>
             <div class="mt-3">
-                <form action="{{ route('cart.add'}}" method="POST">
+                <form action="{{ route('cart.add') }}" method="POST">
                     @csrf
                     <input type="text" class="form-control" id="t04id" name="t04id" value="{{ $product->t04id }}" hidden >
                     <label for="quantity">Cantidad:</label>
