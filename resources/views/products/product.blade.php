@@ -57,41 +57,41 @@
 <script>
     function changeImage(imagePath) {
         document.getElementById('mainImage').src = "{{ asset('') }}" + imagePath;
-    }
+    };
 
     $(document).ready(function() {
-    $("#guardar").click(function(productoId, quantity){
-        const addToCartForm = document.querySelector('form[action="{{ route('cart.add') }}"]');
+        $("#guardar").click(function(productoId, quantity){
+            const addToCartForm = document.querySelector('form[action="{{ route('cart.add') }}"]');
 
-        addToCartForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Prevent default form submission
+            addToCartForm.addEventListener('submit', (event) => {
+                event.preventDefault(); // Prevent default form submission
 
-            const productId = document.getElementById('t04id').value;
-            const quantity = document.getElementById('quantity').value;
+                const productId = document.getElementById('t04id').value;
+                const quantity = document.getElementById('quantity').value;
 
-            // Send the product ID and quantity to the controller using an AJAX request
-            fetch('{{ route('cart.add') }}', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}' // Add CSRF token for security
-                },
-                body: JSON.stringify({
-                    product_id: productId,
-                    quantity: quantity
+                // Send the product ID and quantity to the controller using an AJAX request
+                fetch('{{ route('cart.add') }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}' // Add CSRF token for security
+                    },
+                    body: JSON.stringify({
+                        product_id: productId,
+                        quantity: quantity
+                    })
                 })
-            })
-                .then(response => response.json())
-                .then(data => {
-                    // Handle the response from the controller (e.g., display a success message)
-                    console.log('Producto añadido al carrito:', data);
-                })
-                .catch(error => {
-                    console.error('Error al añadir al carrito:', error);
-                });
+                    .then(response => response.json())
+                    .then(data => {
+                        // Handle the response from the controller (e.g., display a success message)
+                        console.log('Producto añadido al carrito:', data);
+                    })
+                    .catch(error => {
+                        console.error('Error al añadir al carrito:', error);
+                    });
+            });
         });
     });
-});
 </script>
 
 @endsection
