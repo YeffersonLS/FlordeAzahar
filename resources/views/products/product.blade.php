@@ -65,7 +65,7 @@
         $("#guardar").click(function(productoId, quantity){
             const addToCartForm = document.querySelector('form[action="{{ route('cart.add') }}"]');
 
-            addToCartForm.addEventListener('submit', (event) => {
+            addToCartForm.addEventListener('guardar', (event) => {
                 event.preventDefault(); // Prevent default form submission
 
                 const productId = document.getElementById('t04id').value;
