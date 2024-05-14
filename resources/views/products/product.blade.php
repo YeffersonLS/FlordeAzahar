@@ -64,6 +64,7 @@
 
     // $(document).ready(function() {
     // $("#guardar").click(function() {
+    //     const addToCartForm = document.querySelector('form[action="{{ route('cart.add') }}"]');
 
     //         addToCartForm.addEventListener('guardar', (event) => {
     //             event.preventDefault(); // Prevent default form submission
@@ -72,6 +73,7 @@
     //             const quantity = document.getElementById('quantity').value;
 
     //             // Send the product ID and quantity to the controller using an AJAX request
+    //             fetch('{{ route('cart.add') }}', {
     //                 method: 'POST',
     //                 headers: {
     //                     'Content-Type': 'application/json',

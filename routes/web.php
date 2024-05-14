@@ -61,5 +61,5 @@ Route::post('agendarPost', 'App\Http\Controllers\HomeController@agendarPost')->n
 
 Route::get('combosAgendados', 'App\Http\Controllers\HomeController@combosAgendados')->name('combos.agendados');
 
-Route::post('agregarPost/{product}', 'App\Http\Controllers\T13carritoController@addToCart')->name('cart.add');
+Route::post('agregarPost', 'App\Http\Controllers\T13carritoController@addToCart')->name('cart.add');
 
