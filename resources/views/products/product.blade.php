@@ -54,6 +54,7 @@
 
 @endsection
 @section('js')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pure/1.0.1/pure-min.css">
 <script>
     function changeImage(imagePath) {
         document.getElementById('mainImage').src = "{{ asset('') }}" + imagePath;
