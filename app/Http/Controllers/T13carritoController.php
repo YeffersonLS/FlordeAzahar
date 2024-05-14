@@ -9,8 +9,9 @@ use Illuminate\Http\Request;
 
 class T13carritoController extends Controller
 {
-    public function addToCart(Request $request, $productId) {
+    public function addToCart(Request $request) {
 
+        dd($request->all());
         $productId = $request->get('product_id');
         $quantity = $request->get('quantity');
 
