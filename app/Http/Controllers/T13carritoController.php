@@ -63,9 +63,9 @@ class T13carritoController extends Controller
 
     private function getOrCreateCart()
     {
-        dd($cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first());
         if (auth()->user()) {
             $cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first();
+            dd($cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first());
         } else {
             $sessionId = request()->cookie('laravel_session');
             $cart = T13carrito::where('t13sessionid', $sessionId)->first();
