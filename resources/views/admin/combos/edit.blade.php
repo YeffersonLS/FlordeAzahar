@@ -51,6 +51,8 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit">Update</button>
+
                 </form>
             </div>
         </div>
