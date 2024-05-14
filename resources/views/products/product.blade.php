@@ -40,7 +40,7 @@
                 @endforeach
             </div>
             <div class="mt-3">
-                <form action="{{ route('cart.add', ['product' => $product->t04id], ['quantity'=> 'quantity']) }}" method="POST">
+                <form action="{{ route('cart.add', $product->t04id) }}" method="POST">
                     @csrf
                     <label for="quantity">Cantidad:</label>
                     <input type="number" name="quantity" id="quantity" min="1" value="1">
