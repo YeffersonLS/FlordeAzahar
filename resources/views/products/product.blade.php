@@ -24,9 +24,6 @@
 @section('content')
 <div class="container">
     <div class="row">
-            <div class="mb-3">
-                <input type="text" class="form-control" id="t04id" name="t04id" value="{{ $product->t04id }}" hidden >
-            </div>
         <div class="col-md-6">
             <img src="{{ asset($image->image_path) }}" alt="{{ $product->t02nombre }}" id="mainImage" class="img-fluid">
         </div>
@@ -40,8 +37,9 @@
                 @endforeach
             </div>
             <div class="mt-3">
-                <form action="{{ route('cart.add', $product->t04id) }}" method="POST">
+                <form action="{{ route('cart.add'}}" method="POST">
                     @csrf
+                    <input type="text" class="form-control" id="t04id" name="t04id" value="{{ $product->t04id }}" hidden >
                     <label for="quantity">Cantidad:</label>
                     <input type="number" name="quantity" id="quantity" min="1" value="1">
                     <button type="submit" class="btn btn-primary">Agregar al carrito</button>
