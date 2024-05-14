@@ -183,9 +183,9 @@
                 <div class="col-md-6">
                     <h3>Síguenos</h3>
                     <ul class="list-inline">
-                        <li><a href="https://www.facebook.com/profile.php?id=100093570651456"><i class="fab fa-facebook"></i></a>Facebook</li>
+                        <li><a href="https://www.facebook.com/profile.php?id=100093570651456"><i class="fab fa-facebook"></i>Facebook</a></li>
                         <li><a href="https://www.tiktok.com/@heladeriaflordeaz"><i class="fab fa-tiktok"></i>Tik Tok</a></li>
-                        <li><a href="https://www.instagram.com/flordeazahargerencia/"><i class="fab fa-instagram"></i></a>Instagram</li>
+                        <li><a href="https://www.instagram.com/flordeazahargerencia/"><i class="fab fa-instagram"></i>Instagram</a></li>
                         {{-- <li><a href="#"><i class="fab fa-linkedin"></i></a></li> --}}
                     </ul>
                 </div>
