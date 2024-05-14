@@ -25,6 +25,7 @@ class T13carritoController extends Controller
         } else {
             $product = T04productos::findOrFail($productId);
             $cartItem = new T12carritoItem([
+                't12carrito' => $cart->t13id,
                 't12producto' => $product->t04id,
                 't12cantidad' => $quantity,
             ]);
@@ -39,10 +40,13 @@ class T13carritoController extends Controller
     {
         $cart = $this->getOrCreateCart();
 
+        $cartItems = $cart->cartItems()->with('t12producto')->get();
+
+
         // $cartItems = $cart->cartItems()->where('t12carrito', '=', $cart->t13id)->get();
 
-        $cartItems = T12carritoItem::where('t12carrito', '=', $cart->t13id)->get();
-        dd($cartItems, 'entro');
+        // $cartItems = T12carritoItem::where('t12carrito', '=', $cart->t13id)->get();
+        dd($cartItems, '2');
 
         $total = 0;
         foreach ($cartItems as $cartItem) {
