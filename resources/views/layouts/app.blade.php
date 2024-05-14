@@ -74,7 +74,7 @@
                 </a>
             @else
             <a class="navbar-brand" href="{{ url('/') }}">
-                <img class="rounded-circle" src="{{ asset('public/vendor/adminlte/dist/img/AdminLTELogo.svg') }}" alt="Logo" style="width: 80px; height: 80px;">
+                <img class="rounded-circle" src="{{ asset('public/vendor/adminlte/dist/img/AdminLTELogo.svg') }}" alt="Logo" style="width: 60px; height: 60px;">
                 {{ 'Flor de Azahar' }}
             </a>
             @endif
