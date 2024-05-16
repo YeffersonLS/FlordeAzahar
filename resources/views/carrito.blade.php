@@ -24,7 +24,7 @@
                     <td>{{ $item->price * $item->quantity }}</td>
                     <td>
                         <a href="#" class="btn btn-danger btn-sm">Eliminar</a>
-                        <a href="#" class="btn btn-primary btn-sm">Editar</a>
+                        {{-- <a href="#" class="btn btn-primary btn-sm">Editar</a> --}}
                     </td>
                 </tr>
                 @endforeach
