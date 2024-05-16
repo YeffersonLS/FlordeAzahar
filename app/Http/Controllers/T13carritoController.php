@@ -11,12 +11,12 @@ class T13carritoController extends Controller
 {
     public function addToCart(Request $request) {
 
-        dd(request()->cookie('flordeazahar_session'));
+        // dd(request()->cookie('flordeazahar_session'));
         $productId = $request->get('t04id');
         $quantity = $request->get('quantity');
 
         $cart = $this->getOrCreateCart();
-        dd($cart, request()->cookie('flordeazahar_session'));
+        // dd($cart, request()->cookie('flordeazahar_session'));
 
         $cartItem = $cart->cartItems()->where('t12producto', $productId)->first();
 
