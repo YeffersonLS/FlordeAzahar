@@ -26,7 +26,8 @@ class T13carritoController extends Controller
             foreach ($cartItem as $item) {
                 if($item->t12producto = $productId){
                     $item->t12cantidad += $quantity;
-                    dd($quantity, $item);
+                    // dd($quantity, $item);
+                    $item->update();
                 }
             }
             $cartItem->t12cantidad += $quantity;
