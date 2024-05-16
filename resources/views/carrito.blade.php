@@ -32,23 +32,23 @@
             <tfoot>
                 <tr>
                     <td colspan="3">Subtotal</td>
-                    <td>{{ Cart::subtotal() }}</td>
+                    <td>1</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td colspan="3">Envío</td>
-                    <td>{{ Cart::shipping() }}</td>
+                    <td>1</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td colspan="3">Total</td>
-                    <td>{{ Cart::total() }}</td>
+                    <td>1</td>
                     <td></td>
                 </tr>
             </tfoot>
         </table>
 
-        <a href="{{ route('checkout.index') }}" class="btn btn-success btn-lg">Proceder al pago</a>
+        <a href="#" class="btn btn-success btn-lg">Proceder al pago</a>
     @else
         <p class="text-center">Tu carrito está vacío.</p>
     @endif
