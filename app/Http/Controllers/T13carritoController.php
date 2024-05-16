@@ -78,8 +78,7 @@ class T13carritoController extends Controller
         $data = $request->all();
         // dd($data);
         $cartItem = T12carritoItem::where('t12producto', '=', $request->t12producto)
-        ->where('t12carrito', '=', $request->t12carrito)
-        ->get();
+        ->where('t12carrito', '=', $request->t12carrito);
         // dd($cartItem);
         $cartItem->delete();
 
