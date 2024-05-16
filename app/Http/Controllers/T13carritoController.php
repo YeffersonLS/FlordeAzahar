@@ -43,24 +43,28 @@ class T13carritoController extends Controller
         $cart = $this->getOrCreateCart();
 
         // $cartItems = $cart->cartItems()->with('t12producto')->get();
-
+        $check = false;
 
         // $cartItems = $cart->cartItems()->where('t12carrito', '=', $cart->t13id)->get();
 
-        $cartItems = T12carritoItem::where('t12carrito', '=', $cart->t13id)->get();
+        $cartItems = T12carritoItem::select('t12producto', 't12cantidad', 't12carrito', 'p.t04precio', 'p.t04id', 'p.t04nombre')
+        ->leftJoin('t04productos as p', 'p.t04id', '=', 't12producto')
+        ->where('t12carrito', '=', $cart->t13id)->get();
         // dd($cartItems);
 
         $total = 0;
         foreach ($cartItems as $cartItem) {
-            $query = T04productos::findOrFail($cartItem->t12producto);
+            $check = true;
+            // $query = T04productos::findOrFail($cartItem->t12producto);
 
-            $total += $query->t04precio * $cartItem->t12cantidad;
+            $total += $cartItem->t04precio * $cartItem->t12cantidad;
         }
 
-        return response()->json([
-            'cartItems' => $cartItems,
-            'total' => $total
-        ]);
+        return view('carrito', compact('cartItems', 'total', 'check'));
+        // return response()->json([
+        //     'cartItems' => $cartItems,
+        //     'total' => $total
+        // ]);
     }
 
     public function removeCartItem($cartItemId)
