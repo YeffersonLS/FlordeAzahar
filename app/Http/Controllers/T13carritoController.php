@@ -14,6 +14,7 @@ class T13carritoController extends Controller
         // dd(request()->cookie('flordeazahar_session'));
         $productId = $request->get('t04id');
         $quantity = $request->get('quantity');
+        $product = T04productos::FindOrFail($productId);
 
         $cart = $this->getOrCreateCart();
         // dd($cart, request()->cookie('flordeazahar_session'));
@@ -34,7 +35,6 @@ class T13carritoController extends Controller
                 }
             }
         } else {
-            $product = T04productos::FindOrFail($productId);
             $cartItem = new T12carritoItem([
                 't12carrito' => $cart->t13id,
                 't12producto' => $product->t04id,
@@ -43,7 +43,9 @@ class T13carritoController extends Controller
             $cartItem->save();
         }
 
-        return response()->json(['mensaje' => 'Producto entro al carrito']);
+        return redirect('producto/'.$product->t04slug)->with('mensaje', 'Se agrego el producto al carrito correctamente');
+
+        // return response()->json(['mensaje' => 'Producto entro al carrito']);
 
     }
 
