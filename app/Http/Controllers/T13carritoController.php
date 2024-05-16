@@ -30,7 +30,6 @@ class T13carritoController extends Controller
                     $item->update();
                 }
             }
-            $cartItem->t12cantidad += $quantity;
         } else {
             $product = T04productos::findOrFail($productId);
             $cartItem = new T12carritoItem([
