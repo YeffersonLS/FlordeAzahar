@@ -20,7 +20,7 @@ class T13carritoController extends Controller
 
         $cartItem = $cart->cartItems()->where('t12producto', $productId)->first();
 
-        dd($cartItem);
+        dd($cartItem, $cart);
 
         if ($cartItem) {
             $cartItem->quantity += $quantity;
