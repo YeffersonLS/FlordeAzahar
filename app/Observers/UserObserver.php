@@ -18,7 +18,18 @@ class UserObserver
      */
     public function created(User $user): void
     {
+        dump($user);
 
+        $cartCache = request()->cookie('flordeazahar_session');
+
+        $query = T13carrito::where('t13sessionid', $cartCache)->first();
+        dd($query);
+        if (empty($query)) {
+            $query->t13sessionid = null;
+            $query->t13cliente = $user->sys01id;
+            $query->update();
+            dump($query);
+        }
     }
 
     /**
@@ -26,18 +37,7 @@ class UserObserver
      */
     public function updated(User $user): void
     {
-        dump($user);
 
-        $cartCache = request()->cookie('flordeazahar_session');
-
-        $query = T13carrito::where('t13sessionid', $cartCache)->first();
-
-        if (empty($query)) {
-            $query->t13sessionid = null;
-            $query->t13cliente = $user->sys01id;
-            $query->update();
-            dump($query);
-        }
     }
 
     /**

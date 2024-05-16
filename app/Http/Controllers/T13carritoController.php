@@ -51,6 +51,8 @@ class T13carritoController extends Controller
 
     public function getCart()
     {
+        dd(request()->cookie('flordeazahar_session'));
+
         $cart = $this->getOrCreateCart();
 
         $check = false;
