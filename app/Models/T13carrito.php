@@ -13,9 +13,11 @@ class T13carrito extends Model
 
     protected $table = 't13carritos';
 
+    protected $primaryKey = 't13id';
+
     public $fillable = [
-        't13cliente', // Opcional si se desea asociar el carrito al usuario
-        't13sessionid' // Identificador de sesión para carritos de invitados
+        't13cliente',
+        't13sessionid'
     ];
 
     public function cartItems(): HasMany

@@ -66,3 +66,6 @@ Route::post('agregarPost', 'App\Http\Controllers\T13carritoController@addToCart'
 Route::get('carrito', 'App\Http\Controllers\T13carritoController@getCart')->name('cart.get');
 
 Route::post('carrito', 'App\Http\Controllers\T13carritoController@removeCartItem')->name('cart.delete');
+
+Route::post('pago', 'App\Http\Controllers\T14pedidosController@pay')->name('pay.cart');
+

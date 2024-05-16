@@ -52,8 +52,12 @@
                 </tr>
             </tfoot>
         </table>
-
-        <a href="#" class="btn btn-success btn-lg">Proceder al pago</a>
+        <form action="{{ route('pay.cart') }}" method="POST">
+            @csrf
+            <input type="text" class="form-control" id="t12carrito" name="t12carrito" value="{{ $item->t12carrito }}" hidden >
+            <button type="submit" class="btn btn-success btn-lg">Proceder al pago</button>
+        </form>
+        <a href="#" class=""></a>
     @else
         <p class="text-center">Tu carrito está vacío.</p>
     @endif
