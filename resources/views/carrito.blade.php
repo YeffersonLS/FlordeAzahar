@@ -25,7 +25,7 @@
                     <td>
                         <form action="{{ route('cart.delete') }}" method="POST">
                             @csrf
-                            <input type="text" class="form-control" id="t04id" name="t04id" value="{{ $item->t12producto }}" hidden >
+                            <input type="text" class="form-control" id="t12producto" name="t12producto" value="{{ $item->t12producto }}" hidden >
                             <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trahs"></i> Eliminar</button>
                         </form>
                         {{-- <a href="#" class="btn btn-primary btn-sm">Editar</a> --}}
