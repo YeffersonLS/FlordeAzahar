@@ -23,13 +23,13 @@ class T13carritoController extends Controller
         ->where('t12producto', '=', $productId)
         ->where('t12id', '=', $cart->t13id)->get();
 
-        // dd($cartItem);
+        dump($cartItem);
 
         if ($cartItem) {
             foreach ($cartItem as $item) {
                 if($item->t12producto = $productId){
                     $item->t12cantidad + $quantity;
-                    // dd($quantity, $item);
+                    dump($item);
                     $item->update();
                 }
             }
