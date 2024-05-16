@@ -11,7 +11,7 @@ class T13carritoController extends Controller
 {
     public function addToCart(Request $request) {
 
-        // dd($request->all());
+        dd(request()->cookie('flordeazahar_session'));
         $productId = $request->get('t04id');
         $quantity = $request->get('quantity');
 

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('t13id');
             $table->unsignedBigInteger('t13cliente')->nullable();
             $table->foreign('t13cliente')->references('sys01id')->on('sys01usuarios')->onDelete('cascade');
-            $table->bigInteger('t13sessionid')->nullable();
+            $table->text('t13sessionid')->nullable();
             $table->timestamps();
         });
     }
