@@ -84,6 +84,9 @@ class T13carritoController extends Controller
         // dd($cartItem);
         $cartItem->delete();
 
+        return redirect('carrito')->with('mensaje', 'Se elimino el producto correctamente');
+
+
         return response()->json(['mensaje' => 'Elemento eliminado del carrito']);
     }
 
