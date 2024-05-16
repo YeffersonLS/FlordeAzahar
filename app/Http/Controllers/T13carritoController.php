@@ -18,7 +18,7 @@ class T13carritoController extends Controller
         $cart = $this->getOrCreateCart();
         // dd($cart, request()->cookie('flordeazahar_session'));
 
-        $cartItem = T12carritoItem::select('t12id', 't12producto', 't12cantidad', 'p.t04id')
+        $cartItem = T12carritoItem::select('t12id', 't12producto', 't12cantidad', 'p.t04id', 'p.t04nombre')
         ->leftJoin('t04productos as p', 'p.t04id', '=', 't12producto')
         ->where('t12id', '=', $cart->t13id)->get();
 
