@@ -23,8 +23,8 @@
                     <td>{{ $item->quantity }}</td>
                     <td>{{ $item->price * $item->quantity }}</td>
                     <td>
-                        <a href="{{ route('cart.remove', $item->rowId) }}" class="btn btn-danger btn-sm">Eliminar</a>
-                        <a href="{{ route('cart.update', $item->rowId) }}" class="btn btn-primary btn-sm">Editar</a>
+                        <a href="#" class="btn btn-danger btn-sm">Eliminar</a>
+                        <a href="#" class="btn btn-primary btn-sm">Editar</a>
                     </td>
                 </tr>
                 @endforeach
