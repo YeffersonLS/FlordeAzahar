@@ -30,16 +30,16 @@
                 @endforeach
             </tbody>
             <tfoot>
-                <tr>
+                {{-- <tr>
                     <td colspan="3">Subtotal</td>
                     <td>1</td>
                     <td></td>
-                </tr>
-                <tr>
+                </tr> --}}
+                {{-- <tr>
                     <td colspan="3">Envío</td>
                     <td>1</td>
                     <td></td>
-                </tr>
+                </tr> --}}
                 <tr>
                     <td colspan="3">Total</td>
                     <td>1</td>
