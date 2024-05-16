@@ -77,8 +77,9 @@ class T13carritoController extends Controller
     {
         $data = $request->all();
 
-        dd($data);
-        $cartItem = T12carritoItem::findOrFail(1);
+        // dd($data);
+        $cartItem = T12carritoItem::findOrFail($data->t04id);
+        dd($cartItem);
         $cartItem->delete();
 
         return response()->json(['mensaje' => 'Elemento eliminado del carrito']);
