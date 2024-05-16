@@ -34,6 +34,7 @@ class T13carritoController extends Controller
                 }
             }
         } else {
+            dd('salto');
             $product = T04productos::findOrFail($productId);
             $cartItem = new T12carritoItem([
                 't12carrito' => $cart->t13id,
