@@ -80,7 +80,7 @@ class T13carritoController extends Controller
         if (auth()->user()) {
             $cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first();
         } else {
-            $sessionId = request()->cookie('laravel_session');
+            $sessionId = request()->cookie('flordeazahar_session');
             $cart = T13carrito::where('t13sessionid', $sessionId)->first();
         }
 
@@ -89,7 +89,7 @@ class T13carritoController extends Controller
             if (auth()->user()) {
                 $cart->t13cliente = auth()->user()->sys01id;
             } else {
-                $cart->t13sessionid = request()->cookie('laravel_session');
+                $cart->t13sessionid = request()->cookie('flordeazahar_session');
             }
             $cart->save();
         }
