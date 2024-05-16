@@ -20,10 +20,10 @@ class T13carritoController extends Controller
 
         $cartItem = T12carritoItem::where('t12id', '=', $cart->t13id)->get();
 
-        dd($cartItem, $cart);
+        dd($cartItem, $cart, $quantity);
 
         if ($cartItem) {
-            $cartItem->quantity += $quantity;
+            $cartItem->t12cantidad += $quantity;
         } else {
             $product = T04productos::findOrFail($productId);
             $cartItem = new T12carritoItem([
