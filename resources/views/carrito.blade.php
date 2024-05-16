@@ -18,10 +18,10 @@
             <tbody>
                 @foreach ($cartItems as $item)
                 <tr>
-                    <td>{{ $item->name }}</td>
-                    <td>{{ $item->price }}</td>
-                    <td>{{ $item->quantity }}</td>
-                    <td>{{ $item->price * $item->quantity }}</td>
+                    <td>{{ $item->t04nombre }}</td>
+                    <td>{{ $item->t04precio }}</td>
+                    <td>{{ $item->t12cantidad }}</td>
+                    <td>{{ $item->t04precio * $item->t12cantidad }}</td>
                     <td>
                         <a href="#" class="btn btn-danger btn-sm">Eliminar</a>
                         {{-- <a href="#" class="btn btn-primary btn-sm">Editar</a> --}}
