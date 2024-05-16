@@ -80,7 +80,7 @@ class T13carritoController extends Controller
         $cartItem = T12carritoItem::where('t12producto', '=', $request->t12producto)
         ->where('t12carrito', '=', $request->t12carrito)
         ->get();
-        dd($cartItem);
+        // dd($cartItem);
         $cartItem->delete();
 
         return response()->json(['mensaje' => 'Elemento eliminado del carrito']);
