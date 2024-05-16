@@ -16,7 +16,7 @@ class T13carritoController extends Controller
         $quantity = $request->get('quantity');
 
         $cart = $this->getOrCreateCart();
-        dd($cart);
+        // dd($cart);
 
         $cartItem = $cart->cartItems()->where('t12producto', $productId)->first();
 
@@ -48,7 +48,7 @@ class T13carritoController extends Controller
         // $cartItems = $cart->cartItems()->where('t12carrito', '=', $cart->t13id)->get();
 
         $cartItems = T12carritoItem::where('t12carrito', '=', $cart->t13id)->get();
-        dd($cartItems);
+        // dd($cartItems);
 
         $total = 0;
         foreach ($cartItems as $cartItem) {
