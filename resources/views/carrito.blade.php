@@ -42,7 +42,7 @@
                 </tr> --}}
                 <tr>
                     <td colspan="3">Total</td>
-                    <td>1</td>
+                    <td>{{ $total }}</td>
                     <td></td>
                 </tr>
             </tfoot>
