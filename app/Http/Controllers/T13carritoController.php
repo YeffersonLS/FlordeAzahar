@@ -40,12 +40,12 @@ class T13carritoController extends Controller
                 't12producto' => $product->t04id,
                 't12cantidad' => $quantity,
             ]);
-            dd($cartItem);
+            // dd($cartItem);
 
 
             $cartItem->save();
 
-            $cart->cartItems()->save($cartItem);
+            // $cart->cartItems()->save($cartItem);
         }
 
         return response()->json(['mensaje' => 'Producto entro al carrito']);
