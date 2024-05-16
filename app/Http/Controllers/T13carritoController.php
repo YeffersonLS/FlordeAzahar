@@ -34,7 +34,7 @@ class T13carritoController extends Controller
                 }
             }
         } else {
-            $product = T04productos::findOrFail($productId);
+            $product = T04productos::where($productId);
             $cartItem = new T12carritoItem([
                 't12carrito' => $cart->t13id,
                 't12producto' => $product->t04id,
@@ -66,7 +66,7 @@ class T13carritoController extends Controller
             $total += $cartItem->t04precio * $cartItem->t12cantidad;
         }
 
-        return view('carrito', compact('cartItems', 'total', 'check'));
+        return view('carrito', compact('cartItems', 'total', 'check', 'cart'));
         // return response()->json([
         //     'cartItems' => $cartItems,
         //     'total' => $total
@@ -76,8 +76,9 @@ class T13carritoController extends Controller
     public function removeCartItem(Request $request)
     {
         $data = $request->all();
-        // dd($data);
-        $cartItem = T12carritoItem::findOrFail($request->t12producto);
+        dd($data);
+        $cartItem = T12carritoItem::where('t12producto', '=', $request->t12producto)
+        ->where('t12carrito', '=', $request->t13id);
         dump($cartItem);
         $cartItem->delete();
 
