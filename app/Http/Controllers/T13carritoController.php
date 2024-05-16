@@ -40,12 +40,7 @@ class T13carritoController extends Controller
                 't12producto' => $product->t04id,
                 't12cantidad' => $quantity,
             ]);
-            // dd($cartItem);
-
-
             $cartItem->save();
-
-            // $cart->cartItems()->save($cartItem);
         }
 
         return response()->json(['mensaje' => 'Producto entro al carrito']);
@@ -54,25 +49,19 @@ class T13carritoController extends Controller
 
     public function getCart()
     {
-        // dd(request()->cookie('flordeazahar_session'));
-
         $cart = $this->getOrCreateCart();
 
-        // $cartItems = $cart->cartItems()->with('t12producto')->get();
         $check = false;
 
-        // $cartItems = $cart->cartItems()->where('t12carrito', '=', $cart->t13id)->get();
 
 
         $cartItems = T12carritoItem::select('t12producto', 't12cantidad', 't12carrito', 'p.t04precio', 'p.t04id', 'p.t04nombre')
         ->leftJoin('t04productos as p', 'p.t04id', '=', 't12producto')
         ->where('t12carrito', '=', $cart->t13id)->get();
-        // dd($cartItems);
 
         $total = 0;
         foreach ($cartItems as $cartItem) {
             $check = true;
-            // $query = T04productos::findOrFail($cartItem->t12producto);
 
             $total += $cartItem->t04precio * $cartItem->t12cantidad;
         }
@@ -84,9 +73,11 @@ class T13carritoController extends Controller
         // ]);
     }
 
-    public function removeCartItem($cartItemId)
+    public function removeCartItem(Request $request)
     {
-        $cartItem = T12carritoItem::findOrFail($cartItemId);
+        $data = $request()->all();
+        dd($request);
+        $cartItem = T12carritoItem::findOrFail(1);
         $cartItem->delete();
 
         return response()->json(['mensaje' => 'Elemento eliminado del carrito']);

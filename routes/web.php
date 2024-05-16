@@ -64,3 +64,5 @@ Route::get('combosAgendados', 'App\Http\Controllers\HomeController@combosAgendad
 Route::post('agregarPost', 'App\Http\Controllers\T13carritoController@addToCart')->name('cart.add');
 
 Route::get('carrito', 'App\Http\Controllers\T13carritoController@getCart')->name('cart.get');
+
+Route::post('carrito', 'App\Http\Controllers\T13carritoController@removeCartItem')->name('cart.delete');

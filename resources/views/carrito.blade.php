@@ -23,7 +23,11 @@
                     <td>{{ $item->t12cantidad }}</td>
                     <td>{{ $item->t04precio * $item->t12cantidad }}</td>
                     <td>
-                        <a href="#" class="btn btn-danger btn-sm">Eliminar</a>
+                        <form action="{{ route('cart.delete') }}" method="POST">
+                            @csrf
+                            <input type="text" class="form-control" id="t04id" name="t04id" value="{{ $product->t04id }}" hidden >
+                            <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-trahs"></i> Eliminar</button>
+                        </form>
                         {{-- <a href="#" class="btn btn-primary btn-sm">Editar</a> --}}
                     </td>
                 </tr>
