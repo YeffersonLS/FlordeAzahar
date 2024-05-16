@@ -76,7 +76,8 @@ class T13carritoController extends Controller
     public function removeCartItem(Request $request)
     {
         $data = $request->all();
-        dd($request);
+
+        dd($data);
         $cartItem = T12carritoItem::findOrFail(1);
         $cartItem->delete();
 
