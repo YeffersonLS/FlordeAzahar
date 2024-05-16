@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\Models\T13carrito;
 use App\Models\User;
 
 class UserObserver
@@ -9,7 +10,7 @@ class UserObserver
 
     public function creating(User $user): void
     {
-        dd($user);
+
     }
 
     /**
@@ -25,7 +26,18 @@ class UserObserver
      */
     public function updated(User $user): void
     {
-        //
+        dump($user);
+
+        $cartCache = request()->cookie('flordeazahar_session');
+
+        $query = T13carrito::where('t13sessionid', $cartCache)->first();
+
+        if (empty($query)) {
+            $query->t13sessionid = null;
+            $query->t13cliente = $user->sys01id;
+            $query->update();
+            dump($query);
+        }
     }
 
     /**
