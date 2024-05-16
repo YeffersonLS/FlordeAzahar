@@ -66,7 +66,7 @@ class T13carritoController extends Controller
             $total += $cartItem->t04precio * $cartItem->t12cantidad;
         }
 
-        return view('carrito', compact('cartItems', 'total', 'check', 'cart'));
+        return view('carrito', compact('cartItems', 'total', 'check'));
         // return response()->json([
         //     'cartItems' => $cartItems,
         //     'total' => $total
