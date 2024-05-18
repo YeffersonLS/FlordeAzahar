@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\T13carrito;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -66,7 +67,10 @@ class RegisterController extends Controller
     {
         // dd();
 
-        dd($data, request()->cookie('flordeazahar_session'));
+        $sessionId = request()->cookie('flordeazahar_session');
+        $cart = T13carrito::where('t13sessionid', $sessionId)->first();
+
+        dd($data, $cart);
 
         return User::create([
             'sys01name' => $data['sys01name'],
