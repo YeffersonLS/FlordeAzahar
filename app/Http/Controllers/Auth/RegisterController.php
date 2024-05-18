@@ -64,7 +64,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        dd($data);
+        // dd();
+
+        dd($data, request()->cookie('flordeazahar_session'));
 
         return User::create([
             'sys01name' => $data['sys01name'],
