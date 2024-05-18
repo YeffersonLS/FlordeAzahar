@@ -21,13 +21,14 @@ class UserObserver
         $cartCache = request()->cookie('flordeazahar_session');
 
         $query = T13carrito::where('t13sessionid', $cartCache)->first();
-        dd($user, $query);
         if (empty($query)) {
             $query->t13sessionid = null;
             $query->t13cliente = $user->sys01id;
-            $query->save();
+            // $query->save();
             dd($query);
         }
+        dd($user, $query);
+
 
 
     }
