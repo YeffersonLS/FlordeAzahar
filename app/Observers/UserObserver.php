@@ -18,18 +18,18 @@ class UserObserver
      */
     public function created(User $user): void
     {
-        dump($user);
+        // dump($user);
 
-        $cartCache = request()->cookie('flordeazahar_session');
+        // $cartCache = request()->cookie('flordeazahar_session');
 
-        $query = T13carrito::where('t13sessionid', $cartCache)->first();
-        // dd($query);
-        if (empty($query)) {
-            $query->t13sessionid = null;
-            $query->t13cliente = $user->sys01id;
-            $query->update();
-            dump($query);
-        }
+        // $query = T13carrito::where('t13sessionid', $cartCache)->first();
+        // // dd($query);
+        // if (empty($query)) {
+        //     $query->t13sessionid = null;
+        //     $query->t13cliente = $user->sys01id;
+        //     $query->save();
+        //     dump($query);
+        // }
     }
 
     /**
