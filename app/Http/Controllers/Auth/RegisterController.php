@@ -70,7 +70,7 @@ class RegisterController extends Controller
         $sessionId = request()->cookie('flordeazahar_session');
         $cart = T13carrito::where('t13sessionid', $sessionId)->first();
 
-        dd($data, $cart);
+        // dd($data, $cart);
 
         $user = User::create([
             'sys01name' => $data['sys01name'],
