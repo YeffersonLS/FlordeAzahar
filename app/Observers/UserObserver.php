@@ -22,7 +22,7 @@ class UserObserver
 
         $query = T13carrito::where('t13sessionid', $cartCache)->first();
         // dd($query);
-        if (!isset($query)) {
+        if ($query) {
             $query->t13sessionid = null;
             $query->t13cliente = $user->sys01id;
             // $query->save();
