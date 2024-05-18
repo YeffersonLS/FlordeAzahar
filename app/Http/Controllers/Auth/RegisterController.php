@@ -72,7 +72,7 @@ class RegisterController extends Controller
 
         dd($data, $cart);
 
-        return User::create([
+        $user = User::create([
             'sys01name' => $data['sys01name'],
             // 'sys01middlename' => $data['sys01middlename'],
             'sys01lastname' => $data['sys01lastname'],
@@ -82,5 +82,16 @@ class RegisterController extends Controller
             'sys01email' => $data['sys01email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        if (empty($cart)) {
+            $cart->t13sessionid = null;
+            $cart->t13cliente = $user->sys01id;
+            $cart->update();
+        }
+        dump($cart);
+
+        return $user;
+
+
     }
 }
