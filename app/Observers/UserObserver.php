@@ -10,6 +10,14 @@ class UserObserver
 
     public function creating(User $user): void
     {
+
+    }
+
+    /**
+     * Handle the User "created" event.
+     */
+    public function created(User $user): void
+    {
         $cartCache = request()->cookie('flordeazahar_session');
 
         $query = T13carrito::where('t13sessionid', $cartCache)->first();
@@ -20,14 +28,6 @@ class UserObserver
             $query->save();
             dd($query);
         }
-    }
-
-    /**
-     * Handle the User "created" event.
-     */
-    public function created(User $user): void
-    {
-        // dump($user);
 
 
     }
