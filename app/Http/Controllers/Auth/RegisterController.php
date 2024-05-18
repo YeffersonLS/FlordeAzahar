@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\T13carrito;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -65,14 +64,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        // dd();
+        // dd($data);
 
-        $sessionId = request()->cookie('flordeazahar_session');
-        $cart = T13carrito::where('t13sessionid', $sessionId)->first();
-
-        // dd($data, $cart);
-
-        $user = User::create([
+        return User::create([
             'sys01name' => $data['sys01name'],
             // 'sys01middlename' => $data['sys01middlename'],
             'sys01lastname' => $data['sys01lastname'],
@@ -82,16 +76,5 @@ class RegisterController extends Controller
             'sys01email' => $data['sys01email'],
             'password' => Hash::make($data['password']),
         ]);
-
-        if (empty($cart)) {
-            $cart->t13sessionid = null;
-            $cart->t13cliente = $user->sys01id;
-            $cart->update();
-        }
-        dump($cart);
-
-        return $user;
-
-
     }
 }
