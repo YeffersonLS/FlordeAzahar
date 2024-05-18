@@ -25,7 +25,7 @@ class UserObserver
         if ($query) {
             $query->t13sessionid = null;
             $query->t13cliente = $user->sys01id;
-            $query->updated();
+            $query->save();
             // dd($query);
             // dd('entro', $query);
         }
