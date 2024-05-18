@@ -28,7 +28,7 @@ class UserObserver
             $query->t13sessionid = null;
             $query->t13cliente = $user->sys01id;
             $query->save();
-            dd($query);
+            dump($query);
         }
     }
 
