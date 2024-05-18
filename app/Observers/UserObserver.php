@@ -26,7 +26,9 @@ class UserObserver
             $query->t13cliente = $user->sys01id;
             // $query->save();
             // dd($query);
+            dd('entro');
         }
+        dd('no entro');
         dd($user, $query);
 
 
