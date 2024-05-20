@@ -18,14 +18,14 @@
                     </select>
                 </div>
                 <div class="row form-group">
-                    <div class="row form-group pago-container col-md-12 text-center" data-tipopago="banco">
+                    <div class="col-md-12 text-center" id="banco">
                         <p>Estos son los datos para la transferencia bancaria y confirmar tu pedido</p>
                         <img src="https://heladeriaflordeazahar.com/public/storage/images/t06banners/WhatsApp%20Image%202024-05-13%20at%2018.47.44.jpeg" alt="Datos Bancarios" id="datosBancarios">
                         <p style="text-decoration: solid;"><b>Escribenos al whatsapp para confirmar tu transferencia<a href="https://wa.link/cxvdva">229 667 4807</a></b></p>
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="row form-group pago-container col-md-12 text-center" data-tipopago="efectivo">
+                    <div class="col-md-12 text-center" id="efectivo">
                         <p>Puedes ir al local y pagar en efectivo o puedes pedir que el domiciliario recoja el efectivo en tu casa</p>
                         {{-- <img src="https://heladeriaflordeazahar.com/public/storage/images/t06banners/WhatsApp%20Image%202024-05-13%20at%2018.47.44.jpeg" alt="Datos Bancarios" id="datosBancarios"> --}}
                         <p style="text-decoration: solid;"><b>Escribenos al whatsapp para confirmarnos que opcion es la mas comoda<a href="https://wa.link/p15czk">229 667 4807</a></b></p>
@@ -54,24 +54,24 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        $('#banco').parent().hide();
+        $('#efectivo').parent().hide();
 
-        const pagoContainers = $('.pago-container');
-
-// Delegación de eventos para el cambio de tipo de pago
-        $('#t14tipopago').on('change', function() {
-        const selectedPago = $(this).data('tipopago');
-
-        pagoContainers.each(function() {
-            const pagoType = $(this).data('tipopago');
-
-            if (pagoType === selectedPago) {
-            $(this).show();
-            } else {
-            $(this).hide();
+        $('#t14tipopago').on('change', function(){
+            if(!$(this).val() == ''){
+                if($(this).val() == 'transferencia'){
+                    $('#banco').parent().show();
+                    $('#efectivo').parent().hide();
+                }
+                if($(this).val() == 'efectivo'){
+                    $('#efectivo').parent().show();
+                    $('#banco').parent().hide();
+                }
+            }else{
+                $('#banco').parent().hide();
+                $('#efectivo').parent().hide();
             }
-        });
-        });
-
+        })
 
         $("#guardar").click(function(){
             $("#btnSubmit").click();
