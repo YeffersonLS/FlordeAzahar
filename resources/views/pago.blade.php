@@ -12,6 +12,7 @@
                 <div class="form-group">
                     <label for="t14tipopago">Forma de Pago:</label>
                     <select name="t14tipopago" id="t14tipopago" class="form-control">
+                        <option value=""></option>
                         <option value="efectivo">Efectivo</option>
                         <option value="transferencia">Transferencia Bancaria</option>
                     </select>
@@ -34,6 +35,6 @@
 @section('js')
 
 <script>
-    alert('holra');
+    // alert('holra');
 </script>
 @endsection
