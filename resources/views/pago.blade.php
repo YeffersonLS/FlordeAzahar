@@ -17,7 +17,7 @@
 
         <div class="form-group">
             <label for="t14direccion">Dirección de Envío:</label>
-            <textarea name="t14direccion" id="t14direccion" class="form-control" rows="3"></textarea>
+            <textarea name="t14direccion" id="t14direccion" class="form-control" rows="3"></textarea><br>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-success">Confirmar Pedido</button>
