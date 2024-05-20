@@ -44,9 +44,6 @@
 @endsection
 
 @section('js')
-
-<script>
-    // alert('holra');
     <script type="text/javascript">
     $(document).ready(function() {
 
@@ -63,6 +60,5 @@
             $("#btnSubmit").click();
         });
     });
-</script>
 </script>
 @endsection
