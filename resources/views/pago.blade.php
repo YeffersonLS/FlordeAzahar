@@ -51,9 +51,9 @@
 
         $('#t14tipopago').on('change', function(){
             if($(this).val() == 'transferencia'){
-                $('#t14tipopago').parent().show();
+                $('#banco').parent().show();
             }else{
-                $('#t14tipopago').parent().hide();
+                $('#banco').parent().hide();
 
             }
         })
