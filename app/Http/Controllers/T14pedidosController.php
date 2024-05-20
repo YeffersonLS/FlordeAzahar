@@ -16,6 +16,13 @@ class T14pedidosController extends Controller
 
         }
 
-        dd('se paso');
+        // dd('se paso');
+
+        return view('pago');
+    }
+
+    public function payPost(Request $request){
+
+
     }
 }
