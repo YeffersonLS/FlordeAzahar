@@ -20,7 +20,7 @@
                 <div class="row form-group">
                     <div class="col-md-12 text-center">
                         <p>Estos son los datos para la transferencia bancaria y confirmar tu pedido</p>
-                        <img src="https://heladeriaflordeazahar.com/public/storage/images/t06banners/WhatsApp%20Image%202024-05-13%20at%2018.47.44.jpeg" alt="Datos Bancarios">
+                        <img src="https://heladeriaflordeazahar.com/public/storage/images/t06banners/WhatsApp%20Image%202024-05-13%20at%2018.47.44.jpeg" alt="Datos Bancarios" id="datosBancarios">
                     </div>
                 </div>
                 <div class="col-md-12">
