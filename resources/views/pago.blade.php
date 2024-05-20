@@ -33,4 +33,7 @@
 
 @section('js')
 
+<script>
+    alert('holra');
+</script>
 @endsection
