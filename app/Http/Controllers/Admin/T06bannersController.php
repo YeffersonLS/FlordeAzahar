@@ -52,7 +52,7 @@ class T06bannersController extends Controller
             }
         }
 
-        $product->update();
+        $product->save();
         // dd($product);
         return redirect(self::$ruta)->with('mensaje', 'Se Creo el banner correctamente');
     }
@@ -97,7 +97,7 @@ class T06bannersController extends Controller
             }
         }
 
-        $product->update();
+        $product->save();
         return redirect(self::$ruta)->with('mensaje', 'Se edito el banner correctamente');
 
     }
