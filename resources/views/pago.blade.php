@@ -59,20 +59,24 @@
 
         $('#t14tipopago').on('change', function(){
             console.log($(this).val());
-
-            if($(this).val() == 'transferencia'){
-                $('#banco').parent().show();
-                $('#efectivo').parent().hide();
-
-            }else{
+else{
                 $('#banco').parent().hide();
                 $('#efectivo').parent().hide();
             }
 
-            if($(this).val() == 'efectivo'){
-                $('#efectivo').parent().show();
-                $('#banco').parent().hide();
+            else{
 
+            }
+
+            if(!$(this).val() == ''){
+                if($(this).val() == 'transferencia'){
+                    $('#banco').parent().show();
+                    $('#efectivo').parent().hide();
+                }
+                if($(this).val() == 'efectivo'){
+                    $('#efectivo').parent().show();
+                    $('#banco').parent().hide();
+                }
             }else{
                 $('#banco').parent().hide();
                 $('#efectivo').parent().hide();
