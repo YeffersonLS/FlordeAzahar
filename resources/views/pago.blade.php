@@ -18,7 +18,7 @@
                     </select>
                 </div>
                 <div class="row form-group">
-                    <div class="col-md-12 text-center" id="banco" hidden>
+                    <div class="col-md-12 text-center" id="banco">
                         <p>Estos son los datos para la transferencia bancaria y confirmar tu pedido</p>
                         <img src="https://heladeriaflordeazahar.com/public/storage/images/t06banners/WhatsApp%20Image%202024-05-13%20at%2018.47.44.jpeg" alt="Datos Bancarios" id="datosBancarios">
                         <p style="text-decoration: solid;"><b>Escribenos al whatsapp para confirmar tu transferencia<a href="https://wa.link/cxvdva">229 667 4807</a></b></p>
@@ -48,6 +48,8 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        $('#banco').parent().hide();
+
 
         $('#t14tipopago').on('change', function(){
             console.log($(this).val());
