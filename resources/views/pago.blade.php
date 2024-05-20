@@ -44,21 +44,18 @@
 @endsection
 
 @section('js')
+
+<script>
+    // alert('holra');
     <script type="text/javascript">
     $(document).ready(function() {
 
-        $('#t14tipopago').on('change', function(){
-            if($(this).val() == 'transferencia'){
-                $('#t14tipopago').parent().show();
-            }else{
-                $('#t14tipopago').parent().hide();
-
-            }
-        })
+        $('#t14tipopago').
 
         $("#guardar").click(function(){
             $("#btnSubmit").click();
         });
     });
+</script>
 </script>
 @endsection
