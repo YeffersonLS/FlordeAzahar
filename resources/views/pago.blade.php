@@ -59,14 +59,6 @@
 
         $('#t14tipopago').on('change', function(){
             console.log($(this).val());
-else{
-                $('#banco').parent().hide();
-                $('#efectivo').parent().hide();
-            }
-
-            else{
-
-            }
 
             if(!$(this).val() == ''){
                 if($(this).val() == 'transferencia'){
