@@ -57,23 +57,18 @@
         $('#banco').parent().hide();
         $('#efectivo').parent().hide();
 
-        $('#t14tipopago').on('change', function(){
-            console.log($(this).val());
+        $('#t14tipopago').on('change', function() {
+            const selectedValue = $(this).val();
 
-            if(!$(this).val() == ''){
-                if($(this).val() == 'transferencia'){
-                    $('#banco').parent().show();
-                    $('#efectivo').parent().hide();
-                }
-                if($(this).val() == 'efectivo'){
-                    $('#efectivo').parent().show();
-                    $('#banco').parent().hide();
-                }
-            }else{
-                $('#banco').parent().hide();
-                $('#efectivo').parent().hide();
+            if (selectedValue !== '') {
+                $('#banco').parent().toggleClass('hidden', selectedValue !== 'transferencia');
+                $('#efectivo').parent().toggleClass('hidden', selectedValue !== 'efectivo');
+            } else {
+                $('#banco').parent().addClass('hidden');
+                $('#efectivo').parent().addClass('hidden');
             }
-        })
+        });
+
 
         $("#guardar").click(function(){
             $("#btnSubmit").click();
