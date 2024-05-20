@@ -17,12 +17,12 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="col-md-12">
                     <label for="t14direccion">Dirección de Envío:</label>
                     <textarea name="t14direccion" id="t14direccion" class="form-control" rows="3"></textarea>
                 </div>
 
-                <div>
+                <div class="col-md-12">
                     <button type="submit" class="btn btn-success">Confirmar Pedido</button>
                 </div>
             </form>
