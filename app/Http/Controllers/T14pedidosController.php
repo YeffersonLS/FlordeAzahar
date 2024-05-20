@@ -26,11 +26,8 @@ class T14pedidosController extends Controller
 
         $data = $request->all();
         dd(Auth::user()->sys01id);
-
         $q = new T14pedidos() ;
-
         $q->fill($data);
-
         $q->t14cliente = Auth::user()->sys01id;
     }
 }
