@@ -50,6 +50,7 @@
     $(document).ready(function() {
 
         $('#t14tipopago').on('change', function(){
+            console.log($(this));
             if($(this).val() == 'transferencia'){
                 $('#banco').parent().show();
             }else{
