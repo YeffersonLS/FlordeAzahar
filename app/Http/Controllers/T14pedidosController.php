@@ -23,6 +23,7 @@ class T14pedidosController extends Controller
 
     public function payPost(Request $request){
 
-
+        $data = $request->all();
+        dd($data);
     }
 }
