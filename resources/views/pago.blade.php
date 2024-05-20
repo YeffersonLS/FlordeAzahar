@@ -50,6 +50,14 @@
     <script type="text/javascript">
     $(document).ready(function() {
 
+        $('#t14tipopago').on('change', function(){
+            if($(this).val() == 'transferencia'){
+                $('#t14tipopago').parent().show();
+            }else{
+                $('#t14tipopago').parent().hide();
+
+            }
+        })
 
         $("#guardar").click(function(){
             $("#btnSubmit").click();
