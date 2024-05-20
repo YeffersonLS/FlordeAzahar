@@ -13,7 +13,7 @@
                     <div class="arrow prev-arrow">&#10094;</div>
                     <div class="arrow next-arrow">&#10095;</div>
                 </div> --}}
-                <div class="banner-dots"></div>
+                {{-- <div class="banner-dots"></div> --}}
             </div>
         </div>
 

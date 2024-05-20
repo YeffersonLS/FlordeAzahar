@@ -29,5 +29,8 @@ class T14pedidosController extends Controller
         $q = new T14pedidos() ;
         $q->fill($data);
         $q->t14cliente = Auth::user()->sys01id;
+
+        return redirect('/')->with('mensaje', 'A confirmado su pedido, en unos instantes nos estaremos comunicando con usted');
+
     }
 }
