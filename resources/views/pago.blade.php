@@ -20,7 +20,7 @@
             <textarea name="t14direccion" id="t14direccion" class="form-control" rows="3"></textarea>
         </div>
         <div>
-            <button type="submit" class="btn btn-succes">Confirmar Pedido</button>
+            <button type="submit" class="btn btn-success">Confirmar Pedido</button>
         </div>
     </form>
 </div>
