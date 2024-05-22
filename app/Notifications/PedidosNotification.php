@@ -45,7 +45,7 @@ class PedidosNotification extends Notification
         return (new MailMessage)
                     ->line('Acaban de realizar un compra en Heladeria Flor de Azahar por la pagina web.')
                     ->action('Este es el numero de telefono', url("$url"))
-                    ->line('Dado caso no responda este es el telefono que registro'."$phone");
+                    ->line('Dado caso no responda este es el telefono que registro '."$phone");
     }
 
     /**
