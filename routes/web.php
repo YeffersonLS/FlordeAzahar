@@ -23,7 +23,7 @@ Route::get('/confirmadoco', function () {
         // dd('entro');
         $user = User::FindOrFail(Auth::user()->sys01id);
         dd($user);
-        Notification::route('mail', 'yefferson@exple.com')->notify(new PedidosNotification);
+        Notification::route('mail', {{ $user->sys01email }})->notify(new PedidosNotification);
     }
     dd('no entro');
     return view('welcome');
