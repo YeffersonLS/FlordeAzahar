@@ -23,7 +23,7 @@ Route::get('/confirmadoco', function () {
         // dd('entro');
         $user = User::FindOrFail(Auth::user()->sys01id);
         $userEmail = $user->sys01email;
-        dd($userEmail);
+        // dd($userEmail);
 
         Notification::route('mail', $userEmail)->notify(new PedidosNotification);
     }
