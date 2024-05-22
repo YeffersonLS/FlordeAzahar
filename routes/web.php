@@ -22,8 +22,9 @@ Route::get('/confirmadoco', function () {
     if(Auth::check()){
         // dd('entro');
         $user = User::FindOrFail(Auth::user()->sys01id);
-        dd($user);
         $userEmail = $user->sys01email;
+        dd($userEmail);
+
         Notification::route('mail', $userEmail)->notify(new PedidosNotification);
     }
     dd('no entro');
