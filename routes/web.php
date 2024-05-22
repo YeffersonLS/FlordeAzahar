@@ -21,7 +21,7 @@ Route::get('/confirmadoco', function () {
 
     if(Auth::check()){
         // dd('entro');
-        $user = User::FinOrFail(Auth::user()->sys01id);
+        $user = User::FindOrFail(Auth::user()->sys01id);
         dd($user);
         Notification::route('mail', 'yefferson@exple.com')->notify(new PedidosNotification);
     }
