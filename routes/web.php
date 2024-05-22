@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use App\Notifications\PedidosNotification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
@@ -19,10 +20,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/confirmadoco', function () {
 
     if(Auth::check()){
-        dd('entro');
+        // dd('entro');
+        $user = User::FinOrFail(Auth::user()->sys01id);
+        dd($user);
+        Notification::route('mail', 'yefferson@exple.com')->notify(new PedidosNotification);
     }
     dd('no entro');
-    Notification::route('mail', 'yefferson@exple.com')->notify(new PedidosNotification);
     return view('welcome');
 });
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
