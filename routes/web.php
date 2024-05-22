@@ -1,6 +1,7 @@
 <?php
 
 use App\Notifications\PedidosNotification;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/confirmadoco', function () {
 
+    if(Auth::check()){
+        dd('entro');
+    }
+    dd('no entro');
     Notification::route('mail', 'yefferson@exple.com')->notify(new PedidosNotification);
     return view('welcome');
 });

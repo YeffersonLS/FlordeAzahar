@@ -36,8 +36,8 @@ class PedidosNotification extends Notification
     {
         return (new MailMessage)
                     ->line('Acaban de realizar un compra en Heladeria Flor de Azahar por la pagina web.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->action('Este es el numero de telefono', url('https://api.whatsapp.com/send?phone=5212296674807'))
+                    ->line('2296674807');
     }
 
     /**
