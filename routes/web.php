@@ -1,5 +1,7 @@
 <?php
 
+use App\Notifications\PedidosNotification;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/confirmadoco', function () {
+
+    Notification::route('mail', 'yefferson@exple.com')->notify(new PedidosNotification);
+    return view('welcome');
+});
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
