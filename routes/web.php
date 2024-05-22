@@ -27,7 +27,7 @@ Route::get('/confirmadoco', function () {
 
         Notification::route('mail', $userEmail)->notify(new PedidosNotification);
     }
-    dd('no entro');
+    // dd('no entro');
     // return view('welcome');
 });
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

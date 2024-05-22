@@ -2,10 +2,12 @@
 
 namespace App\Notifications;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Auth;
 
 class PedidosNotification extends Notification
 {
@@ -34,10 +36,16 @@ class PedidosNotification extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
+        $user = User::FindOrFail(Auth::user()->sys01id);
+
+        $url = 'https://api.whatsapp.com/send?phone=521'. "$user->sys01phonenumber";
+
+        $phone = $user->sys01phonenumber;
+
         return (new MailMessage)
                     ->line('Acaban de realizar un compra en Heladeria Flor de Azahar por la pagina web.')
-                    ->action('Este es el numero de telefono', url('https://api.whatsapp.com/send?phone=5212296674807'))
-                    ->line('2296674807');
+                    ->action('Este es el numero de telefono', url("$url"))
+                    ->line('Dado caso no responda este es el telefono que registro'."$phone");
     }
 
     /**
