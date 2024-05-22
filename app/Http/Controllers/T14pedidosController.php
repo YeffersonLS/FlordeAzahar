@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\T12carritoItem;
+use App\Models\T13carrito;
 use App\Models\T14pedidos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,12 +27,23 @@ class T14pedidosController extends Controller
     public function payPost(Request $request){
 
         $data = $request->all();
-        dd(Auth::user()->sys01id);
+        // dd(Auth::user()->sys01id);
         $q = new T14pedidos() ;
         $q->fill($data);
         $q->t14cliente = Auth::user()->sys01id;
 
-        return redirect('/')->with('mensaje', 'A confirmado su pedido, en unos instantes nos estaremos comunicando con usted');
+        $cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first();
+
+
+        $cartItems = T12carritoItem::select('t12producto', 't12cantidad', 't12carrito', 't12pedido')
+        ->where('t12carrito', '=', $cart->t13id)->get();
+
+        foreach ($cartItems as $cartItem) {
+            $cartItem->t12pedido = true;
+            $cartItem->save();
+        }
+
+        return redirect('/confirmadoco')->with('mensaje', 'A confirmado su pedido, en unos instantes nos estaremos comunicando con usted');
 
     }
 }

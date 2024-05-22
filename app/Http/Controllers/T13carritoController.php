@@ -61,6 +61,7 @@ class T13carritoController extends Controller
 
         $cartItems = T12carritoItem::select('t12producto', 't12cantidad', 't12carrito', 'p.t04precio', 'p.t04id', 'p.t04nombre')
         ->leftJoin('t04productos as p', 'p.t04id', '=', 't12producto')
+        ->whereNot('t12pedido', '=', true)
         ->where('t12carrito', '=', $cart->t13id)->get();
 
         $total = 0;
@@ -88,8 +89,7 @@ class T13carritoController extends Controller
 
         return redirect('carrito')->with('mensaje', 'Se elimino el producto correctamente');
 
-
-        return response()->json(['mensaje' => 'Elemento eliminado del carrito']);
+        // return response()->json(['mensaje' => 'Elemento eliminado del carrito']);
     }
 
     private function getOrCreateCart()

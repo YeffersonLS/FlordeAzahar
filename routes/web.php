@@ -24,11 +24,12 @@ Route::get('/confirmadoco', function () {
         $user = User::FindOrFail(Auth::user()->sys01id);
         $userEmail = $user->sys01email;
         // dd($userEmail);
-
         Notification::route('mail', $userEmail)->notify(new PedidosNotification);
+
+        redirect('/')->with('mensaje', 'Se ha pedido el carrito correctamente');
     }
-    // dd('no entro');
-    // return view('welcome');
+
+    redirect('/')->with('mensaje', 'Hubo un error al realizar el pedido');
 });
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
