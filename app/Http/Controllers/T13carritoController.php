@@ -37,7 +37,8 @@ class T13carritoController extends Controller
                     $item->update();
                 }
             }
-        } else {
+        }else {
+         dd('se paso');
             $cartItem = new T12carritoItem([
                 't12carrito' => $cart->t13id,
                 't12producto' => $product->t04id,
