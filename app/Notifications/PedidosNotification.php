@@ -2,6 +2,9 @@
 
 namespace App\Notifications;
 
+use App\Models\T04productos;
+use App\Models\T12carritoItem;
+use App\Models\T13carrito;
 use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -42,10 +45,29 @@ class PedidosNotification extends Notification
 
         $phone = $user->sys01phonenumber;
 
+        $cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first();
+
+        $cartItems = T12carritoItem::select('t12producto', 't12cantidad', 't12carrito', 't12pedido')
+        ->where('t12carrito', '=', $cart->t13id)
+        ->where('t12pedido', '=', true)
+        ->get();
+
+        $productNames = '';
+        foreach ($cartItems as $item) {
+            $producto = T04productos::findOrFail($item->t12producto);
+            $productName = $producto->t04nombre;
+
+            $productNames .= $productName . ', ';
+        }
+
+        $combinedProductNames = rtrim($productNames, ', ');
+
         return (new MailMessage)
                     ->line('Acaban de realizar un compra en Heladeria Flor de Azahar por la pagina web.')
                     ->action('Este es el numero de telefono', url("$url"))
-                    ->line('Dado caso no responda este es el telefono que registro '."$phone");
+                    ->line('Dado caso no responda este es el telefono que registro '."$phone")
+                    ->line('Estos son los productos ordenados')
+                    ->line("$combinedProductNames");
     }
 
     /**

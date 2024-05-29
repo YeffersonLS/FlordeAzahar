@@ -20,10 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/confirmadoco', function () {
 
     if(Auth::check()){
-        // dd('entro');
         $user = User::FindOrFail(Auth::user()->sys01id);
         $userEmail = $user->sys01email;
-        // dd($userEmail);
         Notification::route('mail', $userEmail)->notify(new PedidosNotification);
 
         redirect('/')->with('mensaje', 'Se ha pedido el carrito correctamente');

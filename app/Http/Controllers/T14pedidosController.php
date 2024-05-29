@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\T12carritoItem;
 use App\Models\T13carrito;
 use App\Models\T14pedidos;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,10 +41,11 @@ class T14pedidosController extends Controller
 
         foreach ($cartItems as $cartItem) {
             $cartItem->t12pedido = true;
+            $cartItem->t12fechapedido = Carbon::now()->format("Y-m-d");
             $cartItem->save();
         }
 
-        return redirect('/confirmadoco')->with('mensaje', 'A confirmado su pedido, en unos instantes nos estaremos comunicando con usted');
+        return redirect('/confirmadoco');
 
     }
 }
