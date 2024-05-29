@@ -112,6 +112,11 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    'reply_to' => [
+        'address' => 'yefferson.mod@gmail.com',
+        'name' => 'Yefferson',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings
