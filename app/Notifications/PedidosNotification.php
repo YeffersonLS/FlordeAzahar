@@ -79,7 +79,8 @@ class PedidosNotification extends Notification
                     ->line('Dado caso no responda este es el telefono que registro '."$phone")
                     ->line('Estos son los productos ordenados')
                     ->line("$combinedProductNames")
-                    ->cc('yefferson.mod@gmail.com');
+                    ->cc('yefferson.mod@gmail.com')
+                    ->cc('linaloaizasol@gmail.com');
     }
 
     /**
