@@ -66,7 +66,7 @@ class PedidosNotification extends Notification
         })
         ->get();
 
-        dump($cartItems);
+        // dump($cartItems);
 
         $productNames = '';
         foreach ($cartItems as $item) {
@@ -82,7 +82,7 @@ class PedidosNotification extends Notification
         }
 
         $combinedProductNames = rtrim($productNames, ', ');
-        dump($combinedProductNames);
+        // dump($combinedProductNames);
 
 
         return (new MailMessage)
