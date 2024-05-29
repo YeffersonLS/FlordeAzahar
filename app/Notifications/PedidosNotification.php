@@ -56,7 +56,7 @@ class PedidosNotification extends Notification
 
         $pago = $pedido->t14tipopago;
 
-        dd($pago);
+        // dd($pago);
 
         $cartItems = T12carritoItem::where('t12carrito', '=', $cart->t13id)
         ->where(function ($q) {
