@@ -28,7 +28,7 @@ class T13carritoController extends Controller
         $cartItem = T12carritoItem::with('producto')
         ->where('t12producto', $productId)
         ->where('t12id', '=', $cart->t13id)
-        ->where(function ($q,  $productId, $cart) {
+        ->where(function ($q) {
             $q->where('t12pedido', '=', false)
             ;
         })
