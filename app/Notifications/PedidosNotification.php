@@ -59,12 +59,15 @@ class PedidosNotification extends Notification
         foreach ($cartItems as $item) {
             $producto = T04productos::findOrFail($item->t12producto);
             $productName = $producto->t04nombre;
+            $quantity = $item->t12cantidad;
 
-            $productNames .= $productName . ', ';
+            // Concatenar nombre del producto y cantidad
+            $productNames .= "$productName (x$quantity), ";
         }
 
         $combinedProductNames = rtrim($productNames, ', ');
         dump($combinedProductNames);
+
 
         return (new MailMessage)
                     ->line('Acaban de realizar un compra en Heladeria Flor de Azahar por la pagina web.')
