@@ -45,9 +45,9 @@ class T14pedidosController extends Controller
             $cartItem->t12pedido = true;
             $cartItem->t12fechapedido = Carbon::now()->format("Y-m-d");
             $cartItem->save();
-            if ($cartItem->fails()) {
-                    dd($cartItem->getErrors());
-                }
+            // if ($cartItem->fails()) {
+            //         dd($cartItem->getErrors());
+            //     }
         }
 
         return redirect('/confirmadoco');
