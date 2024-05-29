@@ -26,7 +26,7 @@ class T13carritoController extends Controller
         ->where('t12id', '=', $cart->t13id)
         ->get();
 
-        dd($cartItem);
+        dd($cartItem, $productId);
 
         if (empty($cartItem)) {
             foreach ($cartItem as $item) {
