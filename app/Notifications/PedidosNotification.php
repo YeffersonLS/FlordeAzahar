@@ -52,8 +52,11 @@ class PedidosNotification extends Notification
 
         $cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first();
 
-        $pedido = T14pedidos::where('t14cliente', auth()->user()->sys01id)->first();
+        $pedido = T14pedidos::where('t14cliente', auth()->user()->sys01id)->latest()->first();
+
         $pago = $pedido->t14tipopago;
+
+        dd($pago);
 
         $cartItems = T12carritoItem::where('t12carrito', '=', $cart->t13id)
         ->where(function ($q) {
