@@ -16,7 +16,9 @@ class T12carritoItem extends Model
     public $fillable = [
         't12producto',
         't12cantidad',
-        't12carrito'
+        't12carrito',
+        't12pedido',
+        't12fechapedido'
     ];
 
     public function product()
