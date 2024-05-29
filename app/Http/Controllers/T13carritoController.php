@@ -28,9 +28,9 @@ class T13carritoController extends Controller
         $cartItem = T12carritoItem::with('producto') // Eager load related product
         // ->select('t12id', 't12pedido', 't12cantidad')
         ->where('t12producto', '=', $productId)
-        ->whereNot('t12pedido', '=', true)
+        ->where('t12pedido', '=', false)
         ->where('t12id', '=', $cart->t13id)
-        ->get(); // Assuming you only need the first matching item
+        ->get();
 
 
         dd($cartItem, $productId);
