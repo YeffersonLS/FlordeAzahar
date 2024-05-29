@@ -50,7 +50,6 @@ class PedidosNotification extends Notification
 
         $cartItems = T12carritoItem::select('t12producto', 't12cantidad', 't12carrito', 't12pedido')
         ->where('t12carrito', '=', $cart->t13id)
-        ->where('t12pedido', '=', 1)
         ->where('t12fechapedido', '=', Carbon::now()->format("Y-m-d"))
         ->get();
 
