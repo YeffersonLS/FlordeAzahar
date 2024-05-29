@@ -114,9 +114,8 @@ return [
 
     'reply_to' => [
         'address' => 'yefferson.mod@gmail.com',
-        'name' => 'Yefferson',
+        'name' => 'Yefferson'
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Markdown Mail Settings

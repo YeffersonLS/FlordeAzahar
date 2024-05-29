@@ -46,6 +46,9 @@ class PedidosNotification extends Notification
 
         $phone = $user->sys01phonenumber;
 
+
+        $name = $user->sys01fullname;
+
         $cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first();
 
         $cartItems = T12carritoItem::select('t12producto', 't12cantidad', 't12carrito', 't12pedido')
@@ -70,7 +73,8 @@ class PedidosNotification extends Notification
 
 
         return (new MailMessage)
-                    ->line('Acaban de realizar un compra en Heladeria Flor de Azahar por la pagina web.')
+                    ->line('El cliente'."$name")
+                    ->line('Acaba de realizar un compra en Heladeria Flor de Azahar por la pagina web.')
                     ->action('Este es el numero de telefono', url("$url"))
                     ->line('Dado caso no responda este es el telefono que registro '."$phone")
                     ->line('Estos son los productos ordenados')
