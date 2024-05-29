@@ -32,13 +32,15 @@ class T14pedidosController extends Controller
         $q = new T14pedidos() ;
         $q->fill($data);
         $q->t14cliente = Auth::user()->sys01id;
-        $q->save();
+        // $q->save();
 
         $cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first();
 
 
         $cartItems = T12carritoItem::select('t12producto', 't12cantidad', 't12carrito', 't12pedido')
         ->where('t12carrito', '=', $cart->t13id)->get();
+
+        dd($cartItems);
 
         foreach ($cartItems as $cartItem) {
             $cartItem->t12pedido = true;
