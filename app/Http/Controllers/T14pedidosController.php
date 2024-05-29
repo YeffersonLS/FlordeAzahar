@@ -32,6 +32,7 @@ class T14pedidosController extends Controller
         $q = new T14pedidos() ;
         $q->fill($data);
         $q->t14cliente = Auth::user()->sys01id;
+        $q->save();
 
         $cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first();
 
