@@ -37,7 +37,7 @@ class T14pedidosController extends Controller
         $cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first();
 
 
-        $cartItems = T12carritoItem::select('t12producto', 't12cantidad', 't12carrito', 't12pedido')
+        $cartItems = T12carritoItem::select('t12producto', 't12cantidad', 't12carrito', 't12pedido', 't12fechapedido')
         ->where('t12carrito', '=', $cart->t13id)->get();
 
         dd($cartItems);
