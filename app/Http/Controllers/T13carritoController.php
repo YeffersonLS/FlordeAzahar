@@ -30,7 +30,7 @@ class T13carritoController extends Controller
         // dd($cartItem);
 
         if ($cartItem->isEmpty()) {
-            dd('va a crear un nuevo item');
+            // dd('va a crear un nuevo item');
             $cartItem = new T12carritoItem([
                 't12carrito' => $cart->t13id,
                 't12producto' => $product->t04id,
@@ -38,7 +38,7 @@ class T13carritoController extends Controller
             ]);
             $cartItem->save();
         }else {
-         dd('va a subir una unidad');
+        //  dd('va a subir una unidad');
          foreach ($cartItem as $item) {
             if($item->t12producto == $productId){
                 $item->t12cantidad += $quantity;
