@@ -5,6 +5,7 @@ namespace App\Notifications;
 use App\Models\T04productos;
 use App\Models\T12carritoItem;
 use App\Models\T13carrito;
+use App\Models\T14pedidos;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Bus\Queueable;
@@ -51,6 +52,9 @@ class PedidosNotification extends Notification
 
         $cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first();
 
+        $pedido = T14pedidos::where('t14cliente', auth()->user()->sys01id)->first();
+        $pago = $pedido->t14tipopago;
+
         $cartItems = T12carritoItem::where('t12carrito', '=', $cart->t13id)
         ->where(function ($q) {
             $q->where('t12correo', '=', false)
@@ -80,7 +84,7 @@ class PedidosNotification extends Notification
 
         return (new MailMessage)
                     ->line('El cliente '."$name")
-                    ->line('Acaba de realizar un compra en Heladeria Flor de Azahar por la pagina web.')
+                    ->line('Acaba de realizar un compra en Heladeria Flor de Azahar por la pagina web. la cual realizara el pago por medio de '."$pago")
                     ->action('Este es el numero de telefono', url("$url"))
                     ->line('Dado caso no responda este es el telefono que registro '."$phone")
                     ->line('Estos son los productos ordenados')
