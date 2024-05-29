@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/confirmadoco', function () {
 
     if(Auth::check()){
