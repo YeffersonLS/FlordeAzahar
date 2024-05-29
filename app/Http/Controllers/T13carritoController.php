@@ -27,13 +27,16 @@ class T13carritoController extends Controller
         // ->get();
         $cartItem = T12carritoItem::with('producto') // Eager load related product
         // ->select('t12id', 't12pedido', 't12cantidad')
-        ->where('t12producto', '=', $productId)
-        // ->where('t12pedido', '=', false)
-        ->where('t12id', '=', $cart->t13id)
+        ->where(function ($q,  $productId, $cart) {
+            $q->where('t12producto', $productId)
+            ->where('t12id', '=', $cart->t13id)
+            ->where('t12pedido', '=', false)
+            ;
+        })
         ->get();
 
 
-        dd($cartItem, $productId, 'fecha');
+        dd($cartItem, $productId, 'cono');
 
         if (empty($cartItem)) {
             foreach ($cartItem as $item) {
