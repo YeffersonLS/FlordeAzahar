@@ -29,7 +29,7 @@ class T13carritoController extends Controller
 
         // dd($cartItem);
 
-        if (!empty($cartItem)) {
+        if (empty($cartItem)) {
             dd('no debe entrar');
             foreach ($cartItem as $item) {
                 if($item->t12producto == $productId){
