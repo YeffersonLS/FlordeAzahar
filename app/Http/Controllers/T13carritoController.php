@@ -27,7 +27,7 @@ class T13carritoController extends Controller
         })
         ->get();
 
-        // dd($cartItem, $productId, 'cono');
+        dd($cartItem);
 
         if (empty($cartItem)) {
             foreach ($cartItem as $item) {
