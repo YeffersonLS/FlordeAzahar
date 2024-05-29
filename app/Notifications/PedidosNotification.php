@@ -51,9 +51,12 @@ class PedidosNotification extends Notification
 
         $cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first();
 
-        $cartItems = T12carritoItem::select('t12producto', 't12cantidad', 't12carrito', 't12pedido')
-        ->where('t12carrito', '=', $cart->t13id)
-        ->where('t12fechapedido', '=', Carbon::now()->format("Y-m-d"))
+        $cartItems = T12carritoItem::where('t12carrito', '=', $cart->t13id)
+        ->where(function ($q) {
+            $q->where('t12correo', '=', false)
+            ->where('t12fechapedido', '=', Carbon::now()->format("Y-m-d"))
+            ;
+        })
         ->get();
 
         dump($cartItems);
@@ -66,6 +69,9 @@ class PedidosNotification extends Notification
 
             // Concatenar nombre del producto y cantidad
             $productNames .= "$productName (x$quantity), ";
+
+            $item->t12correo = true;
+            $item->save();
         }
 
         $combinedProductNames = rtrim($productNames, ', ');

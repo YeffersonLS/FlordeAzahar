@@ -18,7 +18,8 @@ class T12carritoItem extends Model
         't12cantidad',
         't12carrito',
         't12pedido',
-        't12fechapedido'
+        't12fechapedido',
+        't12correo'
     ];
 
     public function product()
