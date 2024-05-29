@@ -40,12 +40,12 @@ class T14pedidosController extends Controller
         $cartItems = T12carritoItem::select('t12producto', 't12cantidad', 't12carrito', 't12pedido', 't12fechapedido')
         ->where('t12carrito', '=', $cart->t13id)->get();
 
-        dd($cartItems);
+        // dd($cartItems);
 
         foreach ($cartItems as $cartItem) {
             $cartItem->t12pedido = true;
             $cartItem->t12fechapedido = Carbon::now()->format("Y-m-d");
-            $cartItem->save();
+            $cartItem->update();
         }
 
         return redirect('/confirmadoco');
