@@ -25,32 +25,35 @@ class T14pedidosController extends Controller
         return view('pago');
     }
 
-    public function payPost(Request $request){
+    public function payPost(Request $request)
+    {
+        try {
+            $data = $request->all();
 
-        $data = $request->all();
-        // dd(Auth::user()->sys01id);
-        $q = new T14pedidos() ;
-        $q->fill($data);
-        $q->t14cliente = Auth::user()->sys01id;
-        $q->save();
+            $q = new T14pedidos();
+            $q->fill($data);
+            $q->t14cliente = Auth::user()->sys01id;
+            $q->save();
 
-        $cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first();
+            $cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first();
 
+            $cartItems = T12carritoItem::where('t12carrito', '=', $cart->t13id)->get();
 
-        $cartItems = T12carritoItem::where('t12carrito', '=', $cart->t13id)->get();
+            foreach ($cartItems as $cartItem) {
+                $cartItem->t12pedido = true;
+                $cartItem->t12fechapedido = Carbon::now()->format("Y-m-d");
+                $cartItem->save();
+            }
 
-        // dd($cartItems);
+            return redirect('/confirmadoco');
+        } catch (\Exception $e) {
+            // Registrar el error en un log
+            dd($e);
+            // Log::error('Error en el proceso de pago: ' . $e->getMessage());
 
-        foreach ($cartItems as $cartItem) {
-            $cartItem->t12pedido = true;
-            $cartItem->t12fechapedido = Carbon::now()->format("Y-m-d");
-            $cartItem->save();
-            // if ($cartItem->fails()) {
-            //         dd($cartItem->getErrors());
-            //     }
+            // Mostrar un mensaje de error al usuario
+            // return redirect()->back()->withErrors(['error' => 'Ocurrió un error al procesar el pago.']);
         }
-
-        return redirect('/confirmadoco');
-
     }
+
 }
