@@ -43,7 +43,7 @@ class T14pedidosController extends Controller
         // dd($cartItems);
 
         foreach ($cartItems as $cartItem) {
-            $cartItem->t12pedido = true;
+            $cartItem->t12pedido = 1;
             $cartItem->t12fechapedido = Carbon::now()->format("Y-m-d");
             // dd($cartItem);
             $cartItem->save();
