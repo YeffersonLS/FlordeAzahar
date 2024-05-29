@@ -32,7 +32,7 @@ class T14pedidosController extends Controller
         $q = new T14pedidos() ;
         $q->fill($data);
         $q->t14cliente = Auth::user()->sys01id;
-        $q->save();
+        // $q->save();
 
         $cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first();
 
@@ -45,7 +45,10 @@ class T14pedidosController extends Controller
         foreach ($cartItems as $cartItem) {
             $cartItem->t12pedido = true;
             $cartItem->t12fechapedido = Carbon::now()->format("Y-m-d");
+            dd($cartItem);
             $cartItem->update();
+
+
         }
 
         return redirect('/confirmadoco');
