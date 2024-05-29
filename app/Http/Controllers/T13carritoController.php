@@ -33,7 +33,7 @@ class T13carritoController extends Controller
         ->get(); // Assuming you only need the first matching item
 
 
-        // dd($cartItem, $productId);
+        dd($cartItem, $productId);
 
         if (empty($cartItem)) {
             foreach ($cartItem as $item) {
