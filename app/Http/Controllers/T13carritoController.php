@@ -34,7 +34,7 @@ class T13carritoController extends Controller
         ->get();
 
 
-        dd($cartItem, $productId, 'fecha');
+        dd($cartItem, $productId, 'cono');
 
         if (empty($cartItem)) {
             foreach ($cartItem as $item) {
