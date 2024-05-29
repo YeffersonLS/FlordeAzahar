@@ -29,7 +29,7 @@ class T13carritoController extends Controller
 
         // dd($cartItem);
 
-        if (empty($cartItem)) {
+        if (!empty($cartItem)) {
             foreach ($cartItem as $item) {
                 if($item->t12producto == $productId){
                     $item->t12cantidad += $quantity;
