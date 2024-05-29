@@ -61,6 +61,7 @@ class PedidosNotification extends Notification
         }
 
         $combinedProductNames = rtrim($productNames, ', ');
+        dump($combinedProductNames);
 
         return (new MailMessage)
                     ->line('Acaban de realizar un compra en Heladeria Flor de Azahar por la pagina web.')
