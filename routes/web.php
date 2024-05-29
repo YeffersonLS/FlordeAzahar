@@ -21,7 +21,7 @@ Route::get('/confirmadoco', function () {
 
     if(Auth::check()){
         // $user = User::FindOrFail(Auth::user()->sys01id);
-        $userEmail = "no-replay@heladeriaflordeazahar.com;yefferson.mod@gmail.com";
+        $userEmail = "no-replay@heladeriaflordeazahar.com";
         Notification::route('mail', $userEmail)->notify(new PedidosNotification);
 
         return redirect('/')->with('mensaje', 'Se ha pedido el carrito correctamente');

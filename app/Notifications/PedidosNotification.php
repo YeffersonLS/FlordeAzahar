@@ -78,7 +78,8 @@ class PedidosNotification extends Notification
                     ->action('Este es el numero de telefono', url("$url"))
                     ->line('Dado caso no responda este es el telefono que registro '."$phone")
                     ->line('Estos son los productos ordenados')
-                    ->line("$combinedProductNames");
+                    ->line("$combinedProductNames")
+                    ->cc('yefferson.mod@gmail.com');
     }
 
     /**
