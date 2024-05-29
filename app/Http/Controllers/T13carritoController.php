@@ -30,10 +30,10 @@ class T13carritoController extends Controller
         ->where('t12producto', '=', $productId)
         ->whereNot('t12pedido', '=', true)
         ->where('t12id', '=', $cart->t13id)
-        ->first(); // Assuming you only need the first matching item
+        ->get(); // Assuming you only need the first matching item
 
 
-        dd($cartItem, $productId);
+        // dd($cartItem, $productId);
 
         if (empty($cartItem)) {
             foreach ($cartItem as $item) {
