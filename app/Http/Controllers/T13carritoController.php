@@ -29,23 +29,23 @@ class T13carritoController extends Controller
 
         // dd($cartItem);
 
-        if ($cartItem) {
-            dd('no debe entrar');
-            foreach ($cartItem as $item) {
-                if($item->t12producto == $productId){
-                    $item->t12cantidad += $quantity;
-                    dd($item);
-                    $item->update();
-                }
-            }
-        }else {
-         dd('se paso');
+        if ($cartItem->isEmpty()) {
+            dd('va a crear un nuevo item');
             $cartItem = new T12carritoItem([
                 't12carrito' => $cart->t13id,
                 't12producto' => $product->t04id,
                 't12cantidad' => $quantity,
             ]);
             $cartItem->save();
+        }else {
+         dd('va a subir una unidad');
+         foreach ($cartItem as $item) {
+            if($item->t12producto == $productId){
+                $item->t12cantidad += $quantity;
+                dd($item);
+                $item->update();
+            }
+        }
         }
 
         return redirect('producto/'.$product->t04slug)->with('mensaje', 'Se agrego el producto al carrito correctamente');
