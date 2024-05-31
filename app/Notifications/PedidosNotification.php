@@ -96,6 +96,7 @@ class PedidosNotification extends Notification
                     ->line('Esta es la dirección de entrega:')
                     ->line("$direccion")
                     ->cc('yefferson.mod@gmail.com')
+                    ->cc('flordeazahargerencia@gmail.com')
                     ->cc('linaloaizasol@gmail.com');
     }
 
