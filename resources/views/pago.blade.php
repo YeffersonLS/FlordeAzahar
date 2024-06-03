@@ -63,6 +63,7 @@
 
 
 <script type="text/javascript">
+    var cuenta = {{ $total }};
     $(document).ready(function() {
         $('#banco').parent().hide();
         $('#efectivo').parent().hide();
@@ -95,8 +96,10 @@
 
 
         $('#pagar').on('change', function(){
-            console.log($('#t14paga').val());
-            console.log({{ $total }});
+            // console.log($('#t14paga').val());
+            var resultado = $('#t14paga').val() - cuenta;
+            console.log(resultado);
+
         });
 
         $("#guardar").click(function(){
