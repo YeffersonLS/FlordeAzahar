@@ -93,6 +93,7 @@
             }
         });
 
+
         $('#pagar').on('change', function(){
             console.log($('#t14paga').val());
         });
