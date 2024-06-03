@@ -94,7 +94,7 @@
         });
 
         $('#pagar').on('change', function(){
-            console.log('#t14paga');
+            console.log($('#t14paga').val());
         });
 
         $("#guardar").click(function(){
