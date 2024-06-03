@@ -38,7 +38,7 @@
                     </div>
                     <div class="col-md-6 text-center" id="cambio">
                         <label for="t14cambio">El domiciliario llevara de cambio</label>
-                        <input type="number" name="t14cambio" readonly>
+                        <input type="number" name="t14cambio" id="t14cambio" readonly>
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -98,6 +98,7 @@
         $('#pagar').on('change', function(){
             // console.log($('#t14paga').val());
             var resultado = $('#t14paga').val() - cuenta;
+            $('#t14cambio').val(resultado);
             console.log(resultado);
 
         });
