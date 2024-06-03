@@ -31,6 +31,16 @@
                         <p style="text-decoration: solid;"><b>Escribenos al whatsapp para confirmarnos que opcion es la mas comoda<a href="https://wa.link/p15czk">229 667 4807</a></b></p>
                     </div>
                 </div>
+                <div class="row form-group">
+                    <div class="col-md-6 text-center" id="pagar">
+                        <label for="t14paga">Con cuanto va a pagar</label>
+                        <input type="number" name="t14paga">
+                    </div>
+                    <div class="col-md-6 text-center" id="cambio">
+                        <label for="t14cambio">El domiciliario llevara de cambio</label>
+                        <input type="number" name="t14cambio" readonly>
+                    </div>
+                </div>
                 <div class="col-md-12">
                     <label for="t14direccion">Dirección de Envío:</label>
                     <textarea name="t14direccion" id="t14direccion" class="form-control" rows="3"></textarea>
@@ -56,22 +66,36 @@
     $(document).ready(function() {
         $('#banco').parent().hide();
         $('#efectivo').parent().hide();
+        $('#pagar').parent().hide();
+        $('#cambio').parent().hide();
+
 
         $('#t14tipopago').on('change', function(){
             if(!$(this).val() == ''){
                 if($(this).val() == 'transferencia'){
                     $('#banco').parent().show();
                     $('#efectivo').parent().hide();
+                    $('#pagar').parent().hide();
+                    $('#cambio').parent().hide();
+
                 }
                 if($(this).val() == 'efectivo'){
                     $('#efectivo').parent().show();
+                    $('#pagar').parent().show();
+                    $('#cambio').parent().show();
                     $('#banco').parent().hide();
                 }
             }else{
                 $('#banco').parent().hide();
                 $('#efectivo').parent().hide();
+                $('#pagar').parent().hide();
+                $('#cambio').parent().hide();
             }
-        })
+        });
+
+        $('#pagar').on('change', function(){
+
+        });
 
         $("#guardar").click(function(){
             $("#btnSubmit").click();

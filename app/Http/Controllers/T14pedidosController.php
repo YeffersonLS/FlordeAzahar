@@ -22,7 +22,22 @@ class T14pedidosController extends Controller
 
         // dd('se paso');
 
-        return view('pago');
+        $cart = T13carrito::where('t13cliente', auth()->user()->sys01id)->first();
+
+        $cartItems = T12carritoItem::select('t12producto', 't12cantidad', 't12pedido', 't12carrito', 't12carrito', 'p.t04precio', 'p.t04id', 'p.t04nombre')
+        ->leftJoin('t04productos as p', 'p.t04id', '=', 't12producto')
+        ->whereNot('t12pedido', '=', true)
+        ->where('t12carrito', '=', $cart->t13id)->get();
+
+        $total = 0;
+        foreach ($cartItems as $cartItem) {
+            $check = true;
+
+            $total += $cartItem->t04precio * $cartItem->t12cantidad;
+        }
+
+
+        return view('pago', compact('total'));
     }
 
     public function payPost(Request $request)
