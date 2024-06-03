@@ -63,7 +63,8 @@ class T14pedidosController extends Controller
             return redirect('/confirmadoco');
         } catch (\Exception $e) {
             // Registrar el error en un log
-            dd($e);
+            // dd($e);
+            return redirect('/')->with('mensaje', 'Ocurrió un error al procesar el pago');
             // Log::error('Error en el proceso de pago: ' . $e->getMessage());
 
             // Mostrar un mensaje de error al usuario
