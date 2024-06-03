@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="row form-group">
-                    <div class="col-md-6 text-center" id="t14paga">
+                    <div class="col-md-6 text-center" id="pagar">
                         <label for="t14paga">Con cuanto va a pagar</label>
                         <input type="number" name="t14paga" id="t14paga">
                     </div>
@@ -94,8 +94,8 @@
         });
 
 
-        $('#t14paga').on('change', function(){
-            console.log($(this).val());
+        $('#pagar').on('change', function(){
+            console.log($('#t14paga').val());
         });
 
         $("#guardar").click(function(){
