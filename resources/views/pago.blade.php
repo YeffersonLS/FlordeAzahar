@@ -34,7 +34,7 @@
                 <div class="row form-group">
                     <div class="col-md-6 text-center" id="t14paga">
                         <label for="t14paga">Con cuanto va a pagar</label>
-                        <input type="number" name="t14paga">
+                        <input type="number" name="t14paga" id="t14paga">
                     </div>
                     <div class="col-md-6 text-center" id="cambio">
                         <label for="t14cambio">El domiciliario llevara de cambio</label>
