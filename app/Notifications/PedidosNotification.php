@@ -97,10 +97,10 @@ class PedidosNotification extends Notification
                     ->line("$combinedProductNames")
                     ->line('Esta es la dirección de entrega:')
                     ->line("$direccion")
-                    ->line('El cliente pagara con '."$cambio")
+                    ->line('El cliente pagara con '."$cambio". "MXN")
                     ->cc('yefferson.mod@gmail.com')
-                    // ->cc('flordeazahargerencia@gmail.com')
-                    // ->cc('linaloaizasol@gmail.com')
+                    ->cc('flordeazahargerencia@gmail.com')
+                    ->cc('linaloaizasol@gmail.com')
                     ;
     }
 
