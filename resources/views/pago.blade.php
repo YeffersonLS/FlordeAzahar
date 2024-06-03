@@ -96,6 +96,7 @@
 
         $('#pagar').on('change', function(){
             console.log($('#t14paga').val());
+            console.log({{ $total }});
         });
 
         $("#guardar").click(function(){
