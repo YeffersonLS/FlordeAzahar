@@ -57,6 +57,8 @@ class PedidosNotification extends Notification
         $pago = $pedido->t14tipopago;
 
         $direccion = $pedido->t14direccion;
+
+        $cambio = $pedido->t14paga;
         // dd($pago);
 
         $cartItems = T12carritoItem::where('t12carrito', '=', $cart->t13id)
@@ -95,6 +97,7 @@ class PedidosNotification extends Notification
                     ->line("$combinedProductNames")
                     ->line('Esta es la dirección de entrega:')
                     ->line("$direccion")
+                    ->line('El cliente pagara con '."$cambio")
                     ->cc('yefferson.mod@gmail.com')
                     ->cc('flordeazahargerencia@gmail.com')
                     ->cc('linaloaizasol@gmail.com');

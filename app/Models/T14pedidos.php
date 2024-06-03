@@ -18,7 +18,9 @@ class T14pedidos extends Model
         't14cliente',
         't14pago',
         't14direccion',
-        't14tipopago'
+        't14tipopago',
+        't14paga',
+        't14cambio'
     ];
 
 }
