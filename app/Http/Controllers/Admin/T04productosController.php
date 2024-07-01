@@ -231,7 +231,18 @@ class T04productosController extends Controller
                 $row['t04precio'],
             ];
         }
-        dd($html);
+        // dd($html);
+        $sheet->fromArray($html, NULL, 'A1');
+
+        $writer = new Xlsx($spreadsheet);
+        $fileName = 'reporte_productos.xlsx';
+
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment; filename="'. urlencode($fileName) .'"');
+        header('Cache-Control: max-age=0');
+
+        $writer->save('php://output');
+        exit;
     }
 
 }
