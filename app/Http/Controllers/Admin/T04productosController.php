@@ -212,13 +212,28 @@ class T04productosController extends Controller
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
 
-        $sheet->setCellValue('A1', 'Nombre');
-        $sheet->setCellValue('B1', 'Precio');
+        // $sheet->setCellValue('A1', 'Nombre');
+        // $sheet->setCellValue('B1', 'Precio');
+        $html = [
+            [
+                'Nombre',
+                'Precio',
+            ],
+        ];
 
         $data = T04productos::select('t04nombre', 't04precio')->get();
         // dd($data);
         $dataArray = $data->toArray();
-        dd($dataArray);
+        // dd($dataArray);
+        foreach ($dataArray as $row) {
+            foreach ($row as $l) {
+                $html[] = [
+                    $l->t04nombre,
+                    $l->t04precio,
+                ];
+            }
+        }
+        dd($html);
     }
 
 }
