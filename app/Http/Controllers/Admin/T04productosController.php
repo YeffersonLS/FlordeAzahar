@@ -216,8 +216,9 @@ class T04productosController extends Controller
         $sheet->setCellValue('B1', 'Precio');
 
         $data = T04productos::select('t04nombre', 't04precio')->get();
-        dd($data);
+        // dd($data);
         $dataArray = $data->toArray();
+        dd($dataArray);
     }
 
 }
