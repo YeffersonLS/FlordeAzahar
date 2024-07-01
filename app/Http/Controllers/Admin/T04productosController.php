@@ -209,14 +209,13 @@ class T04productosController extends Controller
 
     public function exportProduct()
     {
-        dd('hola');
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
 
         $sheet->setCellValue('A1', 'Nombre');
         $sheet->setCellValue('B1', 'Precio');
 
-        $data = T04productos::select('t04nombre', 't04precio')->toArray();
+        $data = T04productos::select('t04nombre', 't04precio');
         dd($data);
         $dataArray = $data->toArray();
     }
