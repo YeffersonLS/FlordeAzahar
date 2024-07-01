@@ -19,7 +19,10 @@
                 <a href="{!! url(\Route::current()->uri.'/create') !!}" class="btn btn-info d-none d-lg-block m-r-15"><i class="fa fa-plus-circle"></i>
                 Crear Nuevo</a>
             @endif
-
+            @if (\Route::current()->uri == 'admin/products')
+            <a href="{!! url('admin/products/excel') !!}" class="btn btn-info d-none d-lg-block m-r-15"><i class="fa fa-plus-circle"></i>
+                Descargar Excel</a>
+            @endif
 
         </div>
     </div>

@@ -10,6 +10,8 @@ use App\Models\T04productos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class T04productosController extends Controller
 {
@@ -203,6 +205,19 @@ class T04productosController extends Controller
 
 
         return redirect(self::$ruta.'/images')->with('mensaje', 'Se anexaron las imagenes correctamente');
+    }
+
+    public function exportProduct()
+    {
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $sheet->setCellValue('A1', 'Nombre');
+        $sheet->setCellValue('B1', 'Precio');
+
+        $data = T04productos::select('t04nombre', 't04precio');
+        dd($data);
+        $dataArray = $data->toArray();
     }
 
 }

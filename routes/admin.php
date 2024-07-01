@@ -33,6 +33,7 @@ Route::get('json.admin/products/recetas', function (Request $request) {
 Route::get('products/images', [\App\Http\Controllers\Admin\T04productosController::class, 'indexImages'])->name('admin.products.images');
 Route::get('products/images/{blog}/crear', [\App\Http\Controllers\Admin\T04productosController::class, 'images'])->name('admin.products.imagesCrear');
 Route::post('admin/products/images', [\App\Http\Controllers\Admin\T04productosController::class, 'imagesPost'])->name('admin.products.imagesPost');
+Route::post('admin/products/excel', [\App\Http\Controllers\Admin\T04productosController::class, 'exportProduct'])->name('admin.products.exportProduct');
 Route::get('json.admin/products/images', function (Request $request) {
     return \App\Models\T04productos::getDatatableImages($request);
 })->name('json.admin/products/images');
