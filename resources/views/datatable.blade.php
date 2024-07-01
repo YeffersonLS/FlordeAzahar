@@ -21,7 +21,7 @@
             @endif
             @if (\Route::current()->uri == 'admin/products')
             <a href="{!! url('admin/products/excel') !!}" class="btn btn-info d-none d-lg-block m-r-15"><i class="fa fa-plus-circle"></i>
-                Descargar Excel</a>
+                 Descargar Excel</a>
             @endif
 
         </div>
