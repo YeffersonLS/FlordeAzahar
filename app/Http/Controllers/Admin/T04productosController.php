@@ -216,17 +216,19 @@ class T04productosController extends Controller
         // $sheet->setCellValue('B1', 'Precio');
         $html = [
             [
+                'Id',
                 'Nombre',
                 'Precio',
             ],
         ];
 
-        $data = T04productos::select('t04nombre', 't04precio')->get();
+        $data = T04productos::select('t04nombre', 't04precio', 't04id')->get();
         // dd($data);
         $dataArray = $data->toArray();
         // dd($dataArray);
         foreach ($dataArray as $row) {
             $html[] = [
+                $row['t04id'],
                 $row['t04nombre'],
                 $row['t04precio'],
             ];
@@ -242,7 +244,7 @@ class T04productosController extends Controller
         header('Cache-Control: max-age=0');
 
         $writer->save('php://output');
-        exit;
+        return redirect(self::$ruta);
     }
 
 }
