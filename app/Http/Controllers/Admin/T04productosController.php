@@ -226,12 +226,10 @@ class T04productosController extends Controller
         $dataArray = $data->toArray();
         // dd($dataArray);
         foreach ($dataArray as $row) {
-            foreach ($row as $l) {
-                $html[] = [
-                    $l->t04nombre,
-                    $l->t04precio,
-                ];
-            }
+            $html[] = [
+                $row['t04nombre'],
+                $row['t04precio'],
+            ];
         }
         dd($html);
     }
