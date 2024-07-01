@@ -209,6 +209,7 @@ class T04productosController extends Controller
 
     public function exportProduct()
     {
+        dd('hola');
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
 
