@@ -29,7 +29,7 @@
                     <h4 class="m-b-0 m-t-0 text-white">Datos Básicos</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{ route('admin.products.importProductPost') }}" method="POST">
+                    <form action="{{ route('admin.products.importProductPost') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="file" name="file" accept=".xlsx, .xls">
 
