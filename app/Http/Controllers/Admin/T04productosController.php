@@ -276,10 +276,10 @@ class T04productosController extends Controller
 
 
             $producto = T04productos::find($id);
-            dd($producto);
             if ($producto) {
                 $producto->t04nombre = $nombre;
                 $producto->t04precio = $precio;
+                dd($producto);
                 $producto->save();
             }
         }
