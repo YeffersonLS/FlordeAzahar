@@ -22,6 +22,8 @@
             @if (\Route::current()->uri == 'admin/products')
             <a href="{!! url('admin/products/excel') !!}" class="btn btn-info d-none d-lg-block m-r-15"><i class="fa fa-plus-circle"></i>
                  Descargar Excel</a>
+            <a href="{!! url('admin/products/import') !!}" class="btn btn-info d-none d-lg-block m-r-15"><i class="fa fa-plus-circle"></i>
+                Importar Precios</a>
             @endif
 
         </div>

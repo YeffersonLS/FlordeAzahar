@@ -34,6 +34,9 @@ Route::get('products/images', [\App\Http\Controllers\Admin\T04productosControlle
 Route::get('products/images/{blog}/crear', [\App\Http\Controllers\Admin\T04productosController::class, 'images'])->name('admin.products.imagesCrear');
 Route::post('admin/products/images', [\App\Http\Controllers\Admin\T04productosController::class, 'imagesPost'])->name('admin.products.imagesPost');
 Route::get('products/excel', [\App\Http\Controllers\Admin\T04productosController::class, 'exportProduct'])->name('admin.products.exportProduct');
+Route::get('products/import', [\App\Http\Controllers\Admin\T04productosController::class, 'importProduct'])->name('admin.products.importProduct');
+Route::post('products/import', [\App\Http\Controllers\Admin\T04productosController::class, 'importProductPost'])->name('admin.products.importProductPost');
+
 Route::get('json.admin/products/images', function (Request $request) {
     return \App\Models\T04productos::getDatatableImages($request);
 })->name('json.admin/products/images');

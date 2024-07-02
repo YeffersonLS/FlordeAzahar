@@ -10,6 +10,7 @@ use App\Models\T04productos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
@@ -246,5 +247,44 @@ class T04productosController extends Controller
         $writer->save('php://output');
         return redirect(self::$ruta);
     }
+
+    public function importProduct()
+    {
+        $titulo = 'Sube los nuevos precios de los Productos';
+
+        return view('admin.products.import', compact('titulo'));
+    }
+
+    public function importProductPost(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx,xls',
+        ]);
+
+        $file = $request->file('file');
+        $spreadsheet = IOFactory::load($file->getPathname());
+
+        $sheetData = $spreadsheet->getActiveSheet()->toArray();
+
+        foreach ($sheetData as $index => $row) {
+            if ($index == 0) {
+                continue;
+            }
+            $id = $row[0];
+            $nombre = $row[1];
+            $precio = $row[2];
+
+
+            $producto = T04productos::find($id);
+            dd($producto);
+            if ($producto) {
+                $producto->t04nombre = $nombre;
+                $producto->t04precio = $precio;
+                $producto->save();
+            }
+        }
+
+    }
+
 
 }
