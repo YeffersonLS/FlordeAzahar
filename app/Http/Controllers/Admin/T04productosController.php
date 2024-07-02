@@ -279,11 +279,12 @@ class T04productosController extends Controller
             if ($producto) {
                 $producto->t04nombre = $nombre;
                 $producto->t04precio = $precio;
-                dd($producto);
+                // dd($producto);
                 $producto->save();
             }
         }
 
+        return redirect(self::$ruta)->with('mensaje', 'Se han subido los nuevos precios');
     }
 
 
