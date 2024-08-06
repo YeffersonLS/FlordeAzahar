@@ -44,6 +44,9 @@ class HomeController extends Controller
         ->WhereNotNull('t02image_path')
         ->get();
 
+        if(Auth::user()->sys01id == 1){
+            dd($products);
+        }
         // match(true){
         //     $banners < 8 => 'No hay banners'
         // };
