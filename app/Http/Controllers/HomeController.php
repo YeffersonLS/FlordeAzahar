@@ -37,7 +37,7 @@ class HomeController extends Controller
                 $join->on('i.r03product', '=', 't04id')
                     ->whereRaw('i.r03id = (select r03id from r03products_images where r03product = t04id limit 1)');
             })
-            ->orderBy('t04categoria')
+            ->orderByRaw('CASE WHEN t04categoria = 38 THEN 0 ELSE 1 END, t04categoria')
             ->get();
         $banners = T06banners::where('t06publicado', '=', true)
         ->get();
