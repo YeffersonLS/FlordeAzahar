@@ -131,37 +131,37 @@
     color: #000; /* Cambia el color del texto al pasar el mouse */
 }
 
-.banner {
-    background-position-y: top;
-    flex: 0 0 auto;
+/* Asegúrate de que el contenedor del banner esté alineado con el borde de la página */
+.banner-container {
     width: 100%;
-    height: 80vh; /* Puedes ajustar la altura según tus necesidades */
-    background-size: contain;
-    background-repeat: no-repeat;
+    margin: 0; /* Elimina márgenes adicionales */
+    padding: 0;
+}
+
+.banner-carousel {
+    width: 100%;
+}
+
+.banner {
+    width: 100%;
+    height: 80vh; /* Ajusta la altura según tus necesidades */
+    background-size: cover;
     background-position: center;
-    text-align: center;
-    color: white;
-    font-size: 24px;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    margin: 0; /* Elimina márgenes adicionales */
+    padding: 0;
 }
 
 @media only screen and (max-width: 768px) {
     .banner {
-        background-position-y: top;
-        background-size: contain;
-        background-repeat: no-repeat;
         height: 60vh; /* Ajusta la altura para dispositivos móviles */
-        /* Otros estilos específicos para dispositivos móviles si es necesario */
     }
-    .banner-carousel {
-        height: 20vh;
-    }
-}
-
-.banner-container {
-    margin-bottom: 20px; /* Ajusta el margen inferior del contenedor del banner */
 }
 
 
