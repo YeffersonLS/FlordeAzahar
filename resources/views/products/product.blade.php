@@ -44,11 +44,12 @@
                     <input type="number" name="quantity" id="quantity" min="1" value="1">
                     <button type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Agregar al carrito</button>
                 </form>
-Hola
                 {{-- <button type="submit" id="guardar" class="btn btn-success"><i class="fa fa-save"></i> Añadir al carrito</button> --}}
             </div>
         </div>
     </div>
+Hola
+
 </div>
 
 @endsection
