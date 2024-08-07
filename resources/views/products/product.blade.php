@@ -30,7 +30,7 @@
         <div class="col-md-6">
             <h2>{{ $product->t02nombre }}</h2>
             <p>{!! $product->t04descripcion !!}</p>
-            <p>Precio: ${{ $product->t04precio }}</p>
+            <strong><p class="red">Precio: ${{ $product->t04precio }}</p></strong>
             <div class="mt-3">
                 @foreach ($images as $img)
                 <img src="{{ asset($img->image_path) }}" alt="{{ $product->t02nombre }}" class="thumbnail" onclick="changeImage('{{ $img->image_path }}')" style="max-width: 100px; max-height: 100px;">
