@@ -49,28 +49,25 @@
         </div>
     </div>
     <div class="card-body">
-        <div class="row">
-            <div class="product-carousel">
-                @foreach ($relations as $relation)
-                <div class="relation-item">
-                    <!-- Contenido del producto aquí -->
-                    <div class="col-md-6 col-lg-3">
-                        <div class="relation">
-                            <a href="{{ route('product.show', ['t04slug' => $relation->t04slug]) }}">
-                                <div class="card">
-                                    <img src="{{ asset($relation->image_path) }}" class="card-img-top" alt="{{ $relation->t02nombre }}">
-                                    <div class="card-info">
-                                        <p class="subcategoria-relations">{{ $relation->t02nombre }}</p>
-                                        <h5 class="card-title">{{ $relation->t04nombre }}</h5>
-                                        <p class="card-money">{{ '$' . $relation->t04precio . ' MXN' }}</p>
-                                    </div>
+        <div class="row product-carousel">
+            @foreach ($relations as $relation)
+            <div class="product-item">
+                <div class="col-md-6 col-lg-3">
+                    <div class="relation">
+                        <a href="{{ route('product.show', ['t04slug' => $relation->t04slug]) }}">
+                            <div class="card">
+                                <img src="{{ asset($relation->image_path) }}" class="card-img-top" alt="{{ $relation->t02nombre }}">
+                                <div class="card-info">
+                                    <p class="subcategoria-relation">{{ $relation->t02nombre }}</p>
+                                    <h5 class="card-title-relation">{{ $relation->t04nombre }}</h5>
+                                    <p class="card-money-relation">{{ '$' . $relation->t04precio . ' MXN' }}</p>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
-                @endforeach
             </div>
+            @endforeach
         </div>
     </div>
 
