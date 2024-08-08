@@ -55,7 +55,7 @@
                 <div class="product-item">
                     <a href="{{ route('product.show', ['t04slug' => $product->t04slug]) }}">
                         <div class="card">
-                            <img src="{{ asset($product->image_path) }}" class="card-img-top" alt="{{ $product->t02nombre }}">
+                            <img src="{{ asset($product->image_path) }}" class="card-img-top-relation" alt="{{ $product->t02nombre }}">
                             <div class="card-info">
                                 <p class="subcategoria-productos">{{ $product->t02nombre }}</p>
                                 <h5 class="card-title">{{ $product->t04nombre }}</h5>
