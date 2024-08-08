@@ -54,17 +54,19 @@
                 @foreach ($relations as $relation)
                 <div class="product-item">
                     <!-- Contenido del producto aquí -->
-                    <div class="productos">
-                        <a href="{{ route('product.show', ['t04slug' => $relation->t04slug]) }}">
-                            <div class="card">
-                                <img src="{{ asset($relation->image_path) }}" class="card-img-top" alt="{{ $relation->t02nombre }}">
-                                <div class="card-info">
-                                    <p class="subcategoria-productos">{{ $relation->t02nombre }}</p>
-                                    <h5 class="card-title">{{ $relation->t04nombre }}</h5>
-                                    <p class="card-money">{{ '$' . $relation->t04precio . ' MXN' }}</p>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="productos">
+                            <a href="{{ route('product.show', ['t04slug' => $relation->t04slug]) }}">
+                                <div class="card">
+                                    <img src="{{ asset($relation->image_path) }}" class="card-img-top" alt="{{ $relation->t02nombre }}">
+                                    <div class="card-info">
+                                        <p class="subcategoria-productos">{{ $relation->t02nombre }}</p>
+                                        <h5 class="card-title">{{ $relation->t04nombre }}</h5>
+                                        <p class="card-money">{{ '$' . $relation->t04precio . ' MXN' }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 @endforeach
