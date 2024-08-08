@@ -411,7 +411,7 @@
 
 .product-item {
     flex: 0 0 auto; /* Evita que los productos se reduzcan o estiren */
-    width: 200px; /* Ajusta el ancho de los productos según tus necesidades */
+    width: 300px; /* Ajusta el ancho de los productos según tus necesidades */
     border: 1px solid #ddd; /* Ejemplo de borde, puedes personalizarlo */
     border-radius: 8px;
     padding: 10px;
