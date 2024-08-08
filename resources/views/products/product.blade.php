@@ -48,15 +48,30 @@
             </div>
         </div>
     </div>
-<div class="card-body">
-    <div class="row">
-        @foreach ($products as $product)
-        <div class="col-md-6 col-lg-3">
-
+    <div class="card-body">
+        <div class="row">
+            <div class="product-carousel">
+                @foreach ($relations as $relation)
+                <div class="product-item">
+                    <!-- Contenido del producto aquí -->
+                    <div class="productos">
+                        <a href="{{ route('product.show', ['t04slug' => $product->t04slug]) }}">
+                            <div class="card">
+                                <img src="{{ asset($product->image_path) }}" class="card-img-top" alt="{{ $product->t02nombre }}">
+                                <div class="card-info">
+                                    <p class="subcategoria-productos">{{ $product->t02nombre }}</p>
+                                    <h5 class="card-title">{{ $product->t04nombre }}</h5>
+                                    <p class="card-money">{{ '$' . $product->t04precio . ' MXN' }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
         </div>
-        @endforeach
     </div>
-</div>
+
 </div>
 
 @endsection

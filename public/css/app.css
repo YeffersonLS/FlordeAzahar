@@ -400,3 +400,21 @@
     margin: 0 auto;
     display: block;
   }
+
+  .product-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px; /* Espacio entre los productos */
+    padding: 10px 0;
+    scroll-behavior: smooth; /* Animación suave al desplazar */
+}
+
+.product-item {
+    flex: 0 0 auto; /* Evita que los productos se reduzcan o estiren */
+    width: 200px; /* Ajusta el ancho de los productos según tus necesidades */
+    border: 1px solid #ddd; /* Ejemplo de borde, puedes personalizarlo */
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
