@@ -52,15 +52,15 @@
         <div class="row">
             <div class="product-carousel">
                 @foreach ($relations as $relation)
-                <div class="product-item">
+                <div class="relation-item">
                     <!-- Contenido del producto aquí -->
                     <div class="col-md-6 col-lg-3">
-                        <div class="productos">
+                        <div class="relation">
                             <a href="{{ route('product.show', ['t04slug' => $relation->t04slug]) }}">
                                 <div class="card">
                                     <img src="{{ asset($relation->image_path) }}" class="card-img-top" alt="{{ $relation->t02nombre }}">
                                     <div class="card-info">
-                                        <p class="subcategoria-productos">{{ $relation->t02nombre }}</p>
+                                        <p class="subcategoria-relations">{{ $relation->t02nombre }}</p>
                                         <h5 class="card-title">{{ $relation->t04nombre }}</h5>
                                         <p class="card-money">{{ '$' . $relation->t04precio . ' MXN' }}</p>
                                     </div>
