@@ -56,7 +56,7 @@ class ShowProductController extends Controller
         $images = DB::table('r03products_images')
         ->select('image_path')->where ('r03product', '=', $product->t04id)
         ->get();
-        $products = T04productos::select('t04id', 't04nombre', 't04categoria', 't04precio', 'i.image_path', 'c.t02nombre')
+        $products = T04productos::select('t04id', 't04nombre', 't04categoria', 't04slug', 't04precio', 'i.image_path', 'c.t02nombre')
             ->where('t04categoria', '=', $product->t04categoria)
             ->leftJoin('t02directorios as c', 'c.t02id', '=', 't04categoria')
             ->Join('r03products_images as i', function($join) {
