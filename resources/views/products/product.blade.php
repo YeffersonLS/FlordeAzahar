@@ -48,28 +48,26 @@
             </div>
         </div>
     </div>
-    <div class="card-body">
-        <div class="product-carousel">
-            @foreach ($relations as $relation)
-            <div class="relation-item">
-                <div class="relation">
-                    <a href="{{ route('product.show', ['t04slug' => $relation->t04slug]) }}">
-                        <div class="card-relation">
-                            <img src="{{ asset($relation->image_path) }}" class="card-img-relation" alt="{{ $relation->t02nombre }}">
-                            <div class="card-info-relation">
-                                <p class="subcategoria-relation">{{ $relation->t02nombre }}</p>
-                                <h5 class="card-title-relation">{{ $relation->t04nombre }}</h5>
-                                <p class="card-money-relation">{{ '$' . $relation->t04precio . ' MXN' }}</p>
-                            </div>
+<div class="card-body">
+    <div class="row">
+        @foreach ($products as $product)
+        <div class="col-md-6 col-lg-3">
+            <div class="productos">
+                <a href="{{ route('product.show', ['t04slug' => $product->t04slug]) }}">
+                    <div class="card">
+                        <img src="{{ asset($product->image_path) }}" class="card-img-top" alt="{{ $product->t02nombre }}">
+                        <div class="card-info">
+                            <p class="subcategoria-productos">{{ $product->t02nombre }}</p>
+                            <h5 class="card-title">{{ $product->t04nombre }}</h5>
+                            <p class="card-money">{{ '$' . $product->t04precio . ' MXN' }}</p>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
-            @endforeach
         </div>
+        @endforeach
     </div>
-
-
+</div>
 </div>
 
 @endsection
