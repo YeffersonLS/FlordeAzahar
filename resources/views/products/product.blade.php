@@ -51,7 +51,7 @@
     <div class="card-body">
         <div class="row">
             <div class="product-carousel">
-                @foreach ($relations as $relation)
+                @foreach ($products as $product)
                 <div class="product-item">
                     <a href="{{ route('product.show', ['t04slug' => $product->t04slug]) }}">
                         <div class="card">
