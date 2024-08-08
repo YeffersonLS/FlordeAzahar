@@ -401,20 +401,63 @@
     display: block;
   }
 
+  /* AQUI ES EL CARD BODY DE LA LISTA HORIZONTAL DE PRODUCTOS*/
+
   .product-carousel {
     display: flex;
     overflow-x: auto;
-    gap: 10px; /* Espacio entre los productos */
+    scroll-snap-type: x mandatory;
     padding: 10px 0;
-    scroll-behavior: smooth; /* Animación suave al desplazar */
 }
 
-.product-item {
-    flex: 0 0 auto; /* Evita que los productos se reduzcan o estiren */
-    width: 200px; /* Ajusta el ancho de los productos según tus necesidades */
-    border: 1px solid #ddd; /* Ejemplo de borde, puedes personalizarlo */
+.relation-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    margin-right: 10px; /* Espaciado entre productos */
+}
+
+.card-relation {
+    width: 100%; /* Asegura que la tarjeta ocupe todo el espacio disponible */
+    border: 1px solid #ddd;
     border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.card-img-relation {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-info-relation {
     padding: 10px;
-    background-color: #fff; /* Fondo blanco */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    text-align: center;
+}
+
+.subcategoria-relation {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.card-title-relation {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.card-money-relation {
+    font-size: 16px;
+    color: #f00;
+}
+
+.product-carousel::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento en WebKit */
+}
+
+.product-carousel {
+    -ms-overflow-style: none;  /* Oculta la barra de desplazamiento en IE y Edge */
+    scrollbar-width: none;  /* Oculta la barra de desplazamiento en Firefox */
 }
