@@ -58,6 +58,7 @@ class ShowProductController extends Controller
         ->get();
         $products = T04productos::select('t04id', 't04nombre', 't04categoria', 't04slug', 't04precio', 'i.image_path', 'c.t02nombre')
             ->where('t04categoria', '=', $product->t04categoria)
+            ->where('t04id', '!=', $product->t04id)
             ->leftJoin('t02directorios as c', 'c.t02id', '=', 't04categoria')
             ->Join('r03products_images as i', function($join) {
                 $join->on('i.r03product', '=', 't04id')
