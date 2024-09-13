@@ -106,7 +106,7 @@ class T01blogsController extends Controller
                 $q->t01image_path = 'public/storage/' . str_replace('public/', '', $path);
             }
         }
-
+        dd('No entro');
         $q->update();
 
         return redirect(self::$ruta)->with('mensaje', 'Se ha editado el post correctamente');
