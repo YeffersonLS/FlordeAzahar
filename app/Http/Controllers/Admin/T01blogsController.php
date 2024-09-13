@@ -100,13 +100,11 @@ class T01blogsController extends Controller
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                dd('entro');
                 $path = $image->storeAs('public/images/t01blogs', $imageName);
 
                 $q->t01image_path = 'public/storage/' . str_replace('public/', '', $path);
             }
         }
-        dd('No entro');
         $q->update();
 
         return redirect(self::$ruta)->with('mensaje', 'Se ha editado el post correctamente');
