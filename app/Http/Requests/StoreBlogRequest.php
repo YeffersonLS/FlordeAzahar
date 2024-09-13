@@ -23,7 +23,7 @@ class StoreBlogRequest extends FormRequest
     {
         $rules = [
             't01nombre' => 'required',
-            't01publicado' => 'required|in:true,false',
+            't01publicado' => 'required',
         ];
 
         if ($this->t01publicado) {
