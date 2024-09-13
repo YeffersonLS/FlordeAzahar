@@ -47,7 +47,7 @@ class T01blogsController extends Controller
         $c = new T01blog();
         $c->fill($data);
         $c->t01usuario = Auth::user()->sys01id;
-        dd($data,$c);
+        // dd($data,$c);
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
