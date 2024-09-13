@@ -11,9 +11,9 @@ Route::middleware('admin')->group(function () {
 
 Route::get('', [AdminController::class,'index'])->name('admin.home');
 Route::resource('blogs', \App\Http\Controllers\Admin\T01blogsController::class)->names('admin.blogs');
-// Route::get('admin/blogs/{blog}/edit', [\App\Http\Controllers\Admin\T01blogsController::class, 'edit'])->name('admin.blogs.edit');
-// Route::put('admin/blogs/{blog}', [\App\Http\Controllers\Admin\T01blogsController::class, 'update'])->name('admin.blogs.update');
-// Route::delete('admin/blogs/{blog}', [\App\Http\Controllers\Admin\T01blogsController::class, 'destroy'])->name('admin.blogs.destroy');
+Route::get('admin/blogs/{blog}/edit', [\App\Http\Controllers\Admin\T01blogsController::class, 'edit'])->name('admin.blogs.edit');
+Route::put('admin/blogs/{blog}', [\App\Http\Controllers\Admin\T01blogsController::class, 'update'])->name('admin.blogs.update');
+Route::delete('admin/blogs/{blog}', [\App\Http\Controllers\Admin\T01blogsController::class, 'destroy'])->name('admin.blogs.destroy');
 Route::get('json.admin/blogs', function (Request $request) {
     return \App\Models\T01blog::getDatatable($request);
 })->name('json.admin/blogs');

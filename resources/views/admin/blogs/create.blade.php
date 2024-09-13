@@ -48,7 +48,15 @@
                 @endif
 
                     @csrf
-
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                     <div class="row form-group">
                         <div class="col-md-12">
                             <label for="t01slug">Slug SEO</label>
@@ -127,15 +135,6 @@
                         </div>
                     </div>
 
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
 
                     <div class="row form-group">
                         <div class="col-md-12 text-center">
