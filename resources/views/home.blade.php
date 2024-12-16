@@ -86,7 +86,7 @@
         </div>
 
         <br>
-        <div class="row justify-center">
+        {{-- <div class="row justify-center">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">{{ __('Marcas') }}</div>
@@ -97,7 +97,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
     </div>
 @endsection
@@ -108,7 +108,6 @@
         var banners = $('.carousel-banner');
         var dotsContainer = $('.banner-dots');
 
-        // Crear puntos para cada banner
         banners.each(function(index) {
             dotsContainer.append('<span class="dot" data-index="' + index + '"></span>');
         });
@@ -116,38 +115,32 @@
         var dots = $('.dot');
         var currentIndex = 0;
 
-        // Función para mostrar el banner actual
         function showBanner(index) {
             banners.hide().eq(index).show();
             dots.removeClass('active-dot').eq(index).addClass('active-dot');
         }
 
-        // Mostrar el primer banner
         showBanner(currentIndex);
 
-        // Navegación al banner anterior
         $('.prev-arrow').click(function() {
             currentIndex = (currentIndex === 0) ? banners.length - 1 : currentIndex - 1;
             showBanner(currentIndex);
         });
 
-        // Navegación al siguiente banner
         $('.next-arrow').click(function() {
             currentIndex = (currentIndex === banners.length - 1) ? 0 : currentIndex + 1;
             showBanner(currentIndex);
         });
 
-        // Navegación al hacer clic en los puntos
         dots.click(function() {
             var index = $(this).data('index');
             showBanner(index);
         });
 
-        // Configurar temporizador para cambiar automáticamente los banners cada 10 segundos
         setInterval(function() {
             currentIndex = (currentIndex === banners.length - 1) ? 0 : currentIndex + 1;
             showBanner(currentIndex);
-        }, 10000); // Cambiar el banner cada 10 segundos (10000 ms)
+        }, 10000);
     });
 </script>
 @endsection
