@@ -1,14 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row justify-center">
+    @foreach($banners as $index => $banner)
+    <div class="banner carousel-banner" style="background-image: url('{{ asset($banner->t06image_path) }}');">
+        {{-- <h1>{{ $banner->t06descripcionimagen }}</h1> --}}
+    </div>
+    @endforeach
+</div>
     <div class="container">
-        <div class="row justify-center">
-            @foreach($banners as $index => $banner)
-            <div class="banner carousel-banner" style="background-image: url('{{ asset($banner->t06image_path) }}');">
-                {{-- <h1>{{ $banner->t06descripcionimagen }}</h1> --}}
-            </div>
-            @endforeach
-        </div>
+
 
 
         <div>
