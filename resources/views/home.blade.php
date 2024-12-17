@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="row justify-center">
-    <div class="col-8">
+    <div class="col-7">
     @foreach($banners as $index => $banner)
         <div class="banner carousel-banner" style="background-image: url('{{ asset($banner->t06image_path) }}');">
         </div>
     @endforeach
     </div>
-    <div class="col-4">
+    <div class="col-5">
         <video autoplay muted loop style="width: 800px; height: 520px;">
             <source src="{{ asset('public/storage/videos/navidad.mp4') }}" type="video/mp4">
         </video>
