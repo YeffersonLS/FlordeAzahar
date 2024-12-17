@@ -12,7 +12,7 @@
 
     <!-- Video al lado -->
     <div class="col-12 col-md-6 mb-3">
-        <video controls style="width: 100%; max-height: 200px;">
+        <video controls>
             <source src="{{ asset('public/storage/videos/navidad.mp4') }}" type="video/mp4">
         </video>
     </div>
