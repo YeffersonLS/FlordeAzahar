@@ -1,30 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row justify-center align-items-center">
-    <!-- Banner -->
-    <div class="col-12 col-md-6 mb-3">
-        @foreach($banners as $index => $banner)
-        <div class="banner carousel-banner" style="background-image: url('{{ asset($banner->t06image_path) }}'); height: 200px; background-size: cover;">
-        </div>
-        @endforeach
+<div class="row justify-center">
+    @foreach($banners as $index => $banner)
+    <div class="banner carousel-banner" style="background-image: url('{{ asset($banner->t06image_path) }}');">
     </div>
-
-    <!-- Video al lado -->
-    <div class="col-12 col-md-6 mb-3">
-        <video controls>
-            <source src="{{ asset('public/storage/videos/navidad.mp4') }}" type="video/mp4">
-        </video>
-    </div>
-</div>
-
-{{-- <div class="row justify-center mt-3">
     <div class="col-2">
         <video controls style="width: 100%; max-height: 300px;">
             <source src="{{ asset('public/storage/videos/navidad.mp4') }}" type="video/mp4">
         </video>
     </div>
-</div> --}}
+    @endforeach
+</div>
+
     <div class="container">
         <div>
             <br>
