@@ -8,7 +8,7 @@
         </div>
     @endforeach
     </div>
-    <div class="col-4">
+    <div class="col-3">
         <video autoplay muted loop style="width: 550px; height: 800px;">
             <source src="{{ asset('public/storage/videos/navidad.mp4') }}" type="video/mp4">
         </video>
