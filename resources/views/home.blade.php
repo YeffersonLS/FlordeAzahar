@@ -1,19 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="row justify-center">
-    <div class="col-8">
-    @foreach($banners as $index => $banner)
-        <div class="banner carousel-banner" style="background-image: url('{{ asset($banner->t06image_path) }}');">
+<div class="row justify-content-center align-items-center">
+    <!-- Banner -->
+    <div class="col-12 col-md-8 mb-3 mb-md-0">
+        @foreach($banners as $index => $banner)
+        <div class="banner carousel-banner" style="
+            background-image: url('{{ asset($banner->t06image_path) }}');
+            background-size: cover;
+            background-position: center;
+            height: 200px; /* Altura para móviles */
+            @media (min-width: 768px) { height: 400px; } /* Altura mayor en pantallas grandes */
+            ">
         </div>
-    @endforeach
+        @endforeach
     </div>
-    <div class="col-4">
-        <video autoplay muted loop style="width: 550px; height: 800px;">
+
+    <!-- Video -->
+    <div class="col-12 col-md-4">
+        <video autoplay muted loop style="width: 100%; height: auto; max-height: 400px;">
             <source src="{{ asset('public/storage/videos/navidad.mp4') }}" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
         </video>
     </div>
 </div>
+
 
     <div class="container">
         <div>
