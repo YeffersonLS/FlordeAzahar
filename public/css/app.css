@@ -164,7 +164,6 @@
 .responsive-video {
     width: 550px;        /* Ocupa el 100% del ancho del contenedor */
     height: 800px;       /* Mantiene la proporción del video */
-    max-height: 400px;  /* Altura máxima en dispositivos grandes */
 }
 
 @media only screen and (max-width: 768px) {
