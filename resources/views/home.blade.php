@@ -2,19 +2,22 @@
 
 @section('content')
 <div class="row justify-center">
+    <video controls style="width: 100%; max-height: 300px;">
+        <source src="{{ asset('public/storage/videos/navidad.mp4') }}" type="video/mp4">
+    </video>
     @foreach($banners as $index => $banner)
-    <div class="banner carousel-banner" style="background-image: url('{{ asset($banner->t06image_path) }}');">
-    </div>
+    {{-- <div class="banner carousel-banner" style="background-image: url('{{ asset($banner->t06image_path) }}');">
+    </div> --}}
     @endforeach
 </div>
 
-<div class="row justify-center mt-3">
+{{-- <div class="row justify-center mt-3">
     <div class="col-2">
         <video controls style="width: 100%; max-height: 300px;">
             <source src="{{ asset('public/storage/videos/navidad.mp4') }}" type="video/mp4">
         </video>
     </div>
-</div>
+</div> --}}
     <div class="container">
         <div>
             <br>
