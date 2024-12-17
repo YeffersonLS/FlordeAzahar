@@ -9,7 +9,7 @@
     @endforeach
     </div>
     <div class="col-4">
-        <video autoplay muted loop style="width: 400px; height: 800px;">
+        <video autoplay muted loop style="width: 550px; height: 800px;">
             <source src="{{ asset('public/storage/videos/navidad.mp4') }}" type="video/mp4">
         </video>
     </div>
