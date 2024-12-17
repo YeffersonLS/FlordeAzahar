@@ -9,7 +9,7 @@
     @endforeach
     </div>
     <div class="col-4">
-        <video controls style="width: 200px; height: 200px;">
+        <video controls style="width: 640px; height: 520px;">
             <source src="{{ asset('public/storage/videos/navidad.mp4') }}" type="video/mp4">
         </video>
     </div>
