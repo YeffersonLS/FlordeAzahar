@@ -162,13 +162,14 @@
 
 /* Video responsivo */
 .responsive-video {
-    width: 100%;        /* Ocupa el 100% del ancho del contenedor */
-    height: auto;       /* Mantiene la proporción del video */
+    width: 550px;        /* Ocupa el 100% del ancho del contenedor */
+    height: 800px;       /* Mantiene la proporción del video */
     max-height: 400px;  /* Altura máxima en dispositivos grandes */
 }
 
 @media only screen and (max-width: 768px) {
     .responsive-video {
+        max-width: 200px;
         max-height: 300px; /* Reducción de altura en móviles */
     }
 }
