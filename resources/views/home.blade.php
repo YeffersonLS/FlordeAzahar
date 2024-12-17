@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="row justify-content-center align-items-center banner-container">
-    <!-- Banner -->
     <div class="col-12 col-md-8 mb-3 mb-md-0">
         @foreach($banners as $index => $banner)
         <div class="banner carousel-banner" style="
@@ -11,8 +10,6 @@
         </div>
         @endforeach
     </div>
-
-    <!-- Video -->
     <div class="col-12 col-md-4">
         <video autoplay muted loop class="responsive-video">
             <source src="{{ asset('public/storage/videos/navidad.mp4') }}" type="video/mp4">

@@ -156,14 +156,14 @@
 
 @media only screen and (max-width: 768px) {
     .banner {
-        height: 60vh; /* Altura menor para dispositivos móviles */
+        height: 60vh;
     }
 }
 
 /* Video responsivo */
 .responsive-video {
-    width: 550px;        /* Ocupa el 100% del ancho del contenedor */
-    height: 800px;       /* Mantiene la proporción del video */
+    width: 550px;
+    height: 800px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -176,14 +176,13 @@
 @media only screen and (max-width: 768px) {
     .responsive-video {
         max-width: 200px;
-        max-height: 300px; /* Reducción de altura en móviles */
+        max-height: 300px;
     }
 
-    /* Centrar el contenedor del video */
     .col-12 {
         display: flex;
-        justify-content: center; /* Centra horizontalmente */
-        align-items: center; /* Centra verticalmente si hay espacio */
+        justify-content: center;
+        align-items: center;
     }
 }
 
