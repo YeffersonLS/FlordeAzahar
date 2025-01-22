@@ -11,10 +11,6 @@
 {!! $sub !!}
     <div class="col-md-5 align-self-left">
         <div class="d-flex justify-content-start align-items-center" style="margin-top: 50px;">
-            {{-- @if (\Route::current()->uri == 'admin/blogs')
-            <a href="{!! url('admin/blogs/create') !!}" class="btn btn-info d-none d-lg-block m-r-15"><i class="fa fa-plus-circle"></i>
-                Crear Nuevo</a>
-            @endif --}}
             @if (\Route::current()->uri != 'admin/user' && \Route::current()->uri != 'admin/products/images' && \Route::current()->uri != 'admin/products/recetas')
                 <a href="{!! url(\Route::current()->uri.'/create') !!}" class="btn btn-info d-none d-lg-block m-r-15"><i class="fa fa-plus-circle"></i>
                 Crear Nuevo</a>

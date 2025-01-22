@@ -12,7 +12,7 @@
     </div>
     <div class="col-12 col-md-4">
         <video autoplay muted loop class="responsive-video">
-            <source src="{{ asset('public/storage/videos/navidad.mp4') }}" type="video/mp4">
+            <source src="{{ asset('public/storage/videos/sanvalentin.mp4') }}" type="video/mp4">
         </video>
     </div>
 </div>

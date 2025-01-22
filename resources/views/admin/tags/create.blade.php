@@ -83,9 +83,6 @@
 @stop
 
 @section('js')
-{{-- @if (env('APP_ENV') == "local")
-<script src="{{ asset('vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
-@else --}}
 <script src="{{ asset('public/vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js') }}"></script>
 <script type="text/javascript">
     $(document).ready(function() {
